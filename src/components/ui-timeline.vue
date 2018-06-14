@@ -106,7 +106,7 @@
   .timeline-img {
     position: absolute;
     top: 0;
-    left: .35rem;
+    left: .9rem;
     width: .6rem;
     height: .6rem;
     border-radius: 50%;
