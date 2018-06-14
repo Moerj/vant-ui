@@ -1,0 +1,100 @@
+/*
+    ui 公用布局
+*/
+
+@import './public.scss';
+
+// 价格符号
+.ui-rmb {
+    &:before {
+        content: '¥';
+        padding-right: 5px;
+    }
+}
+
+.ui-content {
+    background-color: #fff;
+    padding: 15px;
+    line-height: normal;
+}
+
+//卡片样式
+.ui-card {
+    margin: 0 .5rem .5rem;
+    padding: .5rem;
+    box-shadow: 0 .0625rem .375rem rgba(0, 0, 0, .06), 0 .0625rem .25rem rgba(0, 0, 0, .06);
+    background:#fff;
+    border-radius:3px;
+    overflow: hidden;
+}
+
+
+
+// 文本限制行数
+.ui-clamp-1{
+    //单独写一个是为了编辑器能提示ui-clamp
+    @include text-clamp(1)
+}
+@for $i from 2 through 5 {
+    .ui-clamp-#{$i}{
+        @include text-clamp($i);
+    }
+}
+
+@mixin border($direction) {
+    border-#{$direction}: $ui-border;
+    }
+.ui-border{
+    border: $ui-border;
+}
+.ui-border-top{
+    @include border(top);
+}
+.ui-border-bottom{
+    @include border(bottom);
+}
+.ui-border-left{
+    @include border(left);
+}
+.ui-border-right{
+    @include border(right);
+}
+.ui-circle{
+    border-radius: 50%;
+}
+
+.ui-sign{//未读标记
+    width:.5rem; 
+    height:.5rem;
+    background-color: #f44336;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ui-title{
+    font-size: 16px;
+    color: rgba(69,90,100,.6);
+    padding: 15px;
+    position: relative;
+}
+
+// 输入框
+.ui-textarea{
+    padding: .5rem;
+    width: 95%;
+    min-height: 5rem;
+    margin: .5rem auto;
+    display: block;
+}
+.ui-input,.ui-textarea{
+    transition: .6s;
+    transition-property: border-color,box-shadow;
+    border: 1px solid #ddd;
+    font-size: .8rem;
+    outline: none;
+    border-radius: 4px;
+    &:focus{
+        border-color: rgba($ui-color-primary,.5);
+        box-shadow: 0 0 2px rgba($ui-color-primary,.5);
+    }
+}

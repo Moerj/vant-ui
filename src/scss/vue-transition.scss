@@ -1,0 +1,91 @@
+/* 可以设置不同的进入和离开动画 */
+
+// fade
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .6s;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
+}
+
+// zoom
+.zoom-enter-active {
+    animation: zoomIn .2s;
+}
+
+.zoom-leave-active {
+    animation: zoomIn .2s reverse;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale3d(0, 0, 0);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+// 下
+.bottom-enter-active {
+    animation-name: bottom-in;
+    animation-duration: .3s;
+}
+
+.bottom-leave-active {
+    animation-name: bottom-out;
+    animation-duration: .3s;
+}
+
+@keyframes bottom-in {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes bottom-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+// 右
+.right-enter-active {
+    animation-name: right-in;
+    animation-duration: .3s;
+}
+
+.right-leave-active {
+    animation-name: right-out;
+    animation-duration: .3s;
+}
+
+@keyframes right-in {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes right-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
+}

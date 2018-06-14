@@ -1,0 +1,78 @@
+// ------ public ------
+
+// 颜色
+$ui-color-red:#F36C60;
+$ui-color-blue: #26a2ff;
+$ui-color-black: rgba(black , .7);
+$ui-color-disabled: rgba($color:black, $alpha:.24);
+$ui-color-orange: #ff6c00;
+$ui-color-green: #4ad48f;
+$ui-color-yellow: #ffaf40;
+$ui-color-purple: #c7b1e2;
+
+// 主色
+$ui-color-primary: $ui-color-blue;
+
+// 背景
+$ui-bg-grey:rgb(243, 245, 247);
+
+// 边框
+$ui-border: 1px solid rgba(#d9d9d9, .3);
+$ui-border-radius: 4px;
+
+// 单位转换
+@function rem($px) {
+    @return $px / 20px * 1rem;
+}
+
+// 文本溢出样式，clamp到多少行溢出时显示缩略字符
+@mixin text-clamp($clamp:1) {
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $clamp;
+    overflow: hidden;
+    line-height: normal;
+}
+
+// 图片盒名称渐变背景
+@mixin linear-background() {
+    $bg: rgba($ui-color-primary,.9);
+    background: linear-gradient(to left, darken($bg,10%) , lighten($bg,10%));
+}
+
+@mixin box-shadow-bottom {
+    box-shadow: 0 1px 1px rgba($color: black, $alpha: .1);
+}
+
+@mixin box-shadow {
+    box-shadow:0 .0625rem .375rem rgba(0, 0, 0, .117647), 0 .0625rem .25rem rgba(0, 0, 0, .117647)
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin img-circle($size, $autoType:"") {
+    height: $size;
+    width: $size;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+    >img{
+        @if $autoType == 'width' {
+            width: $size;
+        }
+        @if $autoType == 'height'{
+            height: $size;
+        }
+        @if $autoType == ''{
+            width: $size;
+            height: $size;
+        }
+    }
+}

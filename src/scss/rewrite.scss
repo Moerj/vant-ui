@@ -1,0 +1,11 @@
+@import './public.scss';
+
+// 下拉/上拉刷新
+.mescroll{
+    -webkit-overflow-scrolling: touch;
+}
+
+// 修正上传组件form高度
+.g-core-image-upload-form{
+    height:100% !important;
+}
