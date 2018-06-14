@@ -15,4 +15,12 @@ export default [
         path:'/demo-page',
         component: () => import('./page')
     },
+    {
+        path:'/demo-checkbox',
+        component: () => import('./checkbox')
+    },
+    {
+        path:'/demo-timeline',
+        component: () => import('./timeline')
+    },
 ]

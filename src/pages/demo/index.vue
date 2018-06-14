@@ -10,6 +10,8 @@
         <van-cell-group>
             <van-cell title="子页面" is-link to="/demo-page" />
             <van-cell title="自适应图片" is-link to="/demo-img" />
+            <van-cell title="多选框" is-link to="/demo-checkbox" />
+            <van-cell title="时间线" is-link to="/demo-timeline" />
         </van-cell-group>
     </ui-main>
 </template>

@@ -430,6 +430,13 @@ input, textarea, select, button{
     color:#fff;
 }
 
+// font-size 10~100 px
+@for $i from 10 through 100 {
+    .f#{$i} {
+        font-size: #{$i}px !important;
+    }
+}
+
 // margin/padding 0~100 px
 @for $i from 0 through 100 {
     .m#{$i} {

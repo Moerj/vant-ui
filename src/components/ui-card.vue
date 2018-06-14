@@ -13,7 +13,7 @@
         margin: 15px;
         padding: 15px;
         background-color: #fff;
-        box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+        box-shadow: 0 .0625rem .375rem #d7e4ed;
         font-size: 26px;
         text-align: left;
         &.title{
