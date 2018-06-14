@@ -190,66 +190,13 @@ input, textarea, select, button{
 }
 
 // flex布局
-.flex {
+.flex,.flex-column {
     display: flex;
 
     &.inline{
         display: inline-flex;
     }
 
-    &.column {
-        flex-direction: column;
-
-        &.column-col-top {
-            justify-content: flex-start;
-        }
-        &.column-col-bottom {
-            justify-content: flex-end;
-        }
-        &.column-col-center {
-            justify-content: center;
-        }
-        &.column-col-between {
-            justify-content: space-between;
-        }
-        &.column-col-around {
-            justify-content: space-around;
-        } //横向对齐方式
-        &.column-row-left {
-            align-items: flex-start;
-        }
-        &.column-row-right {
-            align-items: flex-end;
-        }
-        &.column-row-center {
-            align-items: center;
-        }
-        &.column-row-baseline {
-            align-items: baseline;
-        }
-        &.column-row-stretch {
-            align-items: stretch;
-        } //多列横向对齐方式
-        &.column-multi-line-row-left {
-            align-content: flex-start;
-        }
-        &.column-multi-line-row-right {
-            align-content: flex-end;
-        }
-        &.column-multi-line-row-center {
-            align-content: center;
-        }
-        &.column-multi-line-row-between {
-            align-content: space-between;
-        }
-        &.column-multi-line-row-around {
-            align-content: space-around;
-        }
-        &.column-multi-line-row-stretch {
-            align-content: stretch;
-        }
-    }
-    
     //折行
     &.flex-nowrap {
         flex-wrap: nowrap;
@@ -259,7 +206,8 @@ input, textarea, select, button{
     }
     &.flex-wrap-reverse {
         flex-wrap: wrap-reverse;
-    } //横向对齐方式
+    } 
+    //横向对齐方式
     &.row-left {
         justify-content: flex-start;
     }
@@ -274,7 +222,8 @@ input, textarea, select, button{
     }
     &.row-around {
         justify-content: space-around;
-    } //纵向对齐方式
+    } 
+    //纵向对齐方式
     &.col-top {
         align-items: flex-start;
     }
@@ -289,24 +238,33 @@ input, textarea, select, button{
     }
     &.col-stretch {
         align-items: stretch;
-    } //多行纵向对齐方式
-    &.multi-line-col-top {
-        align-content: flex-start;
     }
-    &.multi-line-col-bottom {
-        align-content: flex-end;
-    }
-    &.multi-line-col-center {
-        align-content: center;
-    }
-    &.multi-line-col-between {
-        align-content: space-between;
-    }
-    &.multi-line-col-around {
-        align-content: space-around;
-    }
-    &.multi-line-col-stretch {
-        align-content: stretch;
+
+    // 纵向flex
+    &.flex-column{
+        flex-direction: column;
+        //横向对齐方式
+        &.row-center {
+            align-items: center;
+        }
+        &.row-left {
+            align-items: flex-start;
+        }
+        &.row-right {
+            align-items: flex-end;
+        }
+        &.row-between {
+            align-items: stretch;
+        }
+        &.col-center{
+            justify-content: center;
+        }
+        &.col-top{
+            justify-content: flex-start;
+        }
+        &.col-bottom{
+            justify-content: flex-end;
+        }
     }
 }
 
