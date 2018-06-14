@@ -17,17 +17,17 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 1rem;
+            height: 1rem;
             >*{
                 color: $ui-color-primary;
                 font-weight: lighter;
             }
         }
         .checkbox-text{
-            text-indent: 15px;
             color: rgba(black, .4);
-            font-size: 30px;
+            font-size: 16px;
+            margin-left: 5px;
         }
     }
 </style>

@@ -6,7 +6,7 @@
     @import '~@/scss/public.scss';
     .card-title{
         color: $ui-color-primary;
-        font-size: 30px;
+        font-size: 16px;
         font-weight: bold;
     }
     .card{
@@ -14,7 +14,7 @@
         padding: 15px;
         background-color: #fff;
         box-shadow: 0 .0625rem .375rem #d7e4ed;
-        font-size: 26px;
+        font-size: 14px;
         text-align: left;
         &.title{
             white-space: pre-line;
