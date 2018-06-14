@@ -1,26 +1,26 @@
 export default [
     {
         path:'/demo',
-        component: () => import('./index')
+        component: () => import(/* webpackChunkName: "demo" */ './index')
     },
     {
         path:'/demo-style',
-        component: () => import('./style')
+        component: () => import(/* webpackChunkName: "demo" */ './style')
     },
     {
         path:'/demo-img',
-        component: () => import('./img')
+        component: () => import(/* webpackChunkName: "demo" */ './img')
     },
     {
         path:'/demo-page',
-        component: () => import('./page')
+        component: () => import(/* webpackChunkName: "demo" */ './page')
     },
     {
         path:'/demo-checkbox',
-        component: () => import('./checkbox')
+        component: () => import(/* webpackChunkName: "demo" */ './checkbox')
     },
     {
         path:'/demo-timeline',
-        component: () => import('./timeline')
+        component: () => import(/* webpackChunkName: "demo" */ './timeline')
     },
 ]
