@@ -1,6 +1,7 @@
 # vue-vant
 
-> mobile project
+> demo
+本地运行后,访问/demo路径查看
 
 ## Build Setup
 
