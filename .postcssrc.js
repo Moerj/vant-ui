@@ -7,8 +7,8 @@ module.exports = {
     // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {},
     "postcss-pxtorem": {
-      rootValue: 16,
-      unitPrecision: 5,
+      rootValue: 16, // 1rem等于多少px
+      unitPrecision: 5, //精确到小数点后多少
       propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
       selectorBlackList: [],
       replace: true,
