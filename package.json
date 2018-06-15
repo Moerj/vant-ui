@@ -62,7 +62,7 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "last 10 Chrome versions",
+    "android >= 4",
     "last 3 iOS versions"
   ]
 }
