@@ -31,7 +31,7 @@
     <!-- transition层不会生成dom -->
     <transition name="right">
         <div ref="el" class="ui-page" v-show="active">
-            <van-nav-bar v-if="!$slots.header" :title="title" left-arrow @click-left="close()"></van-nav-bar>
+            <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
             <slot name="header"></slot>
             <div class="flex-1 scroll-y">
                 <slot></slot>
