@@ -12,6 +12,7 @@
             <van-cell icon="photo" title="自适应图片" is-link to="/demo-img" />
             <van-cell icon="certificate" title="多选框" is-link to="/demo-checkbox" />
             <van-cell icon="clock" title="时间线" is-link to="/demo-timeline" />
+            <van-cell title="加载" is-link to="/demo-loading" />
         </van-cell-group>
     </ui-main>
 </template>

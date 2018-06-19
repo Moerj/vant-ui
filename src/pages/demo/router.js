@@ -23,4 +23,8 @@ export default [
         path:'/demo-timeline',
         component: () => import(/* webpackChunkName: "demo" */ './timeline')
     },
+    {
+        path:'/demo-loading',
+        component: () => import(/* webpackChunkName: "demo" */ './loading')
+    },
 ]

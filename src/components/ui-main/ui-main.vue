@@ -85,7 +85,7 @@
 
             <div v-if="isLoading" class="ui-main-loading">
                 <div class="loading-item">
-                    <icon name="brands/react" scale="1.5" spin class="f-color-white"></icon>
+                    <van-loading color="white" />
                 </div>
             </div>
         </div>
