@@ -8,11 +8,12 @@
 
         <div class="ui-title">扩展库</div>
         <van-cell-group>
-            <van-cell title="子页面" is-link to="/demo-page" />
-            <van-cell icon="photo" title="自适应图片" is-link to="/demo-img" />
-            <van-cell icon="certificate" title="多选框" is-link to="/demo-checkbox" />
-            <van-cell icon="clock" title="时间线" is-link to="/demo-timeline" />
+            <van-cell icon="pending-payment" title="子页面" is-link to="/demo-page" />
+            <van-cell title="自适应图片" is-link to="/demo-img" />
+            <van-cell title="多选框" is-link to="/demo-checkbox" />
+            <van-cell title="时间线" is-link to="/demo-timeline" />
             <van-cell title="加载" is-link to="/demo-loading" />
+            <van-cell title="图片上传" is-link to="/demo-upload" />
         </van-cell-group>
     </ui-main>
 </template>

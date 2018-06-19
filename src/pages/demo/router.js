@@ -27,4 +27,8 @@ export default [
         path:'/demo-loading',
         component: () => import(/* webpackChunkName: "demo" */ './loading')
     },
+    {
+        path:'/demo-upload',
+        component: () => import(/* webpackChunkName: "demo" */ './upload')
+    },
 ]
