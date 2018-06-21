@@ -1,6 +1,7 @@
 /**
-    卡牌区域效果
-    通常用于描述当前demo页面的说明
+    卡片容器
+    slot=title 标题
+    slot=default 内容区域
  */
 <style lang="scss" scoped>
     @import '~@/scss/public.scss';
