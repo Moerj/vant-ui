@@ -17,7 +17,7 @@
             </van-cell>
         </van-cell-group>
 
-        <div class="ui-title">扩展库</div>
+        <div class="ui-title">扩展组件</div>
         <van-cell-group>
             <van-cell icon="pending-payment" title="子页面" is-link to="/demo-page" />
             <van-cell title="自适应图片" is-link to="/demo-img" />
