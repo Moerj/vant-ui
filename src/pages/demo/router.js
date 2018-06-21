@@ -35,4 +35,8 @@ export default [
         path:'/demo-dropdown',
         component: () => import(/* webpackChunkName: "demo" */ './dropdown')
     },
+    {
+        path:'/demo-pull',
+        component: () => import(/* webpackChunkName: "demo" */ './pull')
+    },
 ]
