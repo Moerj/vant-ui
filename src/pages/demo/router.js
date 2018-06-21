@@ -39,4 +39,8 @@ export default [
         path:'/demo-pull',
         component: () => import(/* webpackChunkName: "demo" */ './pull')
     },
+    {
+        path:'/demo-tab',
+        component: () => import(/* webpackChunkName: "demo" */ './tab')
+    },
 ]

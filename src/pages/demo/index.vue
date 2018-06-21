@@ -13,7 +13,7 @@
                 <img class="icon" slot="icon" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
             </van-cell>
             <van-cell title="公共样式" is-link to="/demo-style" >
-                <img class="icon" slot="icon" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2425825150,527813223&fm=58&s=8C0E7432DD276F1106E587E503005025&bpow=121&bpoh=75">
+                <img class="icon" slot="icon" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2425825150,527813223&fm=58&s=8C0E7432DD276F1106E587E503005025&bpow=121&bpoh=75.jpeg">
             </van-cell>
         </van-cell-group>
 
@@ -27,6 +27,7 @@
             <van-cell title="图片上传" is-link to="/demo-upload" />
             <van-cell title="下拉框" is-link to="/demo-dropdown" />
             <van-cell title="下拉刷新/上拉加载" is-link to="/demo-pull" />
+            <van-cell title="选项卡" is-link to="/demo-tab" />
         </van-cell-group>
     </ui-main>
 </template>
