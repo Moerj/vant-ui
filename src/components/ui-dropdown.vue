@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    $closeHeight:2rem;
+    $closeHeight:44px;
     .ui-dropdown{
         border:1px solid #ddd;
         overflow: hidden;
