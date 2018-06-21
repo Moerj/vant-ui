@@ -73,7 +73,7 @@
                 if (this.size.indexOf('rem')>-1 || this.size.indexOf('px')>-1) {
                     return this.size
                 }
-                return this.size + 'rem'
+                return this.size + 'px'
             },
             radius(){
                 return this.circle?'50%':''

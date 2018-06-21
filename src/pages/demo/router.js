@@ -8,6 +8,10 @@ export default [
         component: () => import(/* webpackChunkName: "demo" */ './style')
     },
     {
+        path:'/demo-card',
+        component: () => import(/* webpackChunkName: "demo" */ './card')
+    },
+    {
         path:'/demo-img',
         component: () => import(/* webpackChunkName: "demo" */ './img')
     },

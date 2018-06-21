@@ -20,6 +20,7 @@
         <div class="ui-title">扩展组件</div>
         <van-cell-group>
             <van-cell icon="pending-payment" title="子页面" is-link to="/demo-page" />
+            <van-cell title="卡片" is-link to="/demo-card" />
             <van-cell title="自适应图片" is-link to="/demo-img" />
             <van-cell title="多选框" is-link to="/demo-checkbox" />
             <van-cell title="时间线" is-link to="/demo-timeline" />
