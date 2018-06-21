@@ -13,9 +13,9 @@
 
         <ui-card>
             <span slot="title" class="f-color-blue">base.scss</span>
-            外边距样式 m0~m10
-            内边距样式 p0~p10
-            单位为rem, 含中间值如m05 (margin:0.5rem)
+            外边距样式 m0~m100
+            内边距样式 p0~p100
+            单位为px
 
             带方向: mt mb pl pr
             t(top) b(bottom) l(left) r(right)
