@@ -17,13 +17,10 @@
         box-shadow: 0 .0625rem .375rem #d7e4ed;
         font-size: 14px;
         text-align: left;
-        &.title{
-            white-space: pre-line;
-        }
     }
 </style>
 <template>
-    <div class="card" :class="{title:$slots.title}">
+    <div class="card" :style="{'white-space':$slots.title?'pre-line':''}">
         <div v-if="$slots.title" class="card-title">
             <slot name="title"></slot>
         </div>
