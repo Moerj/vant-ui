@@ -14,6 +14,7 @@
             <van-cell title="时间线" is-link to="/demo-timeline" />
             <van-cell title="加载" is-link to="/demo-loading" />
             <van-cell title="图片上传" is-link to="/demo-upload" />
+            <van-cell title="下拉框" is-link to="/demo-dropdown" />
         </van-cell-group>
     </ui-main>
 </template>
