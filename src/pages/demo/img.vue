@@ -15,15 +15,15 @@
             </ui-card>
 
 
-            <ui-img :src="imgUrl" circle size="3"></ui-img>
+            <ui-img :src="imgUrl" circle size="100"></ui-img>
             <ui-card class="mb30">
-                宽高3rem，circle圆形，size属性可带单位，默认rem
+                宽高100px，circle圆形，size属性可带单位，默认px
             </ui-card>
 
 
-            <ui-img :src="imgUrl" style="width:80px;height:50px"></ui-img>
+            <ui-img :src="imgUrl" style="width:100px;height:80px"></ui-img>
             <ui-card class="mb30">
-                宽80px 高50px
+                宽100px 高80px
             </ui-card>
         </div>
     </ui-main>

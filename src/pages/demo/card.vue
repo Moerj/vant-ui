@@ -4,7 +4,7 @@
 
         <ui-card>
             <div slot="title" class="flex col-center">
-                <ui-img src="https://p3.pstatp.com/thumb/249c000b0a4ab52ab70a.jpg" class="ui-circle mr5" size="30px"></ui-img>
+                <ui-img src="https://p3.pstatp.com/thumb/249c000b0a4ab52ab70a.jpg" class="mr5"  size="30px" circle></ui-img>
                 <span>标题 slot=title</span>
             </div>
             <span class="f-color-orange">内容会保留换行</span>
