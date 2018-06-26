@@ -47,4 +47,8 @@ export default [
         path:'/demo-tab',
         component: () => import(/* webpackChunkName: "demo" */ './tab')
     },
+    {
+        path:'/demo-input-number',
+        component: () => import(/* webpackChunkName: "demo" */ './input-number')
+    },
 ]

@@ -29,6 +29,7 @@
             <van-cell title="下拉框" is-link to="/demo-dropdown" />
             <van-cell title="下拉刷新/上拉加载" is-link to="/demo-pull" />
             <van-cell title="选项卡" is-link to="/demo-tab" />
+            <van-cell title="数字输入框" is-link to="/demo-input-number" />
         </van-cell-group>
     </ui-main>
 </template>
