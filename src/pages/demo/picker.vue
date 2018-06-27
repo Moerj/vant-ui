@@ -1,0 +1,45 @@
+<template>
+    <ui-main>
+        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+
+        <ui-card>
+            <span slot="title">ui-picker</span>
+            建议用在选项少于10项的单选
+            选项过多或需要多选请使用ui-selection组件
+        </ui-card>
+
+        <ui-picker v-model="id" placeholder="请选择一项" label="这是单选题" :options="option" required @change="onChange">
+        </ui-picker>
+
+        <p class="f-color-orange pl5">当前id: {{id}}</p>
+
+        
+
+    </ui-main>
+</template>
+<script>
+    export default {
+        data(){
+            return {
+                option:[],
+                id:''
+            }
+        },
+        mounted(){
+            //模拟异步加载数据源和回显数据
+            setTimeout(() => {
+                this.option = [
+                    {text:'萝莉',id:'01'},
+                    {text:'御姐',id:'02'},
+                    {text:'都要',id:'03'},
+                ]
+                this.id = '03'
+            }, 500);
+        },
+        methods:{
+            onChange(item){
+                // console.log('change', item);
+            }
+        },
+    }
+</script>
