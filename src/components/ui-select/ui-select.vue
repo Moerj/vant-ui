@@ -17,7 +17,9 @@
             <van-nav-bar slot="header" :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
 
             <!-- 搜索框 -->
-            <van-search v-if="searchable" slot="header" show-action @search="search" @cancel="search('')" v-model="searchVal" :disabled="isSearching">
+            <van-search v-if="searchable" slot="header" show-action v-model="searchVal" :disabled="isSearching">
+                <a v-if="searchVal!=''" slot="action" @click="search(searchVal)" class="f-color-blue ml10 mr10" >搜索</a>
+                <a v-else slot="action" class="m7"></a>
             </van-search>
 
             <!-- 插槽 -->
@@ -181,6 +183,11 @@
                     }else{
                         this.selected = v
                     }
+                }
+            },
+            searchVal(v){//搜索框清空时触发重置搜索列表
+                if (v==='') {
+                    this.search('')
                 }
             }
         },
