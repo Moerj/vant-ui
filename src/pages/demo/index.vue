@@ -19,18 +19,19 @@
 
         <div class="ui-title">扩展组件</div>
         <van-cell-group>
-            <van-cell icon="pending-payment" title="子页面" is-link to="/demo-page" />
-            <van-cell title="卡片" is-link to="/demo-card" />
-            <van-cell title="自适应图片" is-link to="/demo-img" />
-            <van-cell title="多选框" is-link to="/demo-checkbox" />
-            <van-cell title="时间线" is-link to="/demo-timeline" />
-            <van-cell title="加载" is-link to="/demo-loading" />
-            <van-cell title="图片上传" is-link to="/demo-upload" />
-            <van-cell title="下拉框" is-link to="/demo-dropdown" />
-            <van-cell title="下拉刷新/上拉加载" is-link to="/demo-pull" />
-            <van-cell title="选项卡" is-link to="/demo-tab" />
-            <van-cell title="数字输入框" is-link to="/demo-input-number" />
-            <van-cell title="滑动单选" is-link to="/demo-picker" />
+            <van-cell icon="pending-payment" title="子页面" value="page" is-link to="/demo-page" />
+            <van-cell title="卡片" value="card" is-link to="/demo-card" />
+            <van-cell title="自适应图片" value="img" is-link to="/demo-img" />
+            <van-cell title="多选框" value="checkbox" is-link to="/demo-checkbox" />
+            <van-cell title="时间线" value="timeline" is-link to="/demo-timeline" />
+            <van-cell title="加载" value="loading" is-link to="/demo-loading" />
+            <van-cell title="图片上传" value="upload" is-link to="/demo-upload" />
+            <van-cell title="下拉框" value="dropdown" is-link to="/demo-dropdown" />
+            <van-cell title="下拉刷新/上拉加载" value="pull" is-link to="/demo-pull" />
+            <van-cell title="选项卡" value="tab" is-link to="/demo-tab" />
+            <van-cell title="数字输入框" value="input-number" is-link to="/demo-input-number" />
+            <van-cell title="滑动单选" value="picker" is-link to="/demo-picker" />
+            <van-cell title="高级选择" value="select" is-link to="/demo-select" />
         </van-cell-group>
     </ui-main>
 </template>

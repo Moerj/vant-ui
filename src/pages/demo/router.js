@@ -55,4 +55,8 @@ export default [
         path:'/demo-picker',
         component: () => import(/* webpackChunkName: "demo" */ './picker')
     },
+    {
+        path:'/demo-select',
+        component: () => import(/* webpackChunkName: "demo" */ './select')
+    },
 ]
