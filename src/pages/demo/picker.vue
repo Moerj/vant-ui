@@ -4,8 +4,8 @@
 
         <ui-card>
             <span slot="title">ui-picker</span>
-            建议用在选项少于10项的单选
-            选项过多或需要多选请使用ui-selection组件
+            建议选项少于10项,
+            选项过多或需要多选时不适合
         </ui-card>
 
         <ui-picker v-model="id" placeholder="请选择一项" label="这是单选题" :options="option" required @change="onChange">
