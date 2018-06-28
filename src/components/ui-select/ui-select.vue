@@ -1,5 +1,6 @@
 <template>
-    <van-cell-group @click.native="open()">
+    <van-cell-group>
+        <!-- 单元格 -->
         <van-field
             v-model="fullText"
             :label="label"
@@ -7,6 +8,7 @@
             :required="required"
             :disabled="disabled"
             readonly
+            @focus="open()"
         />
 
         <!-- 弹出窗 会插入body -->
@@ -23,13 +25,18 @@
                 <slot></slot>
             </div>
 
-            <div v-show="!isSearching && loaded && optionsAll.length===0" :data="options" class="flex row-center f10 f-color-grey">暂无数据</div>
+            <!-- 文本提示区 -->
+            <div class="f14 f-color-grey text-center">
 
-            <div v-show="isSearching || !loaded" class="flex row-center col-center">
-                <van-loading type="spinner" color="white" />
-                <span class="f10 f-color-grey">正在搜索数据...</span>
+                <p v-show="!isSearching && loaded && optionsAll.length===0" :data="options">暂无数据</p>
+
+                <p v-show="isSearching || !loaded" class="flex col-center row-center">
+                    <van-loading type="spinner" size="16px"/>
+                    <span class="ml5">正在搜索数据...</span>
+                </p>
             </div>
 
+            <!-- 操作列表区 -->
             <div v-if="optionsAll.length>0">
                 <!-- 多选 -->
                 <van-checkbox-group v-if="multiple" v-model="selected" :max="max">

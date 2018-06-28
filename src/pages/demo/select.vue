@@ -25,10 +25,10 @@
                     id:''
                 },
                 opt:[],
-                tab:'分类一',
+                tab:'分类1',
                 tabData: [ // 工单状态
-                    { label: '分类一'},
-                    { label: '分类二'},
+                    { label: '分类1'},
+                    { label: '分类2'},
                 ],
                 initOpt: [
                     {text:'选项1',id:'1'},
