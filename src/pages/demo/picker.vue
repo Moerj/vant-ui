@@ -34,7 +34,7 @@
                     {text:'都要',id:'03'},
                 ]
                 this.id = '03'
-            }, 500);
+            }, 3000);
         },
         methods:{
             onChange(item){

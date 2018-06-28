@@ -1,6 +1,6 @@
 <template>
-    <van-cell-group @click.native="open()">
-        <van-field :label="label" v-model="selectedText" :placeholder="placeholder" readonly :required="required" />
+    <van-cell-group>
+        <van-field :label="label" v-model="selectedText" :placeholder="placeholder" readonly :required="required" @focus="open()"/>
 
         <div ref="popup">
             <!-- 弹出层 插入body -->
@@ -11,6 +11,7 @@
                 @cancel="close"
                 @confirm="confirm"
                 ref="picker"
+                :loading="options.length===0"
                 />
             </van-popup>
         </div>
@@ -82,8 +83,7 @@
                 this.close()
             },
             open(){
-                if (this.disabled) return;
-                if (this.options.length>0) {
+                if (!this.disabled){
                     this.popupVisible=true
                 }
             },
