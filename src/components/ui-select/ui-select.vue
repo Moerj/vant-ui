@@ -20,7 +20,8 @@
             <van-search v-if="searchable" slot="header" show-action @search="search" @cancel="search('')" v-model="searchVal" :disabled="isSearching">
             </van-search>
 
-            <div slot="header" v-if="!searchVal">
+            <!-- 插槽 -->
+            <div slot="header" v-if="$refs.popup && $refs.popup.active && !searchVal">
                 <!-- 可以插入例如tab -->
                 <slot></slot>
             </div>
