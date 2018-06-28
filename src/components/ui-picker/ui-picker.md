@@ -23,7 +23,7 @@ export default {
 
 参数名      |  type    | default  |  说明
 ------------|----------|----------|----------
-title       | String   |          |  标题
+label       | String   |          |  标题
 v-model     | String   |          |  选中项的value
 options     | Array    |          |  数据源
 required    | Boolean  | false    |  红色星号标记当前为必选项
