@@ -23,7 +23,7 @@
             </van-search>
 
             <!-- 插槽 -->
-            <div slot="header" v-if="$refs.popup && $refs.popup.active && !searchVal">
+            <div slot="header" v-if="!searchVal">
                 <!-- 可以插入例如tab -->
                 <slot></slot>
             </div>
