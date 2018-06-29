@@ -19,7 +19,7 @@ const router = new VueRouter({
 import axios from './assets/axios';
 Vue.use(axios, {
     withCredentials: true,//启用跨域支持
-    baseURL: "/zl-web",//用代理解决跨域,这里配置了后端接口要以/api开头,如: http://106.14.39.87:8886/api/backstage/pieces/find
+    baseURL: "/api",//用代理解决跨域,这里配置了后端接口要以/api开头,如: http://106.14.39.87:8886/api/backstage/pieces/find
     timeout: 20000,
 });
 
