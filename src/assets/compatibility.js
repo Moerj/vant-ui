@@ -28,22 +28,22 @@ if (!Array.prototype.forEach) {
 // 安卓物理返回按钮, app自行调用此方法
 window.APP_BACK = function(){
     // 带蒙层的模态窗出现时,返回为点击模态窗
-    // mint的弹出层
-    let modal = document.querySelector('.v-modal')
-    if (modal) {
+    // vant弹出层
+    let modal = document.querySelector('.van-modal')
+    if (modal && modal.style.display!=='none') {
         modal.click()
         return true
     }
 
     // yd-ui弹出层
-    modal = document.querySelector('.yd-mask')
-    if (modal && modal.style.pointerEvents==='auto') {
-        modal.click()
-        return true
-    }
+    // modal = document.querySelector('.yd-mask')
+    // if (modal && modal.style.pointerEvents==='auto') {
+    //     modal.click()
+    //     return true
+    // }
 
     // 根据class获取所有页面上的返回按钮
-    const backButtons = document.querySelectorAll('.mintui-back')
+    const backButtons = document.querySelectorAll('.van-nav-bar__left')
     // 获取一个倒序排列的按钮组,触发返回点击将从最后一个开始
     const group = Array.from(backButtons).reverse()
     for (let i = 0; i < group.length; i++) {
