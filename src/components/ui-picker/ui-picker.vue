@@ -49,23 +49,18 @@
         },
         mounted(){
             document.body.appendChild(this.$refs.popup)
+
+            this.syncByModel()
         },
         beforeDestroy(){
             document.body.removeChild(this.$refs.popup)
         },
         watch:{
             value(v){
-                if (v) {
-                    this.options.forEach((item,i)=>{
-                        if (item.id === v) {
-                            this.selectedText = item[this.valueKey]
-                            this.selectedIndex=i
-                        }
-                    })
-                }
+                this.syncByModel()
                 this.$emit('change',v)
             },
-             popupVisible(v){
+            popupVisible(v){
                 if (v===true) {
                     this.$nextTick(() => {
                         this.$refs.picker.setIndexes([this.selectedIndex])
@@ -92,6 +87,16 @@
                     this.popupVisible=false
                 })
             },
+            syncByModel(){
+                if (!this.value) return;
+                    
+                this.options.forEach((item,i)=>{
+                    if (item.id === this.value) {
+                        this.selectedText = item[this.valueKey]
+                        this.selectedIndex=i
+                    }
+                })
+            }
         },
     }
 </script>

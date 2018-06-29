@@ -33,7 +33,7 @@
         <div ref="el" class="ui-page" v-show="active">
             <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
             <slot name="header"></slot>
-            <div class="flex-1 scroll-y">
+            <div class="flex-1 scroll-y" v-if="visited">
                 <slot></slot>
             </div>
             <slot name="footer"></slot>
@@ -49,6 +49,7 @@
         data () {
             return {
                 active: false,
+                visited: false,//是否激活访问过, 确保插槽中的组件生命周期完全执行
             }
         },
         methods:{
@@ -58,6 +59,7 @@
             },
             open(){//用于外部调用, 打开当前弹出层
                 this.active = true
+                this.visited = true
             }
         },
         mounted(){
