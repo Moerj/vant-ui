@@ -7,7 +7,6 @@
 </style>
 <template>
     <ui-main>
-        <div class="ui-title">基础组件</div>
         <van-cell-group>
             <van-cell title="Vant UI 组件库" is-link @click.native="link('https://youzan.github.io/vant/mobile.html#/zh-CN')">
                 <img class="icon" slot="icon" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
@@ -17,7 +16,7 @@
             </van-cell>
         </van-cell-group>
 
-        <div class="ui-title">扩展组件</div>
+        <div class="ui-title">ui扩展</div>
         <van-cell-group>
             <van-cell icon="pending-payment" title="子页面" value="page" is-link to="/demo-page" />
             <van-cell title="卡片" value="card" is-link to="/demo-card" />
