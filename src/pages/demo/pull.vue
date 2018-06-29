@@ -34,11 +34,15 @@
             }
         },
         methods:{
-            loadData(){
-                if (this.$refs.uiPull.isDownScrolling) {//下拉刷新
+            loadData({isDownScrolling}){
+                if (isDownScrolling) {//下拉刷新
                     setTimeout(() => {
                         // 重新请求数据
-                        // ....
+                        let arr=[]
+                        for (let i = 0; i < this.pageSize; i++) {
+                            arr.push({ title:'标题' })
+                        }
+                        this.dataList=arr
                         this.$refs.uiPull.endSuccess()//刷新完成
                     }, 1000);
                     
