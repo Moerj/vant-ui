@@ -28,7 +28,6 @@
             <van-cell title="图片上传" value="upload" is-link to="/demo-upload" />
             <van-cell title="下拉刷新/上拉加载" value="pull" is-link to="/demo-pull" />
             <van-cell title="选项卡" value="tab" is-link to="/demo-tab" />
-            <van-cell title="数字输入框" value="input-number" is-link to="/demo-input-number" />
             <van-cell title="滑动单选" value="picker" is-link to="/demo-picker" />
             <van-cell title="高级选择" value="select" is-link to="/demo-select" />
         </van-cell-group>
