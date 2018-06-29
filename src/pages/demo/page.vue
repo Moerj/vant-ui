@@ -40,7 +40,7 @@
                     }
                     this.loading = false;
 
-                    if (this.list.length >= 60) {
+                    if (this.list.length >= 100) {
                         this.finished = true;
                     }
                 }, 1000);
