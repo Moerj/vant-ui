@@ -11,14 +11,18 @@
 
         </ui-card>
 
-        <van-button size="large" @click="$refs.newPage.open()" type="primary">列表数: {{list.length}}</van-button>
+        <van-button size="large" @click="$refs.page.open()" type="primary">列表数: {{list.length}}</van-button>
 
-        <ui-page ref="newPage" title="这是新页面">
+        <ui-page ref="page" title="这是新页面">
+            <!-- 若要自定义header部分, 则去掉title参数 -->
+            <!-- <van-nav-bar slot="header" title="自定义header" left-arrow @click-left="$router.replace('/demo')"/> -->
+
             <van-pull-refresh v-model="reloading" @refresh="onRefresh">
                 <van-list v-model="loading" :finished="finished" @load="onLoad">
                     <van-cell v-for="item in list" :key="item" :title="item + ''" />
                 </van-list>
             </van-pull-refresh>
+
         </ui-page>
     </ui-main>
 </template>
