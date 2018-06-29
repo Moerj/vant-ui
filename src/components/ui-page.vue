@@ -32,13 +32,11 @@
     <transition name="right">
         <div ref="el" class="ui-page" v-show="active">
             <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
-            <div v-if="visited">
-                <slot name="header"></slot>
-                <div class="flex-1 scroll-y">
-                    <slot></slot>
-                </div>
-                <slot name="footer"></slot>
+            <slot name="header" v-if="visited"></slot>
+            <div class="flex-1 scroll-y" v-if="visited">
+                <slot></slot>
             </div>
+            <slot name="footer" v-if="visited"></slot>
         </div>
     </transition>
 </template>
