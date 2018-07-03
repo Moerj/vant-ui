@@ -10,6 +10,7 @@
         @focus="open()"
     >
 
+        <!-- 弹出层会插入body -->
         <ui-page slot="icon" ref="popup" style="z-index:100">
             <!-- 操作选中后,显示确定/返回按钮 -->
             <van-nav-bar slot="header" :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
