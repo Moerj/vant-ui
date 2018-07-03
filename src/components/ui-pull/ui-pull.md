@@ -1,9 +1,6 @@
 ```html
     <ui-pull @load="getListData" v-model="listData" :total="total" ref="pull">
-        <!-- 滚动层一定要有 -->
-        <div class="scroll-y">
-            <!-- for循环的列表... -->
-        </div>
+        <!-- for循环的列表... -->
     </ui-pull>
 ```
 
@@ -12,7 +9,7 @@ export default {
     data(){
         return:{
             listData:[],
-            total:0,
+            total:0,//来至接口的列表总数,滚动加载根据它来判断是否加载完所有列表,最终显示 END 标示
         }
     },
     method:{

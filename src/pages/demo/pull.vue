@@ -16,9 +16,7 @@
         </ui-card>
 
         <ui-pull @load="loadData" v-model="dataList" :total="total" :num.sync="pageNumber" ref="uiPull">
-            <div class="scroll-y">
-                <van-cell v-for="(item,i) in dataList" :key="i" :title="'单元格' + i" value="内容" label="描述信息" />
-            </div>
+            <van-cell v-for="(item,i) in dataList" :key="i" :title="'单元格' + i" value="内容" label="描述信息" />
         </ui-pull>
     </ui-main>
 </template>
