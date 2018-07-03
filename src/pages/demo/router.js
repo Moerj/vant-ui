@@ -1,4 +1,5 @@
-export default [
+const isDev = process.env.NODE_ENV === 'development'
+const routerArry = [
     {
         path:'/demo',
         component: () => import(/* webpackChunkName: "demo" */ './index')
@@ -52,3 +53,4 @@ export default [
         component: () => import(/* webpackChunkName: "demo" */ './select')
     },
 ]
+export default isDev ? routerArry : null
