@@ -1,9 +1,7 @@
 <template>
-    <van-cell-group>
-        <van-field :label="label" v-model="selectedText" :placeholder="placeholder" readonly :required="required" @focus="open()"/>
-
-        <div ref="popup">
-            <!-- 弹出层 插入body -->
+    <van-field :label="label" v-model="selectedText" :placeholder="placeholder" readonly :required="required" @focus="open()">
+        <!-- 弹出层 插入body -->
+        <div slot="icon" ref="popup">
             <van-popup class="ui-picker vw-100" v-model="popupVisible" position="bottom">
                 <van-picker
                 show-toolbar
@@ -15,8 +13,7 @@
                 />
             </van-popup>
         </div>
-
-    </van-cell-group>
+    </van-field>
 </template>
 <script>
     export default {

@@ -1,17 +1,15 @@
 <template>
-    <van-cell-group>
-        <!-- 单元格 -->
-        <van-field
-            v-model="fullText"
-            :label="label"
-            :placeholder="placeholder"
-            :required="required"
-            :disabled="disabled"
-            readonly
-            @focus="open()"
-        />
+    <!-- 单元格 -->
+    <van-field
+        v-model="fullText"
+        :label="label"
+        :placeholder="placeholder"
+        :required="required"
+        :disabled="disabled"
+        readonly
+        @focus="open()"
+    >
 
-        <!-- 弹出窗 会插入body -->
         <ui-page ref="popup" style="z-index:100">
             <!-- 操作选中后,显示确定/返回按钮 -->
             <van-nav-bar slot="header" :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
@@ -60,7 +58,7 @@
             </div>
         </ui-page>
 
-    </van-cell-group>
+    </van-field>
 </template>
 <script>
     export default {

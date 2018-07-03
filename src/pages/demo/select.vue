@@ -2,14 +2,16 @@
     <ui-main>
         <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
 
-        <ui-select label="单选" required v-model="form.id" @search="onSearch" :options="opt" placeholder="请选择一项"></ui-select>
-        <ui-select label="多选" v-model="form2.id" @search="onSearch" :options="opt" multiple searchable :max="3" placeholder="最多选3个,可搜索">
-            <!-- 插入tab进行过滤 -->
-            <van-tabs v-model="tab">
-                <van-tab v-for="item in tabData" :key="item.label" :title="item.label">
-                </van-tab>
-            </van-tabs>
-        </ui-select>
+        <van-cell-group>
+            <ui-select label="单选" required v-model="form.id" @search="onSearch" :options="opt" placeholder="请选择一项"></ui-select>
+            <ui-select label="多选" v-model="form2.id" @search="onSearch" :options="opt" multiple searchable :max="3" placeholder="最多选3个,可搜索">
+                <!-- 插入tab进行过滤 -->
+                <van-tabs v-model="tab">
+                    <van-tab v-for="item in tabData" :key="item.label" :title="item.label">
+                    </van-tab>
+                </van-tabs>
+            </ui-select>
+        </van-cell-group>
 
     </ui-main>
 </template>
