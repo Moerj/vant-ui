@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    .button-slot {
+    .button-slot {//自定义按钮
         float: right;
         >* {
             width: 44px;
@@ -48,6 +48,7 @@
 
                     <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
+                    <!-- 自定义按钮 -->
                     <div class="button-slot">
                         <slot name="button"></slot>
                     </div>
