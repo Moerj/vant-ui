@@ -117,5 +117,13 @@ export default {
             value: $http
         })
 
+        Object.defineProperty(Vue.prototype, '$httpDefaults', {
+            /** $http 默认配置
+             * this.$httpDefaults.baseURL = '/newBaseUrl' //修改baseUrl
+             * this.$httpDefaults.timeout = 10000 //修改超时
+             */
+            value: instance.defaults
+        })
+
     }
 }
