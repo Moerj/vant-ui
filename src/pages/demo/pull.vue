@@ -41,7 +41,7 @@
                             arr.push({ title:'标题' })
                         }
                         this.dataList=arr
-                        this.$refs.uiPull.endSuccess()//刷新完成
+                        this.loadSuccess()
                     }, 1000);
                     
                 }else{
@@ -49,9 +49,12 @@
                         for (let i = 0; i < this.pageSize; i++) {
                             this.dataList.push({ title:'标题' })
                         }
-                        this.$refs.uiPull.endSuccess()
+                        this.loadSuccess()
                     }, 1000);
                 }
+            },
+            loadSuccess(){//标记刷新或加载完成
+                this.$refs.uiPull && this.$refs.uiPull.endSuccess()
             }
         },
     }
