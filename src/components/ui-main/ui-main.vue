@@ -35,7 +35,7 @@
             top: 0;
             left: 0;
             right: 0;
-            // z-index: 20;
+            z-index: 10;
         }
 
         .ui-main-loading{
@@ -110,7 +110,10 @@
     })
     export default {
         name: 'ui-main',
-        version: '0.3.3',
+        version: '2.0.0',
+        props:{
+            stack:Boolean
+        },
         data () {
             return {
                 parentUiMainContent:null,
@@ -141,12 +144,12 @@
         },
         methods: {
             hideParentContent(){// 子路由激活,隐藏父级ui-main-content
-                if(this.parentUiMainContent){
+                if(this.parentUiMainContent && !this.stack){
                     this.parentUiMainContent.style.display = 'none'
                 }
             },
             ShowParentContent(){// 子路由销毁,显示父级ui-main-content
-                if(this.parentUiMainContent){
+                if(this.parentUiMainContent && !this.stack){
                     this.parentUiMainContent.style.display = ''
                 }
             },
