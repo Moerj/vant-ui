@@ -18,7 +18,8 @@
 
         <div class="ui-title">ui扩展</div>
         <van-cell-group>
-            <van-cell icon="pending-payment" title="子页面" value="page" is-link to="/demo-page" />
+            <van-cell title="主容器/子路由" value="main" is-link to="/demo-main" />
+            <van-cell title="子页面" value="page" is-link to="/demo-page" />
             <van-cell title="卡片" value="card" is-link to="/demo-card" />
             <van-cell title="自适应图片" value="img" is-link to="/demo-img" />
             <van-cell title="多选框" value="checkbox" is-link to="/demo-checkbox" />

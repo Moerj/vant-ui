@@ -1,5 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development'
 const routerArry = [
+    // 基础框架
     {
         path:'/demo',
         component: () => import(/* webpackChunkName: "demo" */ './index')
@@ -8,6 +9,22 @@ const routerArry = [
         path:'/demo-style',
         component: () => import(/* webpackChunkName: "demo" */ './style')
     },
+
+    // 扩展
+    {
+        path:'/demo-main',
+        component: () => import(/* webpackChunkName: "demo" */ './main'),
+        children:[
+            {
+                path:'/demo-main-child',
+                component: () => import(/* webpackChunkName: "demo" */ './main-child')
+            }
+        ]
+    },
+    {
+        path:'/demo-page',
+        component: () => import(/* webpackChunkName: "demo" */ './page')
+    },
     {
         path:'/demo-card',
         component: () => import(/* webpackChunkName: "demo" */ './card')
@@ -15,10 +32,6 @@ const routerArry = [
     {
         path:'/demo-img',
         component: () => import(/* webpackChunkName: "demo" */ './img')
-    },
-    {
-        path:'/demo-page',
-        component: () => import(/* webpackChunkName: "demo" */ './page')
     },
     {
         path:'/demo-checkbox',
