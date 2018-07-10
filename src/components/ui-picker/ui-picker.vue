@@ -55,7 +55,6 @@
         watch:{
             value(v){
                 this.syncByModel()
-                this.$emit('change',v)
             },
             popupVisible(v){
                 if (v===true) {
@@ -67,7 +66,6 @@
         },
         methods:{
             confirm(item){
-                // this.selectedText = item[this.valueKey]
                 if (this.selectedText) {
                     this.$emit('change', item)
                 }

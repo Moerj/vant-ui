@@ -38,7 +38,7 @@
         },
         methods:{
             onChange(item){
-                // console.log('change', item);
+                console.log('change', item);
             }
         },
     }
