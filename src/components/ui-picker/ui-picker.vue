@@ -66,10 +66,13 @@
         },
         methods:{
             confirm(item){
+                // 修改v-model
+                this.$emit('input',item.id)
+                // @change回调
                 if (this.selectedText) {
                     this.$emit('change', item)
                 }
-                this.$emit('input',item.id)
+                // 关闭
                 this.close()
             },
             open(){
