@@ -36,17 +36,17 @@
 ```
 > 参数
 
-参数名          |  类型         |  说明                         |  默认值
---------------------------------|---------------------------------------
-label           |   String      | 选项标题                      |
-options         |   Array       | 数据源                         |
-v-model         |   String      | 回显的id                       |
-multiple        |   Boolean     | 是否多选                      |   false
-searchable      |   Boolean     | 是否可搜索                    |   false
-disabled        |   Boolean     | 是否禁用                      |   false
-value-key       |   String      | 选项对象中，文字对应的 key    |   false
-@search         |   Function    | 搜索回调,回调参数keyword      |
-@change         |   Function    | 关闭时选择项变化的回调        |
+参数名          |  类型         |  说明                                           |  默认值
+--------------------------------|-------------------------------------------------|----------
+label           |   String      | 选项标题                                        |
+options         |   Array       | 数据源                                          |
+v-model         |   String      | 回显的id                                        |
+multiple        |   Boolean     | 是否多选                                        |   false
+searchable      |   Boolean     | 是否可搜索                                      |   false
+disabled        |   Boolean     | 是否禁用                                        |   false
+value-key       |   String      | 选项对象中，文字对应的 key                      |   false
+@search         |   Function    | 搜索回调,回调参数keyword                        |
+@change         |   Function    | 关闭时选择项变化的回调(参数为当前选中项)        |
 
 
 >方法
