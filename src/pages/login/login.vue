@@ -1,7 +1,9 @@
 <style lang="scss" scoped>
     @import '~@/scss/public.scss';
+    $color:#26a2ff;
 
     .form-item {
+
         display: flex;
         align-items: center;
         font-size: 1rem;
@@ -31,7 +33,7 @@
         .line {
             height: 1px;
             width: 100%;
-            background-color: #71968d;
+            background-color: rgba($color,.6);
             position: absolute;
             bottom: -1px;
             left:0;
@@ -48,6 +50,7 @@
         left: 0;
         background: url('./login-bg.jpg') no-repeat center;
         background-size: cover;
+        filter: blur(5px);
     }
 
     .form {
@@ -57,7 +60,7 @@
     }
 
     .login-btn{
-        background: rgba(#71968d,.6);
+        background-color: rgba($color,.6);
         color:#fff;
         border:none;
     }
@@ -66,7 +69,7 @@
 <template>
     <ui-main>
         <div class="flex col-center row-center h-100">
-            <div class="bg"></div>
+            <div class="bg" ref="bg"></div>
             <div class="form">
                 <div class="form-item">
                     <label>账号</label>
@@ -79,7 +82,7 @@
                     <i class="line"></i>
                 </div>
                 <div class="form-item">
-                    <van-button @click="$router.push('/demo')" size="large" class="login-btn">登录</van-button>
+                    <van-button @click="$router.push('/demo')" size="large" type="" class="login-btn">登录</van-button>
                 </div>
 
             </div>
@@ -97,7 +100,5 @@
                 }
             }
         },
-        methods: {
-        }
     }
 </script>
