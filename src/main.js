@@ -24,7 +24,7 @@ Vue.use(axios, {
 });
 
 // 主框架 vant-ui
-import 'vant/lib/vant-css/index.css';
+import 'vant/packages/vant-css/src/index.css'
 import Vant from 'vant';
 Vue.use(Vant);
 
