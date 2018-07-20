@@ -5,7 +5,9 @@ module.exports = {
         "postcss-import": {},
         "postcss-url": {},
         // to edit target browsers: use "browserslist" field in package.json
-        "autoprefixer": {},
+        "autoprefixer": {
+            browsers: ['Android >= 4.0', 'last 3 iOS versions']
+        },
         "postcss-pxtorem": {
             rootValue: 16, // 1rem等于多少px
             unitPrecision: 5, //精确到小数点后多少
