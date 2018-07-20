@@ -4,8 +4,8 @@ module.exports = {
     "plugins": {
         "postcss-import": {},
         "postcss-url": {},
-        // to edit target browsers: use "browserslist" field in package.json
         "autoprefixer": {
+            // browsers 会优先采用 package.json 中的 "browserslist" 字段,如果有的话
             browsers: ['Android >= 4.0', 'last 3 iOS versions']
         },
         "postcss-pxtorem": {
@@ -19,6 +19,7 @@ module.exports = {
         },
 
         // 自定义主题颜色 -----------
+        "precss": {},
         "postcss-easy-import": {
             extensions: ['pcss', 'css']
         },
@@ -30,7 +31,6 @@ module.exports = {
             },
             prefix: '$'
         },
-        "precss": {},
         // -----------
     }
 }
