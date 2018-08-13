@@ -27,7 +27,11 @@
                 type: Boolean,
                 default: false
             },
-            num: Number
+            num: Number,
+            pageSize: {
+                type:Number,
+                default:10
+            }
         },
         data() {
             return {
@@ -55,6 +59,9 @@
                         warpId: this.id,
                         icon: null, //图片地址
                         tip: "暂无相关数据~",
+                    },
+                    page:{
+                        size: this.pageSize
                     }
                 }
 
