@@ -41,4 +41,4 @@ export default {
 @load     |    Funtion      | 上拉/下拉的回调,根据参数{isDownScrolling}来区分                |
 v-model   |    Array        | 数据列表                                                       |
 total     |    Number       |   总数据长度,用于上拉加载,必传                                 |   0
-page-size |    Number       |   当分页每次加载条数小于10时,需要手动传此参数,否则上拉无效     |  10
+page-size |    Number       |   每次分页加载的条数                                           |  10
