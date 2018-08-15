@@ -6,7 +6,7 @@
     :id="id" 
     class="mescroll">
         <!-- 必须多套一层,不然 MeScroll 生成的 mescroll-upwarp 会跑到列表前面 -->
-        <div class="h-100">
+        <div :style="{height:value.length>0 ? '100%' : ''}">
             <slot></slot>
         </div>
     </v-touch>
@@ -17,7 +17,7 @@
     export default {
         name: "ui-pull",
         props: {
-            value: Array,
+            value: Array, //list数据源
             total: Number,
             disablePullUp: {
                 type: Boolean,
