@@ -6,7 +6,7 @@
     :id="id" 
     class="mescroll">
         <!-- 必须多套一层,不然 MeScroll 生成的 mescroll-upwarp 会跑到列表前面 -->
-        <div :style="{height:value.length>0 ? '100%' : ''}">
+        <div>
             <slot></slot>
         </div>
     </v-touch>
