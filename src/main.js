@@ -24,7 +24,8 @@ Vue.use(axios, {
 });
 
 // 主框架 vant-ui
-import 'vant/packages/vant-css/src/index.css'
+import 'vant/lib/vant-css/index.css';//导入全部样式
+// import 'vant/packages/vant-css/src/index.css'// postcss定制样式,引入所有组件目前不支持定制主题 https://github.com/youzan/vant/issues/1663
 import Vant from 'vant';
 Vue.use(Vant);
 

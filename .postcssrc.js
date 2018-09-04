@@ -17,20 +17,5 @@ module.exports = {
             mediaQuery: false,
             minPixelValue: 0
         },
-
-        // 自定义主题颜色 -----------
-        "precss": {},
-        "postcss-easy-import": {
-            extensions: ['pcss', 'css']
-        },
-        "postcss-theme-variables": {
-            // 对应颜色文档 https://github.com/youzan/vant/blob/dev/packages/vant-css/src/common/var.css
-            vars: {
-                // 'button-primary-background-color': '#26a2ff',
-                // 'button-primary-border-color': '#26a2ff',
-            },
-            prefix: '$'
-        },
-        // -----------
     }
 }
