@@ -58,6 +58,7 @@
                 this.$emit('close')
             },
             open(){//用于外部调用, 打开当前弹出层
+                document.body.appendChild(this.$refs.el)//每次打开将当前page排列到最后,保证不会被之前的page遮挡
                 this.active = true
                 this.visited = true
             }
