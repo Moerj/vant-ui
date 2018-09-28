@@ -72,7 +72,7 @@ export default {
             Promise.reject(error)
         })
 
-        // response 响应拦截
+        // response 响应拦截器
         instance.interceptors.response.use(res => {
             // 根据res的某项值来实现: 登录过期,请求权限等操作
             // if (!res) {//未登录
