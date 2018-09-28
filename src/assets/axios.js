@@ -34,7 +34,7 @@ export default {
             
         });
 
-        // request拦截器
+        // request 请求拦截器
         instance.interceptors.request.use(config => {
             
             // 根据dataType获取headers
@@ -66,6 +66,19 @@ export default {
             }
             
             return config
+        }, error => {
+            // Do something with request error
+            console.error(error) // for debug
+            Promise.reject(error)
+        })
+
+        // response 响应拦截
+        instance.interceptors.response.use(res => {
+            // 根据res的某项值来实现: 登录过期,请求权限等操作
+            // if (!res) {//未登录
+            //     window.location.href = window.location.origin + '#/login' //跳转到登录页面
+            // }
+            return res
         }, error => {
             // Do something with request error
             console.error(error) // for debug
