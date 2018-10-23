@@ -22,7 +22,7 @@ export default {
     },
     data(){
         return {
-            imgList = [
+            imgList: [
                 {
                     src: '图片的url',
                     w: 0,//宽
