@@ -40,7 +40,7 @@
 
                     <div class="pswp__counter"></div>
 
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <a class="pswp__button pswp__button--close" title="Close (Esc)" @click="$emit('close')"></a>
 
                     <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
 
