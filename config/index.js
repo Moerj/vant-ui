@@ -9,7 +9,7 @@ try {
     activeIP = ip[ip.active]
     console.log(`当前ip代理: [${ip.active}]`, activeIP);
 } catch (error) {
-    console.log('尚未配置ip代理地址,请在config/中创建ip.js');
+    console.log('尚未配置ip代理,请解压config/ip.zip');
 }
 
 module.exports = {
