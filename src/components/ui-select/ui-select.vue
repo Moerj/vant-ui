@@ -191,9 +191,7 @@
             }
         },
         methods:{
-            getSelectedArray(){// 构建历史已选项
-                let selectedArr = []
-
+            updateSelected(){
                 // 构建回显默认选中的
                 if (this.value) {
                     if (this.multiple) {
@@ -202,6 +200,11 @@
                         this.selected = this.value
                     }
                 }
+            },
+            getSelectedArray(){// 构建历史已选项
+                let selectedArr = []
+
+                this.updateSelected()
 
                 // 构建之前选过的
                 const currentOpt = this.optionsAll.length===0 && this.value ? this.options : this.optionsAll
@@ -270,6 +273,7 @@
             // 初始已有选项,关闭初始loading
             if (this.options.length>0) {
                 this.loaded = true
+                this.updateSelected() //初始回显一次
             }
         },
     }

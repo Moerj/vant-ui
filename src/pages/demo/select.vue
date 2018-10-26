@@ -47,7 +47,7 @@
         },
         mounted(){
             this.opt = [...this.initOpt]
-            this.form2.id = '2'
+            this.form.id = '1'
         },
         methods:{
             onSearch(v){
