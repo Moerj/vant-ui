@@ -48,7 +48,7 @@
         mounted(){
             this.opt = [...this.initOpt]
             this.form.id = '1'
-            this.form2.id = '1,2' //fixme:多选回显无效,但延时赋值有效
+            this.form2.id = '1,2'
         },
         methods:{
             onSearch(v){

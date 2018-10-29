@@ -135,6 +135,7 @@
         },
         watch:{
             selected(v){//选中后带回参数到父页面
+                if (this.loaded===false) return;
                 if (this.multiple) {
                     this.fullText = ''
                     this.fullId = ''
