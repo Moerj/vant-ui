@@ -23,6 +23,11 @@ Vue.use(axios, {
     timeout: 20000,
 });
 
+// vue字体库
+import 'vue-awesome/icons'; //总图标库,如果不关心打包体积时一次引入全部图标
+import Icon from 'vue-awesome/components/Icon'; //核心组件
+Vue.component('icon', Icon);
+
 // 主框架 vant-ui
 import 'vant/lib/index.css';//导入全部样式
 // import 'vant/packages/vant-css/src/index.css'// postcss定制样式,引入所有组件目前不支持定制主题 https://github.com/youzan/vant/issues/1663
