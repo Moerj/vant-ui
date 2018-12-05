@@ -30,6 +30,7 @@
             <van-cell title="选项卡" value="tab" is-link to="/demo-tab" />
             <van-cell title="滑动单选" value="picker" is-link to="/demo-picker" />
             <van-cell title="高级选择" value="select" is-link to="/demo-select" />
+            <van-cell title="日期时间" value="datetime" is-link to="/demo-datetime" />
         </van-cell-group>
     </ui-main>
 </template>
