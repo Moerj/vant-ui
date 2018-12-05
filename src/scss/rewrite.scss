@@ -9,3 +9,10 @@
 .g-core-image-upload-form{
     height:100% !important;
 }
+
+// #region vant-ui
+// 修改输入框标题宽度限制
+.van-field .van-cell__title{
+    max-width: inherit;
+}
+// #endregion
