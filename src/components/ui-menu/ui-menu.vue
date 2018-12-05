@@ -6,6 +6,7 @@
         right: 0;
         bottom: 0;
         background-color: rgba(black,.5);
+        z-index: 10;
     }
     .filter-list{
         $bg:#f8f8f8;
@@ -13,7 +14,7 @@
         left: 0;
         right: 0;
         font-size: .7rem;
-        z-index: 1;
+        z-index: 11;
         background-color: #fff;
         .van-tree-select__nav{
             background-color: $bg;
@@ -40,7 +41,7 @@
     }
 </style>
 <template>
-    <div>
+    <div ref="el">
         <!-- 面包屑开关 -->
         <div class="tree-select-bar" ref="bar">
             <span @click="treeVisible=!treeVisible">
@@ -134,6 +135,13 @@
         },
         mounted(){
             this.updateText()
+            // 创建前将主要内容插入到body, 页面嵌套的层级问题
+            // document.body.appendChild(this.$refs.el)
+        },
+        beforeDestroy(){
+            // 销毁前还原主要内容,确保销毁dom
+            // const parent = this.$parent.$el || this.$parent
+            // parent.appendChild(this.$refs.el)
         },
     }
 </script>
