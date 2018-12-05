@@ -6,6 +6,10 @@ import App from './App'
 // js兼容性处理
 import './assets/compatibility'
 
+// 公共方法
+import globalMethod from './assets/globalMethods'
+Vue.use(globalMethod)
+
 // 路由插件
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
