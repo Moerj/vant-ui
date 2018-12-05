@@ -1,12 +1,12 @@
 <template>
     <div class="flex-column h-100">
         <van-nav-bar slot="header" title="基本信息" left-arrow @click-left="$router.go(-1)" />
-        <ui-menu slot="header" :options="items" v-model="activeId" ref="tree"></ui-menu>
+        <ui-menu slot="header" :options="items" v-model="activeMenu" ref="tree"></ui-menu>
         
         <div class="flex-1 relative">
             <!-- 动态ui-main -->
             <keep-alive>
-                <component :is="activeId" :params="{test:'参数'}"></component>
+                <component :is="activeMenu" :params="{test:'参数'}"></component>
             </keep-alive>
         </div>
     </div>
@@ -19,7 +19,7 @@
         },
         data() {
             return {
-                activeId: 'safeInfo', //当前激活的页面
+                activeMenu: '', //当前激活的页面
                 items: [{
                     // 导航名称
                     text: '企业基础信息',
@@ -49,6 +49,18 @@
                     ]
                 }]
             }
+        },
+        watch:{
+            activeMenu(v){
+                this.$router.push({
+                    query:{
+                        menu: v
+                    }
+                })
+            },
+        },
+        mounted(){
+            this.activeMenu = this.$route.query.menu || 'safeInfo'
         },
     }
 
