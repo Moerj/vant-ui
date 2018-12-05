@@ -19,10 +19,6 @@ const router = new VueRouter({
   routes
 })
 
-// 公共方法
-import globalMethods from './assets/globalMethods'
-Vue.use(globalMethods)
-
 // http 模块
 import axios from './assets/axios';
 Vue.use(axios, {
