@@ -135,13 +135,6 @@
         },
         mounted(){
             this.updateText()
-            // 创建前将主要内容插入到body, 页面嵌套的层级问题
-            // document.body.appendChild(this.$refs.el)
-        },
-        beforeDestroy(){
-            // 销毁前还原主要内容,确保销毁dom
-            // const parent = this.$parent.$el || this.$parent
-            // parent.appendChild(this.$refs.el)
         },
     }
 </script>
