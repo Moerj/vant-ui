@@ -65,5 +65,9 @@ const routerArry = [
         path:'/demo-select',
         component: () => import(/* webpackChunkName: "demo" */ './select')
     },
+    {
+        path:'/demo-datetime',
+        component: () => import(/* webpackChunkName: "demo" */ './datetime')
+    },
 ]
 export default isDev ? routerArry : null
