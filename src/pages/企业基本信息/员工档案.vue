@@ -1,6 +1,6 @@
 <template>
     <ui-main>
-
+        <van-search placeholder="可搜索姓名、职务、部门" v-model="searchVal" />
         <!-- list -->
         <ui-pull @load="getListData" v-model="listData" :total="total" ref="pull">
             <div class="ui-content ui-border-bottom" v-for="item in listData">
@@ -11,7 +11,7 @@
                         <div class="flex col-center mb5">
                             <icon v-if="true" name="venus" style="color:pink"></icon>
                             <icon v-else name="mars" style="color:pink"></icon>
-                            <b>小咪咪</b>
+                            <b>{{item.name}}</b>
 
                             <van-tag plain type="primary" class="ml10">在职</van-tag>
                             <van-tag plain color="#f2826a" class="ml10">业务员</van-tag>
@@ -34,6 +34,7 @@
             return{
                 listData: [],
                 total: 60, //来至接口的列表总数,滚动加载根据它来判断是否加载完所有列表,最终显示 END 标示
+                searchVal:''
             }
         },
         methods: {
