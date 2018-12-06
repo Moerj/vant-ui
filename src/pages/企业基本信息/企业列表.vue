@@ -7,10 +7,10 @@
 </template>
 <script>
     export default {
-        props:['page-title'],
+        props:['title'],
         methods:{
             goItem(item){//显示指定企业
-                this.$emit('update:page-title', item.title)//标题显示选中的企业名称
+                this.$emit('update:title', item.title)//标题显示选中的企业名称
                 this.$parent.close()//关闭当前企业列表的弹窗
             }
         },

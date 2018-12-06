@@ -1,6 +1,6 @@
 <template>
     <div class="flex-column h-100">
-        <van-nav-bar slot="header" :title="pageTitle" left-arrow @click-left="$refs.list.open()" />
+        <van-nav-bar slot="header" :title="title" left-arrow @click-left="$refs.list.open()" />
         <ui-menu slot="header" :options="items" v-model="activeMenu" ref="tree"></ui-menu>
         
         <div class="flex-1 relative">
@@ -10,8 +10,8 @@
             </keep-alive>
         </div>
 
-        <ui-page ref="list">
-            <enterpriseList :page-title.sync="pageTitle"></enterpriseList>
+        <ui-page ref="list" transition="">
+            <enterpriseList :title.sync="title"></enterpriseList>
         </ui-page>
     </div>
 </template>
@@ -25,7 +25,7 @@
         },
         data() {
             return {
-                pageTitle:'',
+                title:'',
                 activeMenu: '', //当前激活的页面
                 items: [{
                     // 导航名称
