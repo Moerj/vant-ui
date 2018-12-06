@@ -12,9 +12,9 @@ export default {
         return{
             selectedValue:'',
             opt:[
-                {label:'选项1',value:'1'},
-                {label:'选项2',value:'2'},
-                {label:'选项3',value:'3'},
+                {text:'选项1',id:'1'},
+                {text:'选项2',id:'2'},
+                {text:'选项3',id:'3'},
             ]
         }
     }
@@ -29,5 +29,6 @@ options     | Array    |          |  数据源
 required    | Boolean  | false    |  红色星号标记当前为必选项
 placeholder | String   |          |  选项提示
 disabled    | Boolean  | false    |  是否禁用
+value-key   | String   | text     |  选项对象中，文字对应的 key
 @change     | Function |          |  选中后的回调,参数为当前选中的对象
 
