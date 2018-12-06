@@ -29,7 +29,7 @@
 </style>
 <template>
     <!-- transition层不会生成dom -->
-    <transition name="right">
+    <transition :name="transition">
         <div ref="el" class="ui-page" v-show="active">
             <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
             <slot name="header" v-if="visited"></slot>
@@ -44,7 +44,11 @@
     export default {
         name:'ui-page',
         props:{
-            title:String
+            title:String,
+            transition:{
+                type:String,
+                default:'right'
+            }
         },
         data () {
             return {
