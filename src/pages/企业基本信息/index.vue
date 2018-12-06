@@ -1,6 +1,6 @@
 <template>
     <div class="flex-column h-100">
-        <van-nav-bar slot="header" title="基本信息" left-arrow @click-left="$router.replace('/workplace')" />
+        <van-nav-bar slot="header" :title="pageTitle" left-arrow @click-left="$refs.list.open()" />
         <ui-menu slot="header" :options="items" v-model="activeMenu" ref="tree"></ui-menu>
         
         <div class="flex-1 relative">
@@ -9,6 +9,10 @@
                 <component :is="activeMenu" :params="{test:'参数'}"></component>
             </keep-alive>
         </div>
+
+        <ui-page ref="list">
+            <enterpriseList :page-title.sync="pageTitle"></enterpriseList>
+        </ui-page>
     </div>
 </template>
 <script>
@@ -17,11 +21,11 @@
             safeInfo: ()=>import('./安全生产基础信息'),
             enterpriseInfo: ()=>import('./企业基础信息'),
             employeeProfile: ()=>import('./员工档案'),
-            certificateManagement: ()=>import('./个人证书管理'),
-            certificateAudit: ()=>import('./个人证书审核'),
+            enterpriseList: ()=>import('./企业列表'),
         },
         data() {
             return {
+                pageTitle:'',
                 activeMenu: '', //当前激活的页面
                 items: [{
                     // 导航名称
@@ -41,14 +45,6 @@
                             text: '员工档案',
                             id: 'employeeProfile'
                         },
-                        {
-                            text: '个人证书管理',
-                            id: 'certificateManagement'
-                        },
-                        {
-                            text: '个人证书审核',
-                            id: 'certificateAudit'
-                        },
                     ]
                 }]
             }
@@ -63,6 +59,7 @@
             },
         },
         mounted(){
+            this.$refs.list.open()//初始进来就先打开企业列表
             this.activeMenu = this.$route.query.menu || 'safeInfo'
         },
     }

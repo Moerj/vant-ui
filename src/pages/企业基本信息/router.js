@@ -1,6 +1,6 @@
 export default [
     {
-        path:'/baseInfo',
-        component: ()=>import('./index.vue')
+        path:'/enterprise-information',
+        component: ()=>import('./index.vue'),
     },
 ]

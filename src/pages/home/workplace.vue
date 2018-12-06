@@ -23,7 +23,7 @@
         <van-nav-bar slot="header" title="工作台" />
 
         <div class="ui-content">
-            <router-link to="/baseInfo" class="btn bg-blue">
+            <router-link to="/enterprise-information" class="btn bg-blue">
                 <icon name="regular/address-book" scale="2"></icon>
                 <span>基本信息</span>
             </router-link>
