@@ -10,6 +10,7 @@
             </keep-alive>
         </div>
 
+        <!-- 企业列表,初始自动打卡 -->
         <ui-page ref="list" transition="">
             <enterpriseList :title.sync="title"></enterpriseList>
         </ui-page>
