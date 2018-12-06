@@ -19,10 +19,12 @@
 <script>
     export default {
         components:{
+            enterpriseList: ()=>import('./企业列表'),
+
+            // 动态页面
             safeInfo: ()=>import('./安全生产基础信息'),
             enterpriseInfo: ()=>import('./企业基础信息'),
             employeeProfile: ()=>import('./员工档案'),
-            enterpriseList: ()=>import('./企业列表'),
         },
         data() {
             return {
