@@ -12,7 +12,7 @@
         margin-bottom: 15px;
         margin-right: 7px;
         margin-left: 7px;
-        font-size: 10px;
+        font-size: 12px;
         .fa-icon{
             margin-bottom: 2px;
         }

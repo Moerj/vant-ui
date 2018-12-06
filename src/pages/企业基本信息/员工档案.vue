@@ -19,7 +19,7 @@
                                 <van-tag plain color="#f2826a" class="ml10">业务员</van-tag>
                             </span>
                         </div>
-                        <div class="flex row-between col-center f10">
+                        <div class="flex row-between col-center f12">
                             <span>职务: 其他</span>
                             <a href="tel:10000" class="flex col-center f-color-blue">
                                 <icon name="phone" class="mr3"></icon> 123456789
