@@ -10,8 +10,14 @@
         props:['page-title'],
         methods:{
             goItem(item){//显示指定企业
+<<<<<<< HEAD
                 this.$emit('update:page-title', item.title)//标题显示选中的企业名称
                 this.$parent.close()//关闭当前企业列表的弹窗
+=======
+                //关闭当前企业列表的弹窗
+                this.$emit('update:page-title', item.title)
+                this.$parent.close()
+>>>>>>> 04290282636c90b1d36b9b032d134c3bdedde6a1
             }
         },
         data(){
