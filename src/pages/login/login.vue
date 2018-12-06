@@ -82,7 +82,7 @@
                     <i class="line"></i>
                 </div>
                 <div class="form-item">
-                    <van-button @click="$router.push('/home')" size="large" type="" class="login-btn">登录</van-button>
+                    <van-button @click="$router.push('/demo')" size="large" type="" class="login-btn">登录</van-button>
                 </div>
 
             </div>
