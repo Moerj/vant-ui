@@ -13,19 +13,28 @@
                     { icon:'chat',label:'标签', path:'' },
                     { icon:'records',label:'工作台', path:'/workplace' },
                     { icon:'gold-coin',label:'个人中心', path:'' },
-                ]
+                ],
             }
         },
         mounted(){
-            this.items.forEach((item,index)=>{
-                if (location.hash.indexOf(item.path)>=1) {
-                    this.active = index
-                }
-            })
         },
         methods:{
             clickItem(item){
                 item.path && this.$router.push(item.path)
+            },
+            updateTabState(){
+                this.items.forEach((item,index)=>{
+                    if (location.hash.indexOf(item.path)>=1) {
+                        this.active = index
+                    }
+                })
+            }
+        },
+        watch:{
+            $route(){
+                if (this.$route.meta.root) {
+                    this.updateTabState()
+                }
             }
         },
     }
