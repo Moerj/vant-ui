@@ -6,6 +6,10 @@ import App from './App'
 // js兼容性处理
 import './assets/compatibility'
 
+// 公共方法
+import globalMethod from './assets/globalMethods'
+Vue.use(globalMethod)
+
 // 路由插件
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
@@ -22,6 +26,11 @@ Vue.use(axios, {
     baseURL: "/api",//用代理解决跨域,这里配置了后端接口要以/api开头,如: http://106.14.39.87:8886/api/backstage/pieces/find
     timeout: 20000,
 });
+
+// vue字体库
+import 'vue-awesome/icons'; //总图标库,如果不关心打包体积时一次引入全部图标
+import Icon from 'vue-awesome/components/Icon'; //核心组件
+Vue.component('icon', Icon);
 
 // 主框架 vant-ui
 import 'vant/lib/index.css';//导入全部样式
