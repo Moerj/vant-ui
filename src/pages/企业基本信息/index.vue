@@ -11,7 +11,7 @@
         </div>
 
         <!-- 企业列表,初始自动打卡 -->
-        <ui-page ref="list" transition="">
+        <ui-page ref="list" transition="fade">
             <enterpriseList :title.sync="title"></enterpriseList>
         </ui-page>
     </div>
