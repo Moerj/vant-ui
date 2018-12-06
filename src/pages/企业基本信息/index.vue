@@ -1,6 +1,6 @@
 <template>
     <div class="flex-column h-100">
-        <van-nav-bar slot="header" title="基本信息" left-arrow @click-left="$router.go(-1)" />
+        <van-nav-bar slot="header" title="基本信息" left-arrow @click-left="$router.replace('/workplace')" />
         <ui-menu slot="header" :options="items" v-model="activeMenu" ref="tree"></ui-menu>
         
         <div class="flex-1 relative">
@@ -14,8 +14,11 @@
 <script>
     export default {
         components:{
-            safeInfo: ()=>import('./安全生产基础信息.vue'),
-            enterpriseInfo: ()=>import('./企业基础信息.vue'),
+            safeInfo: ()=>import('./安全生产基础信息'),
+            enterpriseInfo: ()=>import('./企业基础信息'),
+            employeeProfile: ()=>import('./员工档案'),
+            certificateManagement: ()=>import('./个人证书管理'),
+            certificateAudit: ()=>import('./个人证书审核'),
         },
         data() {
             return {
@@ -36,15 +39,15 @@
                         },
                         {
                             text: '员工档案',
-                            id: 3
+                            id: 'employeeProfile'
                         },
                         {
                             text: '个人证书管理',
-                            id: 4
+                            id: 'certificateManagement'
                         },
                         {
                             text: '个人证书审核',
-                            id: 5
+                            id: 'certificateAudit'
                         },
                     ]
                 }]

@@ -1,8 +1,8 @@
 <template>
     <ui-main>
         <van-cell-group class="mb10">
-            <van-cell title="企业名称" value="贵州燃气(集团)有限责任公司" />
-            <van-cell title="统一社会信用代码" />
+            <van-cell title="企业名称" label="贵州燃气(集团)有限责任公司" />
+            <van-cell title="统一社会信用代码" value="fhweu1233"/>
             <van-cell title="工商登记机关" />
             <van-cell title="登记日期"></van-cell>
             <van-cell title="成立日期"></van-cell>
