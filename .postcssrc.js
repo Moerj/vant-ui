@@ -12,7 +12,7 @@ module.exports = {
             rootValue: 16, // 1rem等于多少px
             unitPrecision: 5, //精确到小数点后多少
             propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
-            selectorBlackList: [],
+            selectorBlackList: ['body'],
             replace: true,
             mediaQuery: false,
             minPixelValue: 0
