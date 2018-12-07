@@ -115,24 +115,15 @@
 
                 this.gallery.init();
             },
-            reinit(){//图片尺寸变化后,重新渲染
+            reinit(){//重新渲染
                 if (this.gallery) {
                     this.gallery.invalidateCurrItems(); // reinit Items
                     this.gallery.updateSize(true); // reinit Items
                 }
-            }
-        },
-        mounted(){
-            document.body.appendChild(this.$refs.pswp)
-        },
-        beforeDestroy(){
-            document.body.removeChild(this.$refs.pswp)
-        },
-        watch:{
-            items(imgList){// 当未设置图片尺寸,本地动态计算
-                if (!imgList.length) return;
-
-                imgList.forEach((item)=>{
+            },
+            imgResize(){// 当图片尺寸为 0,开启本地动态计算
+                if (!this.items.length) return;
+                this.items.forEach((item)=>{
                     if (item.src && (item.w < 1 || item.h < 1)) {
                         const img = new Image(); 
                         img.onload = ()=>{
@@ -143,6 +134,20 @@
                         img.src = item.src
                     }
                 })
+            }
+        },
+        mounted(){
+            document.body.appendChild(this.$refs.pswp)
+            if (this.items.length>0) {
+                this.imgResize()
+            }
+        },
+        beforeDestroy(){
+            document.body.removeChild(this.$refs.pswp)
+        },
+        watch:{
+            items(){
+                this.imgResize()
             }
         },
     }
