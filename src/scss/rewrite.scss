@@ -9,3 +9,10 @@
 .g-core-image-upload-form{
     height:100% !important;
 }
+
+// 顶部fa图标纵向居中
+.van-nav-bar{
+    .fa-icon{
+        vertical-align: middle;
+    }
+}
