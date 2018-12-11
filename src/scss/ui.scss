@@ -98,3 +98,29 @@
         box-shadow: 0 0 2px rgba($ui-color-primary,.5);
     }
 }
+
+// 多选框 van-checkbox
+.ui-checkbox{
+    width: 23%;
+    display: inline-block;
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 10px;
+    .van-checkbox__icon{
+        display: none;
+    }
+    .van-checkbox__label{
+        font-size: 12px;
+        padding: 5px;
+        border:1px solid #eee;
+        height: 30px;
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .van-checkbox__icon--checked + .van-checkbox__label{
+        border-color:transparent;
+        background-color: $ui-color-primary;
+        color: #fff;
+    }
+}
