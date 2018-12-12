@@ -30,7 +30,7 @@
 <template>
     <!-- transition层不会生成dom -->
     <transition :name="transition">
-        <div ref="el" class="ui-page" v-show="active">
+        <div ref="el" class="ui-page" v-show="active" :key="redraw ? active : ''">
             <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
             <slot name="header" v-if="visited"></slot>
             <div class="flex-1 scroll-y" v-if="visited">
@@ -48,6 +48,10 @@
             transition:{
                 type:String,
                 default:'right'
+            },
+            redraw:{//page每次开启和关闭是否重绘其中内容
+                type:Boolean,
+                default:false
             }
         },
         data () {
