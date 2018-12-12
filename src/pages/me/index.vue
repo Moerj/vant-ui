@@ -92,6 +92,8 @@
                     message: '确认退出吗?'
                 }).then(() => {
                     // on confirm
+                    sessionStorage.clear()
+                    localStorage.clear()
                     this.$router.push('/login')
                 }).catch(() => {
                     // on cancel
