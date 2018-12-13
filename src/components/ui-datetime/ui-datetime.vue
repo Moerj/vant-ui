@@ -15,8 +15,9 @@
 
         <!-- 弹出层会插入body -->
         <div slot="icon" ref="popup">
-            <van-popup v-model="popupVisible" position="bottom" class="ui-datetime">
+            <van-popup v-model="popupVisible" position="bottom" class="ui-datetime" get-container="body">
                 <van-datetime-picker 
+                ref="picker"
                 v-model="pickerModel" 
                 :type="type"
                 :min-date="minDate"
@@ -68,15 +69,24 @@
         },
         methods:{
             open(){
+                //时间组件打开时picker选项定位
                 if (this.value) {
-                    this.pickerModel = new Date(this.value) //时间组件打开时,将自然时间转为时间对象
+                    if (this.type==='time') {
+                        // 时间类型无法直接赋值定位
+                        let hour = this.value.split(':')[0]
+                        let minute = this.value.split(':')[1]
+                        this.$refs.picker.$children[0].setValues([hour,minute])
+                    }else {
+                        // 直接赋值定位
+                        this.pickerModel = new Date(this.value);
+                    }
                 }
                 this.popupVisible = true
             },
             close(){
                 this.popupVisible = false
             },
-            confirm(){
+            confirm(val){
                 // 根据类型确定格式化
                 let formate ='yyyy-MM-dd hh:mm:ss'
                 switch (this.type) {
@@ -97,10 +107,10 @@
                 // 将最终输出结果转化为自然时间-字符串
                 let timeStr = ''
                 if (this.type==='time') {
-                    timeStr = this.pickerModel
+                    timeStr = val
                 }
                 else  {
-                    timeStr = this.$date(this.pickerModel, formate)
+                    timeStr = this.$date(val, formate)
                 }
 
                 // 回显输出
@@ -113,12 +123,6 @@
                 this.close()
                 this.$emit('cancel')
             }
-        },
-        mounted(){
-            document.body.appendChild(this.$refs.popup)
-        },
-        beforeDestroy(){
-            document.body.removeChild(this.$refs.popup)
         },
     }
 </script>
