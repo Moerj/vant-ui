@@ -58,7 +58,7 @@ export default {
             }
         })
 
-        // 获取用户信息下的指定字段
+        // 安全获取用户信息下的指定字段
         Object.defineProperty(Vue.prototype, '$userInfo', {
             value:function(infoKey){
                 if (infoKey===undefined) {
