@@ -25,7 +25,7 @@ if (!Array.prototype.forEach) {
     })
 }
 
-// 安卓物理返回按钮, app自行调用此方法
+// 安卓物理返回按钮, app需自行调用此方法
 window.APP_BACK = function(){
     // 带蒙层的模态窗出现时,返回为点击模态窗
     // vant弹出层
@@ -34,13 +34,6 @@ window.APP_BACK = function(){
         modal.click()
         return true
     }
-
-    // yd-ui弹出层
-    // modal = document.querySelector('.yd-mask')
-    // if (modal && modal.style.pointerEvents==='auto') {
-    //     modal.click()
-    //     return true
-    // }
 
     // 根据class获取所有页面上的返回按钮
     const backButtons = document.querySelectorAll('.van-nav-bar__left')
