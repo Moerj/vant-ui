@@ -69,9 +69,9 @@
         </ui-page>
 
         <ui-page title="设置" ref="setting" class="bg-white">
-            <icon name="brands/github" scale="5" style="position:fixed;top:40%;left:50%;transform:translateX(-50%)"></icon>
+            <van-icon name="point-gift-o" class="f-color-grey" style="font-size:60px;position:fixed;top:40%;left:50%;transform:translateX(-50%)" />
             <div class="abs-left-bottom w-100 ui-content text-center">
-                <p class="f18 f-bold">贵州燃气集团安全生产应用系统</p>
+                <p class="f18 f-bold">xxx科技有限公司</p>
                 <div class="f-color-text">版本号: {{appVersion}}</div>
                 <van-button type="danger" plain size="large" class="mt50 mb50" @click="logout">退出登录</van-button>
             </div>

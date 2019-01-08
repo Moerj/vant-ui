@@ -28,7 +28,6 @@
                 total:60,//总数据量
                 pageSize:20,//每页多少条数据
                 pageNumber:1,//当前页
-                uiPull:null
             }
         },
         methods:{
