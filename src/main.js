@@ -1,5 +1,3 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 
@@ -29,7 +27,6 @@ Vue.use(axios, {
 
 // 主框架 vant-ui
 import 'vant/lib/index.css';//导入全部样式
-// import 'vant/packages/vant-css/src/index.css'// postcss定制样式,引入所有组件目前不支持定制主题 https://github.com/youzan/vant/issues/1663
 import Vant from 'vant';
 Vue.use(Vant);
 
@@ -42,7 +39,8 @@ import VueTouch from 'vue-touch'
 Vue.use(VueTouch, {name: 'v-touch'})
 
 // 组件库
-import vantUI from './vant-ui';
+import vantUI from 'vant-ui'; //npm库
+// import vantUI from './vant-ui'; //本地库
 Vue.use(vantUI);
 
 // 自定义全局样式
@@ -56,10 +54,7 @@ import '@/scss/vue-transition.scss'; //vue的过渡动画
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')
