@@ -7,6 +7,7 @@ yarn-error.log*
 test/
 temp/
 /config/ip.js
+vant-ui/
 
 # Editor directories and files
 .idea

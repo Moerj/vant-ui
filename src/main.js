@@ -41,9 +41,9 @@ Vue.use(eventHub);
 import VueTouch from 'vue-touch'
 Vue.use(VueTouch, {name: 'v-touch'})
 
-// 自定义全局组件,请放到components/ 并以ui-开头命名
-import components from './assets/components';
-Vue.use(components);
+// 组件库
+import vantUI from './vant-ui';
+Vue.use(vantUI);
 
 // 自定义全局样式
 import '@/scss/base.scss'; //基础布局样式
