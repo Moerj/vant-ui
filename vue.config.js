@@ -22,7 +22,7 @@ function getFullDate() {
 
 module.exports = {
     devServer: {
-        port: 9300,
+        port: 9000,
         proxy: {
             '/api': { //跨域配置标示
                 target: `${activeIP}/api`, //所有访问标示的都被代理到这个地址,例如 http://后端域名/api
@@ -35,19 +35,10 @@ module.exports = {
     },
     productionSourceMap: false,
     configureWebpack: config => {
-        // if (process.env.NODE_ENV === 'production') {
-        //     // 为生产环境修改配置...
-        //     process.env.APP_VERSION = getFullDate() //设置版本号
-
-        // } else {
-        //     // 为开发环境修改配置...
-        // }
-
         return {
             plugins: [
                 new webpack.DefinePlugin({
                     'process.env': {
-                        // NODE_ENV: '"production"',
                         APP_VERSION: getFullDate() // 生成发布版本号,调用 process.env.APP_VERSION
                     }
                 }),
