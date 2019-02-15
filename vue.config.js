@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 let ip, activeIP = ''
 try {
     ip = require('./ip')
@@ -36,6 +38,13 @@ module.exports = {
         if (process.env.NODE_ENV === 'production') {
             // 为生产环境修改配置...
             process.env.APP_VERSION = getFullDate() //设置版本号
+            return {
+                plugins:[
+                    new webpack.DefinePlugin({
+                        'process.env': env
+                    }),
+                ]
+            }
         } else {
             // 为开发环境修改配置...
         }
