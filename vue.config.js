@@ -35,18 +35,23 @@ module.exports = {
     },
     productionSourceMap: false,
     configureWebpack: config => {
-        if (process.env.NODE_ENV === 'production') {
-            // 为生产环境修改配置...
-            process.env.APP_VERSION = getFullDate() //设置版本号
-            return {
-                plugins:[
-                    new webpack.DefinePlugin({
-                        'process.env': env
-                    }),
-                ]
-            }
-        } else {
-            // 为开发环境修改配置...
+        // if (process.env.NODE_ENV === 'production') {
+        //     // 为生产环境修改配置...
+        //     process.env.APP_VERSION = getFullDate() //设置版本号
+
+        // } else {
+        //     // 为开发环境修改配置...
+        // }
+
+        return {
+            plugins: [
+                new webpack.DefinePlugin({
+                    'process.env': {
+                        // NODE_ENV: '"production"',
+                        APP_VERSION: getFullDate() // 生成发布版本号,调用 process.env.APP_VERSION
+                    }
+                }),
+            ]
         }
     }
 }
