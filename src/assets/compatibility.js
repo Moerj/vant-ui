@@ -29,7 +29,7 @@ if (!Array.prototype.forEach) {
 window.APP_BACK = function(){
     // 带蒙层的模态窗出现时,返回为点击模态窗
     // vant弹出层
-    let modal = document.querySelector('.van-modal')
+    let modal = document.querySelector('.van-overlay')
     if (modal && modal.style.display!=='none') {
         modal.click()
         return true
