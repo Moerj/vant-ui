@@ -44,8 +44,8 @@
 </style>
 <template>
     <div @click="clickTab" class="ui-tab-item" :class="{'item-active': this.$parent.value===label}">
+        <slot name="icon"></slot>
         <span class="item-label"> {{label}} <i v-if="badge" class="item-badge">{{badge}}</i></span>
-        
         <slot></slot>
     </div>
 </template>
