@@ -106,7 +106,7 @@
                 parentUiMainContent:null,
                 scrollActive: true,
                 isLoading: false,
-                count:0
+                loadingCount:0
             }
         },
         beforeCreate(){
@@ -116,11 +116,11 @@
             Object.defineProperty(this.$parent, '$loading', {
                 value: {
                     open(){
-                        _this.count++
+                        _this.loadingCount++
                     },
                     close(){
-                        if(_this.count>0){
-                            _this.count--
+                        if(_this.loadingCount>0){
+                            _this.loadingCount--
                         }
                     }
                 }
@@ -160,7 +160,7 @@
             },
         },
         watch:{
-            count(v){
+            loadingCount(v){
                 const B = Boolean(v)
                 this.isLoading = B //开关loading层
                 this.toggleScroll(!B)
