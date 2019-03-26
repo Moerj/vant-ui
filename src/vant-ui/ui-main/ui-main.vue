@@ -95,21 +95,9 @@
     </div>
 </template>
 <script>
-    // 全局loading功能
-    import Vue from 'vue'
-    Object.defineProperty(Vue.prototype, '$loading', {
-        value: {
-            open(){
-                Vue.prototype.$eventHub.$emit('$loading',true)
-            },
-            close(){
-                Vue.prototype.$eventHub.$emit('$loading',false)
-            }
-        }
-    })
     export default {
         name: 'ui-main',
-        version: '2.0.1',
+        version: '2.0.2',
         props:{
             stack:Boolean
         },
@@ -121,8 +109,24 @@
                 count:0
             }
         },
+        beforeCreate(){
+            // 挂载this.$loading方法在当前页面实例 
+            // 注意: this是当前ui-main实例, this.$parent才是页面实例.
+            const _this = this
+            Object.defineProperty(this.$parent, '$loading', {
+                value: {
+                    open(){
+                        _this.count++
+                    },
+                    close(){
+                        if(_this.count>0){
+                            _this.count--
+                        }
+                    }
+                }
+            })
+        },
         mounted () {
-            this.$eventHub.$on('$loading',this.toggleLoading)
             this.$eventHub.$on('ui-main-scroll',this.toggleScroll)
             this.$nextTick(() => {
                 //获取父级ui-main 如果有的话
@@ -138,7 +142,6 @@
             })
         },
         beforeDestroy () {
-            this.$eventHub.$off('$loading',this.toggleLoading)
             this.$eventHub.$off('ui-main-scroll',this.toggleScroll)
             this.ShowParentContent()
         },
@@ -195,13 +198,6 @@
                         }
                     }
                 });
-            },
-            toggleLoading(v){
-                if (v) {
-                    this.count++
-                }else if(this.count>0){
-                    this.count--
-                }
             },
             toggleScroll(lock){
                 this.scrollActive = lock
