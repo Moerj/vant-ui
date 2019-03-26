@@ -49,7 +49,10 @@
         name:'ui-number',
         props:{
             label:String,
-            value:'',
+            value:{
+                type:[String,Number],
+                default: 1
+            },
             min:{
                 type:Number,
                 default:1
@@ -62,7 +65,7 @@
         },
         data(){
             return {
-                n: this.value || 1
+                n: this.value
             }
         },
         computed:{
