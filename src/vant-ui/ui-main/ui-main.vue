@@ -97,10 +97,7 @@
 <script>
     export default {
         name: 'ui-main',
-        version: '2.0.3',
-        props:{
-            stack:Boolean
-        },
+        version: '2.0.4',
         data () {
             return {
                 parentUiMainContent:null,
