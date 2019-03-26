@@ -118,6 +118,7 @@
                 parentUiMainContent:null,
                 scrollActive: true,
                 isLoading: false,
+                count:0
             }
         },
         mounted () {
@@ -196,12 +197,22 @@
                 });
             },
             toggleLoading(v){
-                this.isLoading = v //开关loading层
-                this.toggleScroll(!v)
+                if (v) {
+                    this.count++
+                }else if(this.count>0){
+                    this.count--
+                }
             },
             toggleScroll(lock){
                 this.scrollActive = lock
             },
+        },
+        watch:{
+            count(v){
+                const B = Boolean(v)
+                this.isLoading = B //开关loading层
+                this.toggleScroll(!B)
+            }
         }
     }
 </script>
