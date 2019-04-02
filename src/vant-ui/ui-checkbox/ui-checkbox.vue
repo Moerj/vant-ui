@@ -71,7 +71,7 @@
         },
         watch: {
             value(v){
-                this.checked = this.value
+                this.checked = v
             },
             checked(v){
                 this.$emit('input', v)
