@@ -36,7 +36,7 @@
         data() {
             return {
                 uiPullInstance: null,
-                id: 'ui-pull-' + new Date().getTime(),
+                id: 'ui-pull-' + this._uid,
                 initNum: this.num
             }
         },
