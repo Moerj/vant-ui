@@ -13,6 +13,7 @@ function getFullDate() {
 }
 
 module.exports = {
+    publicPath: './',
     devServer: {
         port: 9000,
         proxy: {
