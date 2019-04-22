@@ -6,9 +6,6 @@
 - 自动页数
 - 自定义操作按钮
 
-## 安装依赖
-
-> npm i photoswipe
 
 ```html
 <lightbox :items="imgList" ref="lightbox"></lightbox>

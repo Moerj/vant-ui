@@ -1,0 +1,73 @@
+<style lang="scss" scoped>
+    .img-item{
+        width: 30%;
+        height: 120px;
+        margin: 0 5px 10px 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+<template>
+    <ui-main>
+        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')" />
+
+        <ui-card>
+            <span slot="title">lightbox</span>
+            画廊是一个独立的弹窗组件, 通常配合图片列表进行展示
+        </ui-card>
+
+        <!-- img list -->
+        <div class="flex flex-wrap">
+            <div @click="openLightbox(i)" v-for="(item,i) in imgList" :style="`background-image: url(${item.src});`" class="img-item"></div>
+        </div>
+
+        <!-- 类似弹出层的调用方式 -->
+        <lightbox :items="imgList" ref="lightbox"></lightbox>
+    </ui-main>
+</template>
+<script>
+    import lightbox from '@/lib/lightbox' //在当前页面按需引入组件
+    export default {
+        components: {
+            lightbox
+        },
+        data() {
+            return {
+                imgList: [{
+                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g63sfiej31kw11xqpu.jpg',
+                        w: 0, //宽
+                        h: 0, //高
+                        // 宽高参数不可省略,无需写单位,以px计算.
+                        // 0代表自动计算宽高,但会损失性能.
+                    },
+                    {
+                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5xnk75j31kw2dckjl.jpg',
+                        w: 0, //宽
+                        h: 0, //高
+                    },
+                    {
+                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5wy2v9j31kw0w0qo9.jpg',
+                        w: 0, //宽
+                        h: 0, //高
+                    },
+                    {
+                        src: 'https://wx3.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tdy0j31kw11xqpb.jpg',
+                        w: 0, //宽
+                        h: 0, //高
+                    },
+                    {
+                        src: 'https://wx2.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tep9j31kw11xhaw.jpg',
+                        w: 0, //宽
+                        h: 0, //高
+                    },
+                ]
+            }
+        },
+        methods: {
+            openLightbox(index = 0) {
+                // 画廊组件开启,index可指定初始图片
+                this.$refs.lightbox.open(index)
+            }
+        }
+    }
+</script>

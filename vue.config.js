@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const comporessionPlugin = require('compression-webpack-plugin')
 const IP = require('./ip')
 
 function getFullDate() {
@@ -28,14 +29,27 @@ module.exports = {
     },
     productionSourceMap: false,
     configureWebpack: config => {
-        return {
-            plugins: [
-                new webpack.DefinePlugin({
-                    'process.env': {
-                        APP_VERSION: getFullDate() // 生成发布版本号,调用 process.env.APP_VERSION
-                    }
-                }),
+        // all mode
+        let Default = [
+            new webpack.DefinePlugin({
+                'process.env': {
+                    APP_VERSION: getFullDate() // 生成发布版本号,调用 process.env.APP_VERSION
+                }
+            })
+        ]
+
+        // build mode
+        let Build = []
+        if (process.env.NODE_ENV === 'production' || process.env.VUE_APP_MODE === 'demo') {
+            Build = [
+                new comporessionPlugin({
+                    test: /\.js$|\.html$|\.css/, //匹配文件名
+                    threshold: 10240, //对超过10k的数据进行压缩
+                    deleteOriginalAssets: false //是否删除原文件
+                })
             ]
         }
+
+        return { plugins: [...Default, ...Build] }
     }
 }
