@@ -1,5 +1,5 @@
 <template>
-    <ui-main class="bg-white">
+    <ui-main>
         <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
 
         <ui-card>
