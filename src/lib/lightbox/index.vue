@@ -124,7 +124,8 @@
             imgResize(){// 当图片尺寸为 0,开启本地动态计算
                 if (!this.items.length) return;
                 this.items.forEach((item)=>{
-                    if (item.src && (item.w < 1 || item.h < 1)) {
+                    const autoSize = !item.w || !item.h
+                    if (item.src && autoSize) {
                         const img = new Image(); 
                         img.onload = ()=>{
                             item.w = img.naturalWidth

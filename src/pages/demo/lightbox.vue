@@ -33,33 +33,12 @@
         },
         data() {
             return {
-                imgList: [{
-                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g63sfiej31kw11xqpu.jpg',
-                        w: 0, //宽
-                        h: 0, //高
-                        // 宽高参数不可省略,无需写单位,以px计算.
-                        // 0代表自动计算宽高,但会损失性能.
-                    },
-                    {
-                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5xnk75j31kw2dckjl.jpg',
-                        w: 0, //宽
-                        h: 0, //高
-                    },
-                    {
-                        src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5wy2v9j31kw0w0qo9.jpg',
-                        w: 0, //宽
-                        h: 0, //高
-                    },
-                    {
-                        src: 'https://wx3.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tdy0j31kw11xqpb.jpg',
-                        w: 0, //宽
-                        h: 0, //高
-                    },
-                    {
-                        src: 'https://wx2.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tep9j31kw11xhaw.jpg',
-                        w: 0, //宽
-                        h: 0, //高
-                    },
+                imgList: [
+                    { src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g63sfiej31kw11xqpu.jpg', },
+                    { src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5xnk75j31kw2dckjl.jpg', },
+                    { src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g5wy2v9j31kw0w0qo9.jpg', },
+                    { src: 'https://wx3.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tdy0j31kw11xqpb.jpg', },
+                    { src: 'https://wx2.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tep9j31kw11xhaw.jpg', },
                 ]
             }
         },
