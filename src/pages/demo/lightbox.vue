@@ -22,7 +22,7 @@
         </div>
 
         <!-- 类似弹出层的调用方式 -->
-        <lightbox :items="imgList" ref="lightbox"></lightbox>
+        <ui-lightbox :items="imgList" ref="lightbox"></ui-lightbox>
     </ui-main>
 </template>
 <script>

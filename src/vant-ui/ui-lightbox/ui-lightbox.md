@@ -8,7 +8,7 @@
 
 
 ```html
-<lightbox :items="imgList" ref="lightbox"></lightbox>
+<ui-lightbox :items="imgList" ref="lightbox"></ui-lightbox>
 ```
 
 ```js
