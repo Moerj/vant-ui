@@ -26,11 +26,7 @@
     </ui-main>
 </template>
 <script>
-    import lightbox from '@/lib/lightbox' //在当前页面按需引入组件
     export default {
-        components: {
-            lightbox
-        },
         data() {
             return {
                 imgList: [
