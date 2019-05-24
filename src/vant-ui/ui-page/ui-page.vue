@@ -76,10 +76,6 @@
             document.body.appendChild(this.$refs.el)
         },
         beforeDestroy(){
-            // 销毁前还原主要内容,确保销毁dom
-            // const parent = this.$parent.$el || this.$parent
-            // parent.appendChild(this.$refs.el)
-
             // 先销毁dom
             document.body.removeChild(this.$refs.el)
         },
