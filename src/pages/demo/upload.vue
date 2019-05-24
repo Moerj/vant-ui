@@ -48,14 +48,20 @@
 </style>
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <div slot="title">@change</div>
+            <template v-slot:title>
+                <div>@change</div>
+            </template>
             获取已上传的file对象,然后手动实现上传逻辑
         </ui-card>
         <ui-card>
-            <div slot="title">@remove</div>
+            <template v-slot:title>
+                <div>@remove</div>
+            </template>
             点击删除按钮时获取已删除的本地图片src和索引
         </ui-card>
 

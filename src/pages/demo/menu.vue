@@ -1,9 +1,13 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')" />
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')" />
+        </template>
 
         <ui-card>
-            <span slot="title">ui-menu</span>
+            <template v-slot:title>
+                <span>ui-menu</span>
+            </template>
             顶部主菜单,用于切换到子页面
         </ui-card>
 

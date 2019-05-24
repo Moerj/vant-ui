@@ -1,21 +1,27 @@
 <template>
     <ui-main >
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <!-- 案例 1 -->
         <ui-card>
-            <span slot="title" class="f-color-blue">default</span>
+            <template v-slot:title>
+                <span class="f-color-blue">default</span>
+            </template>
             默认均分布局
         </ui-card>
 
-        <ui-tab  v-model="tab1">
+        <ui-tab v-model="tab1">
             <ui-tab-item  v-for="item in tabData1" :key="item.label" :label="item.label" :badge="item.badge"></ui-tab-item>
         </ui-tab>
 
 
         <!-- 案例 2 -->
         <ui-card class="mt2">
-            <span slot="title" class="f-color-blue">scroll</span>
+            <template v-slot:title>
+                <span class="f-color-blue">scroll</span>
+            </template>
             左右滚动
         </ui-card>
 

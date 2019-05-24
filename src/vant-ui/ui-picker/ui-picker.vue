@@ -1,18 +1,20 @@
 <template>
     <van-field :label="label" v-model="selectedText" :placeholder="placeholder" readonly :required="required" @focus="open()">
         <!-- 弹出层会插入body -->
-        <div slot="icon" ref="popup">
-            <van-popup class="ui-picker vw-100" v-model="popupVisible" position="bottom" get-container="body">
-                <van-picker
-                show-toolbar
-                :columns="options"
-                @cancel="close"
-                @confirm="confirm"
-                ref="picker"
-                :loading="options.length===0"
-                />
-            </van-popup>
-        </div>
+        <template v-slot:button>
+            <div ref="popup">
+                <van-popup class="ui-picker vw-100" v-model="popupVisible" position="bottom" get-container="body">
+                    <van-picker
+                    show-toolbar
+                    :columns="options"
+                    @cancel="close"
+                    @confirm="confirm"
+                    ref="picker"
+                    :loading="options.length===0"
+                    />
+                </van-popup>
+            </div>
+        </template>
     </van-field>
 </template>
 <script>

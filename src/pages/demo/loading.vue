@@ -1,9 +1,13 @@
 <template>
     <ui-main class="bg-white">
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">$loading 全局遮罩</span>
+            <template v-slot:title>
+                <span>$loading 全局遮罩</span>
+            </template>
             在ui-main组件创建一个全屏遮罩层,锁定所有滚动条
             
 
@@ -13,7 +17,9 @@
 
         
         <ui-card>
-            <span slot="title">ui-loading 局部遮罩</span>
+            <template v-slot:title>
+                <span>ui-loading 局部遮罩</span>
+            </template>
             用html标签创建一块loading区域, 遮罩覆盖在该区域上方。
             可以自定义组件的加载标题和背景色。
             

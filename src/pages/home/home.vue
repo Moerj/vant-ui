@@ -1,5 +1,7 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" title="首页"/>
+        <template v-slot:header>
+            <van-nav-bar title="首页"/>
+        </template>
     </ui-main>
 </template>

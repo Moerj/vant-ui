@@ -1,9 +1,13 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">ui-datetime</span>
+            <template v-slot:title>
+                <span>ui-datetime</span>
+            </template>
             支持datetime、date、time、year-month
             时间最小只能支持选到分钟
         </ui-card>

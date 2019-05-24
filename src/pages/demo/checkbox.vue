@@ -1,9 +1,13 @@
 <template>
     <ui-main class="bg-white">
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">ui-checkbox</span>
+            <template v-slot:title>
+                <span>ui-checkbox</span>
+            </template>
             注意由于fastclick组件影响, pc上看效果可能要双击两次鼠标
         </ui-card>
 

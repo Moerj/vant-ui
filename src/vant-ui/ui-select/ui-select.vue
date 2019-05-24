@@ -10,54 +10,59 @@
         @focus="open()"
     >
 
-        <!-- 弹出层会插入body -->
-        <ui-page slot="icon" ref="popup" style="z-index:100">
-            <!-- 操作选中后,显示确定/返回按钮 -->
-            <van-nav-bar slot="header" :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
+        <template v-slot:button>
+            <ui-page ref="popup" style="z-index:100">
+                <!-- 操作选中后,显示确定/返回按钮 -->
+                <template v-slot:header>
+                    <van-nav-bar :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
+                    <!-- 搜索框 -->
+                    <van-search v-if="searchable" show-action v-model="searchVal" :disabled="isSearching">
+                        <template v-slot:action>
+                            <a v-if="searchVal!=''" @click="search(searchVal)" class="f-color-blue ml10 mr10" >搜索</a>
+                            <a v-else class="m7"></a>
+                        </template>
+                    </van-search>
+                    <!-- 插槽 -->
+                    <div v-if="!searchVal">
+                        <!-- 可以插入例如tab -->
+                        <slot></slot>
+                    </div>
+                </template>
 
-            <!-- 搜索框 -->
-            <van-search v-if="searchable" slot="header" show-action v-model="searchVal" :disabled="isSearching">
-                <a v-if="searchVal!=''" slot="action" @click="search(searchVal)" class="f-color-blue ml10 mr10" >搜索</a>
-                <a v-else slot="action" class="m7"></a>
-            </van-search>
 
-            <!-- 插槽 -->
-            <div slot="header" v-if="!searchVal">
-                <!-- 可以插入例如tab -->
-                <slot></slot>
-            </div>
 
-            <!-- 文本提示区 -->
-            <div class="f14 f-color-grey text-center">
+                <!-- 文本提示区 -->
+                <div class="f14 f-color-grey text-center">
 
-                <p v-show="!isSearching && loaded && optionsAll.length===0" :data="options">暂无数据</p>
+                    <p v-show="!isSearching && loaded && optionsAll.length===0" :data="options">暂无数据</p>
 
-                <p v-show="isSearching || !loaded" class="flex col-center row-center">
-                    <van-loading type="spinner" size="16px"/>
-                    <span class="ml5">正在搜索数据...</span>
-                </p>
-            </div>
+                    <p v-show="isSearching || !loaded" class="flex col-center row-center">
+                        <van-loading type="spinner" size="16px"/>
+                        <span class="ml5">正在搜索数据...</span>
+                    </p>
+                </div>
 
-            <!-- 操作列表区 -->
-            <div v-if="optionsAll.length>0">
-                <!-- 多选 -->
-                <van-checkbox-group v-if="multiple" v-model="selected" :max="max">
-                    <van-cell-group>
-                        <van-cell v-for="item in optionsAll" :title="item[valueKey]" :key="item.id" @click.native="toggleCheckbox('checkbox'+item.id)">
-                            <van-checkbox :name="item.id" :ref="'checkbox'+item.id" shape="square"/>
-                        </van-cell>
-                    </van-cell-group>
-                </van-checkbox-group>
-                <!-- 单选 -->
-                <van-radio-group v-else v-model="selected">
-                    <van-cell-group>
-                        <van-cell v-for="item in optionsAll" :key="item.id" :title="item[valueKey]" clickable @click="selected=item.id">
-                            <van-radio :name="item.id" />
-                        </van-cell>
-                    </van-cell-group>
-                </van-radio-group>
-            </div>
-        </ui-page>
+                <!-- 操作列表区 -->
+                <div v-if="optionsAll.length>0">
+                    <!-- 多选 -->
+                    <van-checkbox-group v-if="multiple" v-model="selected" :max="max">
+                        <van-cell-group>
+                            <van-cell v-for="item in optionsAll" :title="item[valueKey]" :key="item.id" @click.native="toggleCheckbox('checkbox'+item.id)">
+                                <van-checkbox :name="item.id" :ref="'checkbox'+item.id" shape="square"/>
+                            </van-cell>
+                        </van-cell-group>
+                    </van-checkbox-group>
+                    <!-- 单选 -->
+                    <van-radio-group v-else v-model="selected">
+                        <van-cell-group>
+                            <van-cell v-for="item in optionsAll" :key="item.id" :title="item[valueKey]" clickable @click="selected=item.id">
+                                <van-radio :name="item.id" />
+                            </van-cell>
+                        </van-cell-group>
+                    </van-radio-group>
+                </div>
+            </ui-page>
+        </template>
 
     </van-field>
 </template>

@@ -9,10 +9,14 @@
     <ui-main>
         <van-cell-group>
             <van-cell title="Vant UI 组件库" is-link @click.native="link('https://youzan.github.io/vant/mobile.html#/zh-CN')">
-                <img class="icon" slot="icon" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
+                <template v-slot:icon>
+                    <img class="icon" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
+                </template>
             </van-cell>
             <van-cell title="公共样式" is-link to="/demo-style" >
-                <img class="icon" slot="icon" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2425825150,527813223&fm=58&s=8C0E7432DD276F1106E587E503005025&bpow=121&bpoh=75.jpeg">
+                <template v-slot:icon>
+                    <img class="icon" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2425825150,527813223&fm=58&s=8C0E7432DD276F1106E587E503005025&bpow=121&bpoh=75.jpeg">
+                </template>
             </van-cell>
         </van-cell-group>
 

@@ -9,10 +9,14 @@
 </style>
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')" />
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')" />
+        </template>
 
         <ui-card>
-            <span slot="title">lightbox</span>
+            <template v-slot:title>
+                <span>lightbox</span>
+            </template>
             画廊是一个独立的弹窗组件, 通常配合图片列表进行展示
         </ui-card>
 

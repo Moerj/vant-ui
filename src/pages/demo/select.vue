@@ -1,6 +1,8 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <van-cell-group>
             <ui-select label="单选" required v-model="form.id" @search="onSearch" :options="opt" placeholder="请选择一项"></ui-select>

@@ -1,21 +1,27 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">ui-page</span>
+            <template v-slot:title>
+                <span>ui-page</span>
+            </template>
             与ui-main嵌套子路由不同，子页面可以直接与父页面进行交互。
             <span class="f-color-red f07">
                 需要注意的是，页面刷新后子页面不会保留状态。
             </span>
-
         </ui-card>
 
         <van-button size="large" @click="$refs.page.open()" type="primary">列表数: {{list.length}}</van-button>
 
         <ui-page ref="page" title="这是新页面">
             <!-- 若要自定义header部分, 则去掉title参数 -->
-            <!-- <van-nav-bar slot="header" title="自定义header" left-arrow @click-left="$router.replace('/demo')"/> -->
+            <!-- <template v-slot:title>
+                <van-nav-bar title="自定义header" left-arrow @click-left="$router.replace('/demo')"/>
+            </template> -->
+            
 
             <van-pull-refresh v-model="reloading" @refresh="onRefresh">
                 <van-list v-model="loading" :finished="finished" @load="onLoad">

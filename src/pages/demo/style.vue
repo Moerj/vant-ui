@@ -1,9 +1,13 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">单位</span>
+            <template v-slot:title>
+                <span>单位</span>
+            </template>
             全局基础单位: 16px
             最小单位: 10px
 
@@ -16,12 +20,16 @@
         </ui-card>
 
         <ui-card>
-            <span slot="title">public.scss</span>
+            <template v-slot:title>
+                <span>public.scss</span>
+            </template>
             存放所有样式公共变量, 如颜色, 用于在其他页面或样式文件中@import引入
         </ui-card>
 
         <ui-card>
-            <span slot="title">base.scss</span>
+            <template v-slot:title>
+                <span>base.scss</span>
+            </template>
             外边距样式 m0~m100
             内边距样式 p0~p100
             单位为px
@@ -31,12 +39,16 @@
         </ui-card>
 
         <ui-card>
-            <span slot="title">ui.scss</span>
+            <template v-slot:title>
+                <span>ui.scss</span>
+            </template>
             与样式库相关的css封装
         </ui-card>
 
         <ui-card>
-            <span slot="title">rewrite.scss</span>
+            <template v-slot:title>
+                <span>rewrite.scss</span>
+            </template>
             整对当前项目与当前框架的差异进行样式覆盖
         </ui-card>
 

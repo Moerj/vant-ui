@@ -1,9 +1,13 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <ui-card>
-            <span slot="title">ui-picker</span>
+            <template v-slot:title>
+                <span>ui-picker</span>
+            </template>
             建议选项少于10项,
             选项过多或需要多选时不适合
         </ui-card>
@@ -12,8 +16,6 @@
         </ui-picker>
 
         <p class="f-color-orange pl5">当前id: {{id}}</p>
-
-        
 
     </ui-main>
 </template>

@@ -42,7 +42,7 @@
             <div class="con flex-1">
                 <div class="card">
                     <div class="avatar">
-                        <van-icon name="contact" slot="icon" size="40px"></van-icon>
+                        <van-icon name="contact" size="40px"></van-icon>
                     </div>
                     <p class="f18 f-bold text-center">博益科技</p>
                     <div class="f16 f-color-text text-center">1808888888</div>
@@ -50,10 +50,14 @@
 
                 <van-cell-group class="mt50">
                     <van-cell title="个人档案" is-link @click="$refs.userInfo.open()">
-                        <van-icon name="description" slot="icon" size="22px" class="mr5 f-color-primary"></van-icon>
+                        <template v-slot:icon>
+                            <van-icon name="description" size="22px" class="mr5 f-color-primary"></van-icon>
+                        </template>
                     </van-cell>
                     <van-cell title="设置" is-link @click="$refs.setting.open()">
-                        <van-icon name="setting" slot="icon" size="22px" class="mr5 f-color-primary"></van-icon>
+                        <template v-slot:icon>
+                            <van-icon name="setting" size="22px" class="mr5 f-color-primary"></van-icon>
+                        </template>
                     </van-cell>
                 </van-cell-group>
             </div>

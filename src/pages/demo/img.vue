@@ -1,11 +1,15 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <div class="text-center">
 
             <ui-card>
-                <span slot="title">ui-img</span>
+                <template v-slot:title>
+                    <span>ui-img</span>
+                </template>
                 创建带自适应尺寸的图片
             </ui-card>
 

@@ -1,10 +1,14 @@
 <template>
     <ui-main>
-        <van-nav-bar slot="header" :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        <template v-slot:header>
+            <van-nav-bar :title="$route.path.replace('/demo-','')" left-arrow @click-left="$router.replace('/demo')"/>
+        </template>
 
         <div class="flex-column h-100">
             <ui-card>
-                <span slot="title">主容器</span>
+                <template v-slot:title>
+                    <span>主容器</span>
+                </template>
                 用与每个页面的外壳构建
                 它有三个常用插槽,分别是:
                 header、default、footer

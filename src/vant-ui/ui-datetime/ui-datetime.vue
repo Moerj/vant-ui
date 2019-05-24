@@ -14,22 +14,24 @@
         @focus="open()">
 
         <!-- 弹出层会插入body -->
-        <div slot="icon" ref="popup">
-            <van-popup v-model="popupVisible" position="bottom" class="ui-datetime" get-container="body">
-                <van-datetime-picker 
-                ref="picker"
-                v-model="pickerModel" 
-                :type="type"
-                :min-date="minDate"
-                :max-date="maxDate"
-                :min-hour="minHour"
-                :max-hour="maxHour"
-                :min-Minute="minMinute"
-                :max-Minute="maxMinute"
-                @confirm="confirm"
-                @cancel="cancel"/>
-            </van-popup>
-        </div>
+        <template v-slot:button>
+            <div ref="popup">
+                <van-popup v-model="popupVisible" position="bottom" class="ui-datetime" get-container="body">
+                    <van-datetime-picker 
+                    ref="picker"
+                    v-model="pickerModel" 
+                    :type="type"
+                    :min-date="minDate"
+                    :max-date="maxDate"
+                    :min-hour="minHour"
+                    :max-hour="maxHour"
+                    :min-Minute="minMinute"
+                    :max-Minute="maxMinute"
+                    @confirm="confirm"
+                    @cancel="cancel"/>
+                </van-popup>
+            </div>
+        </template>
 
     </van-field>
 </template>
