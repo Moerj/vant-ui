@@ -20,11 +20,13 @@
     }
 </style>
 <template>
-    <div class="card" :style="{'white-space':$slots.title?'pre-line':''}">
+    <div class="card">
         <div v-if="$slots.title" class="card-title">
             <slot name="title"></slot>
         </div>
-        <slot></slot>
+        <div class="card-content">
+            <slot></slot>
+        </div>
     </div>
 </template>
 <script>
