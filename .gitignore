@@ -2,6 +2,7 @@
 node_modules
 /dist
 /ip.js
+public/md2html/*.html
 
 # local env files
 .env.local
