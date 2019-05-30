@@ -100,9 +100,9 @@
                         })
                     }
                 }else{//单图上传
-                    list.push({
+                    list = [{
                         url:URL.createObjectURL(data.file)
-                    })
+                    }]
                 }
                 this.$emit('update:file-list', list)
             },

@@ -3,7 +3,7 @@
 ## 调用方式
 
 ```html
-    <ui-checkbox v-model="checked" name="inputName" label="labelString"></ui-checkbox>
+<ui-checkbox v-model="checked" name="inputName" label="labelString"></ui-checkbox>
 ```
 
 ## 参数

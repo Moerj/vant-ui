@@ -3,7 +3,7 @@
 ## 调用方式
 
 ```html
-    <ui-img src="http://img.png" size="2">图片的标题</ui-img>
+<ui-img src="http://img.png" size="2">图片的标题</ui-img>
 ```
 
 ## 参数

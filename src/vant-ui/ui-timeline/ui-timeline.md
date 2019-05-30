@@ -5,7 +5,6 @@
 ```
 
 ```js
-export default {
 data(){
     return {
         points: [
@@ -19,6 +18,6 @@ data(){
             date: '2017-1-1 15:33', // 时间点
             },]
         }
-    },
+    }
 }
 ```

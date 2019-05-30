@@ -9,11 +9,9 @@
 ```
 
 ```js
-export default {
-    data(){
-        return{
-            timeString:'',
-        }
+data(){
+    return{
+        timeString:''
     }
 }
 ```

@@ -3,7 +3,7 @@
 ## 调用方式
 
 ```html
-    <ui-loading title="加载中..." background="rgba(255,255,255,0.8)"></ui-loading>
+<ui-loading title="加载中..." background="rgba(255,255,255,0.8)"></ui-loading>
 ```
 
 ## 参数

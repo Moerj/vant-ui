@@ -9,16 +9,14 @@
 ```
 
 ```js
-export default {
-    data(){
-        return{
-            selectedValue:'',
-            opt:[
-                {text:'选项1',id:'1'},
-                {text:'选项2',id:'2'},
-                {text:'选项3',id:'3'},
-            ]
-        }
+data(){
+    return{
+        selectedValue:'',
+        opt:[
+            {text:'选项1',id:'1'},
+            {text:'选项2',id:'2'},
+            {text:'选项3',id:'3'},
+        ]
     }
 }
 ```

@@ -11,31 +11,28 @@
     @search="onSearch"
     @change="onChange"
 ></ui-select>
-
-<script>
-    export default {
-        data(){
-            return{
-                opt:[
-                    {text:'选项1',id:'1'},
-                    {text:'选项2',id:'2'},
-                    {text:'选项3',id:'3'}
-                ]
-            }
-        },
-        methods:{
-            onSearch(keyword){
-                // keyword搜索关键字
-            },
-            onChange(){
-
-            }
-        }
-    }
-</script>
 ```
 
-> 参数
+```js
+data(){
+    return{
+        opt:[
+            {text:'选项1',id:'1'},
+            {text:'选项2',id:'2'},
+            {text:'选项3',id:'3'}
+        ]
+    }
+},
+methods:{
+    onSearch(keyword){
+        // keyword搜索关键字
+    },
+    onChange(){
+
+    }
+}
+```
+
 
 参数名          |  类型         |  说明                                           |  默认值
 ----------------|---------------|-------------------------------------------------|----------
@@ -50,7 +47,6 @@ value-key       |   String      | 选项对象中，文字对应的 key         
 @change         |   Function    | 关闭时选择项变化的回调(参数为当前选中项)        |
 
 
->方法
 
 方法名          |  参数         |  说明                     
 ----------------|---------------|--------------

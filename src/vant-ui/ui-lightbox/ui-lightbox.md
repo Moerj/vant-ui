@@ -12,28 +12,22 @@
 ```
 
 ```js
-import lightbox from '@/lib/lightbox' //在当前页面按需引入组件
-export default {
-    components:{
-        lightbox
-    },
-    data(){
-        return {
-            imgList: [
-                {
-                    src: '图片的url',
-                    w: 0,//宽
-                    h: 0,//高
-                    // 宽高参数无需写单位,以px计算; 空值或0代表自动计算宽高,但会损失性能.
-                }
-            ]
-        }
-    },
-    methods:{
-        openLightbox(index=0){
-            // 画廊组件开启,index可指定初始图片
-            this.$refs.lightbox.open(index)
-        }
+data(){
+    return {
+        imgList: [
+            {
+                src: '图片的url',
+                w: 0,//宽
+                h: 0,//高
+                // 宽高参数无需写单位,以px计算; 空值或0代表自动计算宽高,但会损失性能.
+            }
+        ]
+    }
+},
+methods:{
+    openLightbox(index=0){
+        // 画廊组件开启,index可指定初始图片
+        this.$refs.lightbox.open(index)
     }
 }
 ```
