@@ -14,8 +14,10 @@ let distPath = path.resolve(basePath)
 
 // 如果md2html文件夹不存在就自己建立一个
 if (!fs.existsSync(distPath)) {
-    fs.mkdir(distPath)
-    console.log('成功创建:',distPath)
+    fs.mkdir(distPath,(err) => {
+        if (err) throw err
+        console.log('成功创建:', distPath)
+    })
 }else{
     // 清理指定文件夹
     fs.readdirSync(distPath).map((file) => {
