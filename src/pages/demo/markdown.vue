@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
     .doc{
-        width: 1600px;
+        min-width: 1450px;
+        max-width: 1600px;
         margin: 0 auto;
         background-color: #fff;
         position: relative;
@@ -157,11 +158,11 @@
         computed:{
             markdownSrc(){
                 if (this.pageName === '') {
-                    return `${this.host}/md2html/readme.md.html`
+                    return `${this.host}md2html/readme.md.html`
                 }else if (this.pageName === 'style') {
-                    return `${this.host}/md2html/style.md.html`
+                    return `${this.host}md2html/style.md.html`
                 }
-                return `${this.host}/md2html/ui-${this.pageName}.md.html`
+                return `${this.host}md2html/ui-${this.pageName}.md.html`
             }
         },
         mounted(){
