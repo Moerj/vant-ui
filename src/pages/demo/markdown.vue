@@ -1,7 +1,9 @@
 <style lang="scss" scoped>
     .doc{
-        max-width: 1600px;
+        width: 1600px;
+        margin: 0 auto;
         background-color: #fff;
+        position: relative;
         .scroll-y{
             &::-webkit-scrollbar{
                 width:3px;
@@ -77,42 +79,40 @@
     }
 </style>
 <template>
-    <div class="vh-100 flex-column">
-        <div class="topbar">
-            <span class="flex col-center">
-                <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="24">
-                <span class="f22 ml10">Vant-ui</span>
-            </span>
-        </div>
-        <div class="doc flex-1 flex">
-            <!-- nav -->
-            <div class="scroll-y nav-item">
-                <span class="nav-title">框架基础</span>
-                <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
-                    <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
-                    Vant官方库
-                </a>
-                <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
-                    介绍
-                </a>
-                <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
-                    样式
-                </a>
-                <span class="nav-title">扩展组件</span>
-                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
-                    {{item.path.replace('/demo','').replace('-','')}}
-                    <span class="f13 opacity-06">{{item.name}}</span>
-                </a>
+    <div class="doc flex-1 flex">
+        <!-- nav -->
+        <div class="nav-item">
+            <div class="topbar">
+                <span class="flex col-center">
+                    <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="24">
+                    <span class="f22 ml10">Vant-ui</span>
+                </span>
             </div>
-
-            <!-- markdown -->
-            <div class="markdown flex-1">
-                <iframe v-if="markdownSrc" :src="markdownSrc" frameborder="0" style="width:100%;height:100%"></iframe>
-            </div>
-
-            <!-- demo -->
-            <iframe :src="demoSrc" frameborder="0" class="doc-simulator"></iframe>
+            <span class="nav-title">框架基础</span>
+            <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
+                <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
+                Vant官方库
+            </a>
+            <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
+                介绍
+            </a>
+            <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
+                样式
+            </a>
+            <span class="nav-title">扩展组件</span>
+            <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
+                {{item.path.replace('/demo','').replace('-','')}}
+                <span class="f13 opacity-06">{{item.name}}</span>
+            </a>
         </div>
+
+        <!-- markdown -->
+        <div class="markdown flex-1">
+            <iframe v-if="markdownSrc" :src="markdownSrc" frameborder="0" style="width:100%;height:100%"></iframe>
+        </div>
+
+        <!-- demo -->
+        <iframe :src="demoSrc" frameborder="0" class="doc-simulator"></iframe>
     </div>
 </template>
 <script>
