@@ -36,9 +36,10 @@
         box-shadow: 0 4px 12px #ebedf0;
     }
     .nav-item{
-        height: 100%;
+        height: 100vh;
         border-right: 1px solid #f1f4f8;
-        padding-bottom:50px;
+        display: flex;
+        flex-direction: column;
         @mixin item(){
             margin: 0;
             display: block;
@@ -48,13 +49,13 @@
             transition: all .3s;
             
         }
-        >.nav-title{
+        .nav-title{
             @include item;
             font-size: 16px;
             font-weight: bold;
             margin-top: 20px;
         }
-        &> a{
+        a{
             @include item;
             font-size: 14px;
             cursor: pointer;
@@ -88,22 +89,24 @@
                     <span class="f22 ml10">Vant-ui</span>
                 </span>
             </div>
-            <span class="nav-title">框架基础</span>
-            <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
-                <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
-                Vant官方库
-            </a>
-            <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
-                介绍
-            </a>
-            <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
-                样式
-            </a>
-            <span class="nav-title">扩展组件</span>
-            <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
-                {{item.path.replace('/demo','').replace('-','')}}
-                <span class="f13 opacity-06">{{item.name}}</span>
-            </a>
+            <div class="flex-1 scroll-y pb50">
+                <span class="nav-title">框架基础</span>
+                <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
+                    <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
+                    Vant官方库
+                </a>
+                <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
+                    介绍
+                </a>
+                <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
+                    样式
+                </a>
+                <span class="nav-title">扩展组件</span>
+                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
+                    {{item.path.replace('/demo','').replace('-','')}}
+                    <span class="f13 opacity-06">{{item.name}}</span>
+                </a>
+            </div>
         </div>
 
         <!-- markdown -->
