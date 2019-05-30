@@ -73,7 +73,18 @@
         background-color: #fff;
         display: flex;
         align-items: center;
-        padding-left: 40px;
+        padding-left: 20px;
+        @keyframes rotate {
+            0%{
+                transform: rotateZ(0);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        .logo{
+            animation: rotate 5s infinite;
+        }
     }
     .markdown{
         padding: 15px 40px;
@@ -85,8 +96,10 @@
         <div class="nav-item">
             <div class="topbar">
                 <span class="flex col-center">
-                    <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="24">
-                    <span class="f22 ml10">Vant-ui</span>
+                    <img class="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="24">
+                    <span class="f22 ml10">Vant-UI
+                        <span class="f14 opacity-06 ml5">v{{version}}</span>
+                    </span>
                 </span>
             </div>
             <div class="flex-1 scroll-y pb50">
@@ -119,16 +132,18 @@
     </div>
 </template>
 <script>
-    import routerList from './router'
+    import ROUTER_LIST from './router'
+    import PACKAGE from '@/vant-ui/package.json'
     
     export default {
         data(){
             return {
                 host: location.origin + location.pathname,
                 demoSrc: this.host +'#/demo',
-                routerList:routerList,
+                routerList: ROUTER_LIST,
                 activeNav: sessionStorage.getItem('activeNav') || '/demo',
-                pageName:''
+                pageName:'',
+                version: PACKAGE.version
             }
         },
         methods:{
