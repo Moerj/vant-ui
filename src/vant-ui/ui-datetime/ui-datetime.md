@@ -1,6 +1,8 @@
 # 日期时间
 日期时间选择
 
+<span style="color:red">手势滑动在pc端查看可能无法操作,请切换成手机模式</span>
+
 
 ```html
 <ui-datetime v-model="timeString" label="日期与时间" type="date"></ui-datetime>
