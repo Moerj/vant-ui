@@ -180,5 +180,10 @@
         mounted(){
             this.navChange(this.pageName)
         },
+        created(){
+            if (window.innerWidth<800) {
+                this.$router.replace('/demo')
+            }
+        },
     }
 </script>
