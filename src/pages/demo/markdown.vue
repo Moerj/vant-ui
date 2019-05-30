@@ -109,14 +109,14 @@
                     <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
                     Vant官方库
                 </a>
-                <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
+                <a @click="navChange('/demo')" :class="{active:isActiveNav('readme')}">
                     介绍
                 </a>
-                <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
+                <a @click="navChange('/demo-style')" :class="{active:isActiveNav('style')}">
                     样式
                 </a>
                 <span class="nav-title">扩展组件</span>
-                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
+                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:isActiveNav(item.path)}" @click="navChange(item.path)">
                     {{item.path.replace('/demo','').replace('-','')}}
                     <span class="f13 opacity-06">{{item.name}}</span>
                 </a>
@@ -140,24 +140,36 @@
         data(){
             return {
                 host: location.origin + location.pathname,
-                demoSrc: this.host +'#/demo',
+                demoSrc: '',
                 routerList: ROUTER_LIST,
-                activeNav: sessionStorage.getItem('activeNav') || '/demo',
-                pageName:'',
+                pageName: this.$route.query.nav || '',
                 version: PACKAGE.version
             }
         },
         methods:{
             navChange(path){
-                this.pageName =  path.replace('/demo','').replace('-','')
-                this.demoSrc = `${this.host}#${path}`
-                this.activeNav = path
-                sessionStorage.setItem('activeNav',path)
+                this.pageName =  path.replace('/demo','').replace('-','') || 'readme'  //当前菜单名称
+
+                if (this.pageName === 'readme') {
+                    this.demoSrc = `${this.host}#/demo`
+                }else{
+                    this.demoSrc = `${this.host}#/demo-${this.pageName}` //获取demo地址
+                }
+
+                // 记录当前激活的菜单
+                this.$router.push({
+                    query:{
+                        nav:this.pageName
+                    }
+                })
             },
+            isActiveNav(path){
+                return path.indexOf(this.pageName)>=0
+            }
         },
         computed:{
             markdownSrc(){
-                if (this.pageName === '') {
+                if (this.pageName === 'readme') {
                     return `${this.host}md2html/readme.md.html`
                 }else if (this.pageName === 'style') {
                     return `${this.host}md2html/style.md.html`
@@ -166,7 +178,7 @@
             }
         },
         mounted(){
-            this.navChange(this.activeNav)
+            this.navChange(this.pageName)
         },
     }
 </script>
