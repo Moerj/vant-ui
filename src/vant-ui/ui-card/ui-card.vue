@@ -1,8 +1,3 @@
-/**
-    卡片容器
-    slot=title 标题
-    slot=default 内容区域
- */
 <style lang="scss" scoped>
     @import '~@/scss/public.scss';
     .card-title{
