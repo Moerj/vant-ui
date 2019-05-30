@@ -6,12 +6,42 @@
     <link href="https://cdn.bootcss.com/prism/1.16.0/themes/prism.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/table.min.css" rel="stylesheet">
     <style>
+        html, body {
+            padding: 0;
+            margin: 0; 
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: #34495e;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
         blockquote{
             border-left:4px solid #03a9f4;
             font-size:16px;
             line-height:1.5;
             padding:0em .5em;
             margin:1em 0em 2em;
+        }
+        h1,h2,h3,h4,h5,h6{
+            font-weight: normal;
+            font-size: rgba(black, .78);
+        }
+        body::-webkit-scrollbar{
+                width:3px;
+                height:4px;
+        }
+        body::-webkit-scrollbar-track{
+            border-radius:10px;
+            background-color:transparent ;
+        }
+        body::-webkit-scrollbar-thumb{
+            border-radius:10px;
+            background-color:transparent ;
+        }
+        body:hover::-webkit-scrollbar-track{
+            background-color:rgba(0, 0, 0, .1);
+        }
+        body:hover::-webkit-scrollbar-thumb{
+            background-color:rgba(0, 0, 0, .25);
         }
     </style>
 </head>

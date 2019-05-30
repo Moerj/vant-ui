@@ -3,7 +3,6 @@ const routerArry = [
     // 基础框架
     {
         path:'/demo',
-        name:'首页',
         component: () => import(/* webpackChunkName: "demo" */ './index')
     },
     {
@@ -12,7 +11,6 @@ const routerArry = [
     },
     {
         path:'/demo-style',
-        name:'样式',
         component: () => import(/* webpackChunkName: "demo" */ './style')
     },
 

@@ -4,9 +4,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-demo": "vue-cli-service build --mode demo",
-    "启动": "concurrently \"node tools/md2html.js\"  \"npm run serve \" ",
-    "打包demo": "concurrently \"node tools/md2html.js --production\" \"npm run build-demo\""
+    "demo": "vue-cli-service build --mode demo",
+    "start": "concurrently \"node tools/md2html.js\"  \"npm run serve \" ",
+    "build-demo": "concurrently \"node tools/md2html.js --production\" \"npm run demo\""
   },
   "dependencies": {
     "axios": "^0.18.0",

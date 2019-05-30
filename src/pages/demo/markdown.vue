@@ -1,7 +1,6 @@
 <style lang="scss" scoped>
     .doc{
-        height: 100vh;
-        display: flex;
+        max-width: 1600px;
         background-color: #fff;
         .scroll-y{
             &::-webkit-scrollbar{
@@ -37,14 +36,24 @@
     .nav-item{
         height: 100%;
         border-right: 1px solid #f1f4f8;
-        padding: 50px 0;
-        &> a{
+        padding-bottom:50px;
+        @mixin item(){
             margin: 0;
             display: block;
             color: #455a64;
             padding: 10px 20px 10px 40px;
             line-height: 24px;
             transition: all .3s;
+            
+        }
+        >.nav-title{
+            @include item;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        &> a{
+            @include item;
             font-size: 14px;
             cursor: pointer;
             &:hover{
@@ -55,24 +64,55 @@
             }
         }
     }
+    .topbar{
+        height: 60px;
+        border-bottom: 1px solid #f1f4f8;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+    }
+    .markdown{
+        padding: 15px 40px;
+    }
 </style>
 <template>
-    <div class="doc">
-        <!-- nav -->
-        <div class="scroll-y nav-item mr15">
-            <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNavIndex==index}" @click="navActive(item,index)">
-                {{item.name}}
-            </a>
+    <div class="vh-100 flex-column">
+        <div class="topbar">
+            <span class="flex col-center">
+                <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="24">
+                <span class="f22 ml10">Vant-ui</span>
+            </span>
         </div>
+        <div class="doc flex-1 flex">
+            <!-- nav -->
+            <div class="scroll-y nav-item">
+                <span class="nav-title">框架基础</span>
+                <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
+                    <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16">
+                    Vant官方库
+                </a>
+                <a @click="navChange('/demo')" :class="{active:activeNav=='/demo'}">
+                    介绍
+                </a>
+                <a @click="navChange('/demo-style')" :class="{active:activeNav=='/demo-style'}">
+                    样式
+                </a>
+                <span class="nav-title">扩展组件</span>
+                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:activeNav==item.path}" @click="navChange(item.path)">
+                    {{item.path.replace('/demo','').replace('-','')}}
+                    <span class="f13 opacity-06">{{item.name}}</span>
+                </a>
+            </div>
 
-        <!-- demo -->
-        <iframe :src="frameSrc" frameborder="0" class="doc-simulator"></iframe>
+            <!-- markdown -->
+            <div class="markdown flex-1">
+                <iframe v-if="markdownSrc" :src="markdownSrc" frameborder="0" style="width:100%;height:100%"></iframe>
+            </div>
 
-        <!-- markdown -->
-        <div class="flex-1 p15">
-            <iframe :src="markdownSrc" frameborder="0" style="width:100%;height:100%"></iframe>
+            <!-- demo -->
+            <iframe :src="demoSrc" frameborder="0" class="doc-simulator"></iframe>
         </div>
-
     </div>
 </template>
 <script>
@@ -81,29 +121,33 @@
     export default {
         data(){
             return {
-                frameSrc: location.origin +'/#/demo',
+                host: location.origin + location.pathname,
+                demoSrc: this.host +'#/demo',
                 routerList:routerList,
-                markdownSrc:'',
-                activeNavIndex: sessionStorage.getItem('activeNavIndex')
+                activeNav: sessionStorage.getItem('activeNav') || '/demo',
+                pageName:''
             }
         },
         methods:{
-            navActive(item,index){
-                const host = location.origin + location.pathname
-                const pageName =  item.path.replace('/demo-','')
-                this.frameSrc = `${host}#${item.path}`
-                // this.markdownSrc = '/md2html/ui-' + item.path.replace('/demo-','') + '.md.html'
-
-                this.markdownSrc = `${host}/md2html/ui-${pageName}.md.html`
-                this.activeNavIndex = index
-                sessionStorage.setItem('activeNavIndex',index)
+            navChange(path){
+                this.pageName =  path.replace('/demo','').replace('-','')
+                this.demoSrc = `${this.host}#${path}`
+                this.activeNav = path
+                sessionStorage.setItem('activeNav',path)
+            },
+        },
+        computed:{
+            markdownSrc(){
+                if (this.pageName === '') {
+                    return `${this.host}/md2html/readme.md.html`
+                }else if (this.pageName === 'style') {
+                    return `${this.host}/md2html/style.md.html`
+                }
+                return `${this.host}/md2html/ui-${this.pageName}.md.html`
             }
         },
         mounted(){
-            let i = this.activeNavIndex
-            if (i) {
-                this.navActive(this.routerList[i], i)
-            }
+            this.navChange(this.activeNav)
         },
     }
 </script>

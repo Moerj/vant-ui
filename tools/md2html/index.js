@@ -32,7 +32,7 @@ let NODE_ENV = process.argv[process.argv.length - 1].replace('--', '');
 
 //给table加class
 markdown.renderer.rules.table_open = function(tokens, idx) {
-    return '<table class="ui celled striped table">';
+    return '<table class="ui celled table small">';
 }
 
 // 转换 markdown 文件为html文件
@@ -86,7 +86,7 @@ let walk = function(dir, done) {
 };
 
 module.exports = function(watch) {
-    let mdPath = path.resolve(__dirname, '../../src/vant-ui')
+    let mdPath = path.resolve(__dirname, '../../src')
     //首次执行
     // console.log('\n\x1b[36m -- MD2HTML START --');
     walk(mdPath, function(err, results) {
