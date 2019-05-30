@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
     .doc{
-        min-width: 1450px;
+        min-width: 1280px;
         max-width: 1600px;
         margin: 0 auto;
         background-color: #fff;
@@ -74,7 +74,7 @@
         background-color: #fff;
         display: flex;
         align-items: center;
-        padding-left: 20px;
+        justify-content: center;
         @keyframes rotate {
             0%{
                 transform: rotateZ(0);
@@ -89,6 +89,21 @@
     }
     .markdown{
         padding: 15px 40px;
+    }
+
+    // 小屏幕视频
+    @media screen and (max-width: 1280px) {
+        .markdown{
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        .nav-item a, .nav-title{
+            padding-left: 20px !important;
+        }
+        .doc-simulator{
+            margin-right: 0;
+            width: 320px;
+        }
     }
 </style>
 <template>
