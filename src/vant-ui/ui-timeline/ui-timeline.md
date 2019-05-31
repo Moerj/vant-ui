@@ -21,3 +21,5 @@ data(){
     }
 }
 ```
+
+> 类似的功能也可以使用 <a href="https://youzan.github.io/vant/1.x/#/zh-CN/steps" target="_blank">Steps 步奏条</a>

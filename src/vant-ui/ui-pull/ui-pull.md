@@ -30,7 +30,7 @@ method:{
         })
     },
     reload(){//用于点击tab,进行列表重新加载
-        // 更直接.load()的区别在于reload带有loading效果
+        // reload带有loading效果
         this.$refs.pull.reload()
     }
 }

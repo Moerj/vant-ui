@@ -44,6 +44,7 @@ const routerArry = [
     {
         path:'/demo-checkbox',
         name:'复选框',
+        meta:{ disused:true },
         component: () => import(/* webpackChunkName: "demo" */ './checkbox')
     },
     {
@@ -69,6 +70,7 @@ const routerArry = [
     {
         path:'/demo-tab',
         name:'标签页',
+        meta:{ disused:true },
         component: () => import(/* webpackChunkName: "demo" */ './tab')
     },
     {

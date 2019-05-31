@@ -60,11 +60,18 @@
             @include item;
             font-size: 14px;
             cursor: pointer;
+            position: relative;
             &:hover{
                 color:dodgerblue;
             }
             &.active{
-                color:orange;
+                color:#4caf50;
+            }
+
+            >.tag{
+                position: absolute;
+                right: 2px;
+                top: 2px;
             }
         }
     }
@@ -130,8 +137,14 @@
                 <a @click="navChange('/demo-style')" :class="{active:isActiveNav('style')}">
                     样式
                 </a>
+                
                 <span class="nav-title">扩展组件</span>
-                <a v-for="(item,index) in routerList" v-if="item.name" :class="{active:isActiveNav(item.path)}" @click="navChange(item.path)">
+                <a  v-for="(item,index) in routerList" 
+                    v-if="item.name" 
+                    :class="{active:isActiveNav(item.path)}" 
+                    :style="{'text-decoration':(item.meta&&item.meta.disused)?'line-through':''}"
+                    @click="navChange(item.path)">
+
                     {{item.path.replace('/demo','').replace('-','')}}
                     <span class="f13 opacity-06">{{item.name}}</span>
                 </a>
