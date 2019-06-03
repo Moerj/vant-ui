@@ -1,16 +1,16 @@
 
-let fs = require('fs');
-let path = require('path');
-let chokidar = require('chokidar');
-let markdown = require('markdown-it')({
+const fs = require('fs');
+const path = require('path');
+const chokidar = require('chokidar');
+const markdown = require('markdown-it')({
     html: true,
     linkify: true,
     typographer: true,
     quotes: '\"\"\'\'',
 });
-
-let basePath = path.join(__dirname, '../../public/md2html/').replace(/\\/g, '/')
-let distPath = path.resolve(basePath)
+const NODE_ENV = process.argv[process.argv.length - 1].replace('--', '');
+const basePath = path.join(__dirname, '../../public/md2html/').replace(/\\/g, '/')
+const distPath = path.resolve(basePath)
 
 // 如果md2html文件夹不存在就自己建立一个
 if (!fs.existsSync(distPath)) {
@@ -29,8 +29,6 @@ if (!fs.existsSync(distPath)) {
         }
     })
 }
-
-let NODE_ENV = process.argv[process.argv.length - 1].replace('--', '');
 
 //给table加class
 markdown.renderer.rules.table_open = function(tokens, idx) {
@@ -60,7 +58,7 @@ function buildFile(file) {
 }
 
 // 遍历所有文件夹找出'.md'文件
-let walk = function(dir, done) {
+const walk = function(dir, done) {
     let results = [];
     fs.readdir(dir, function(err, list) {
         if (err) return done(err);
@@ -87,8 +85,8 @@ let walk = function(dir, done) {
     });
 };
 
-module.exports = function(watch) {
-    let mdPath = path.resolve(__dirname, '../../src')
+const init = function() {
+    const mdPath = path.resolve(__dirname, '../../src')
     //首次执行
     // console.log('\n\x1b[36m -- MD2HTML START --');
     walk(mdPath, function(err, results) {
@@ -122,6 +120,9 @@ module.exports = function(watch) {
         });
     }
 };
+
+
+init()// 此脚本在package.js中调用
 
 
 

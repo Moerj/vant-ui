@@ -5,8 +5,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "demo": "vue-cli-service build --mode demo",
-    "start": "concurrently \"node tools/md2html.js\"  \"npm run serve \" ",
-    "build-demo": "concurrently \"node tools/md2html.js --production\" \"npm run demo\""
+    "start": "concurrently \"node tools/md2html/index.js\"  \"npm run serve \" ",
+    "build-demo": "concurrently \"node tools/md2html/index.js --production\" \"npm run demo\""
   },
   "dependencies": {
     "axios": "^0.18.0",
