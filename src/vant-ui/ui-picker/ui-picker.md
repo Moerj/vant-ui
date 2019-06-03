@@ -1,7 +1,7 @@
 # 单选器
 用于选项较少的单选操作
 
-<span style="color:red">手势滑动在pc端查看可能无法操作,请切换成手机模式</span>
+<span style="color:red">手势滑动在pc端无法操作,请在移动端查看</span>
 
 
 ```html
