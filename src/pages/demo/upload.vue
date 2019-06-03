@@ -17,7 +17,7 @@
             点击删除按钮时获取已删除的本地图片src和索引
         </ui-card>
 
-        <ui-upload multiple :file-list.sync="fileList" @change="onChange" @remove="onRemove"></ui-upload>
+        <ui-upload multiple v-model="fileList" @read="read" @remove="remove"></ui-upload>
     </ui-main>
 </template>
 <script>
@@ -33,12 +33,12 @@
             }
         },
         methods:{
-            onChange(){
-                console.log('加入上传队列',this.fileList);
+            read(){
+                console.log('有图片加入上传队列',this.fileList);
             },
-            onRemove(){
-                console.log('删除文件',this.fileList);
-            }
+            remove(list,index){
+                console.log(`删除第${index}张图`,list);
+            },
         },
     }
 </script>

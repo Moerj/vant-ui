@@ -1,7 +1,7 @@
 # 图片上传
 
 ```html
- <ui-upload multiple :file-list.sync="fileList" @change="onChange" @remove="onRemove"></ui-upload>
+ <ui-upload multiple :file-list.sync="fileList" @read="onRead" @remove="onRemove"></ui-upload>
 ```
 
 ```js
@@ -19,9 +19,11 @@ data() {
 ```
 
 
-参数        |      类型       |      说明                                               | 默认值
-------------|-----------------|---------------------------------------------------------|---------
-multiple    |    Boolean      |   是否传多图                                            |   false     
-file-list   |    Array        |   数据列表                                              |
-@change     |    Function     |   新增文件回调                                          |  
-@remove     |    Function     |   删除文件回调                                          |  
+参数         |      类型       |      说明                                               | 默认值
+-------------|-----------------|---------------------------------------------------------|---------
+v-model      |    Array        |   数据列表                                              |
+:before-read |    Function     |   读取前的回调函数，返回 false 可终止文件读取           |  
+@read        |    Function     |   新增文件回调, 参数                                    |  
+@remove      |    Function     |   删除文件回调, 参数(删除的文件参数,删除的索引)         |  
+multiple     |    Boolean      |   input原生属性,上传时是否可以一次选择多图              |   true     
+accept       |    String       |   input原生属性                                         |        
