@@ -96,6 +96,10 @@
     }
     .markdown{
         padding: 15px 40px;
+        >iframe{
+            width: 100%;
+            height: 100%;
+        }
     }
 
     // 小屏幕视频
@@ -153,7 +157,7 @@
 
         <!-- markdown -->
         <div class="markdown flex-1">
-            <iframe v-if="markdownSrc" :src="markdownSrc" frameborder="0" style="width:100%;height:100%"></iframe>
+            <iframe v-if="markdownSrc" :src="markdownSrc" frameborder="0"></iframe>
         </div>
 
         <!-- demo -->
