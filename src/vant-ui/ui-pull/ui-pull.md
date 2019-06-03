@@ -1,4 +1,4 @@
-# 下拉刷新/上拉加载
+## 下拉刷新/上拉加载
 
 ```html
 <ui-pull @load="getListData" v-model="listData" :total="total" ref="pull">
@@ -36,11 +36,11 @@ method:{
 }
 ```
 
-参数        |      类型       |      说明                                               | 默认值
-------------|-----------------|---------------------------------------------------------|---------
-@load       |    Funtion      |   上拉/下拉的回调,根据参数{isDownScrolling}来区分       |
-v-model     |    Array        |   数据列表                                              |
-total       |    Number       |   总数据长度,用于上拉加载,必传                          |   0
-page-size   |    Number       |   每次分页加载的条数,分页数低于默认值时必传             |  10
-@swipeleft  |    Function     |   手势v-touch的滑动回调-左                              |  
-@swiperight |    Function     |   手势v-touch的滑动回调-右                              |  
+参数        |      说明                                               |      类型       | 默认值
+------------|---------------------------------------------------------|-----------------|---------
+@load       |   上拉/下拉的回调,根据参数{isDownScrolling}来区分       |    Funtion      |
+v-model     |   数据列表                                              |    Array        |
+total       |   总数据长度,用于上拉加载,必传                          |    Number       |   0
+page-size   |   每次分页加载的条数,分页数低于默认值时必传             |    Number       |  10
+@swipeleft  |   手势v-touch的滑动回调-左                              |    Function     |  
+@swiperight |   手势v-touch的滑动回调-右                              |    Function     |  

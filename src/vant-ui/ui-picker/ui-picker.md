@@ -1,4 +1,4 @@
-# 单选器
+## 单选器
 用于选项较少的单选操作
 
 <span style="color:red">手势滑动在pc端无法操作,请在移动端查看</span>
@@ -21,14 +21,14 @@ data(){
 }
 ```
 
-参数名      |  type    | default  |  说明
-------------|----------|----------|----------
-label       | String   |          |  标题
-v-model     | String   |          |  选中项的value
-options     | Array    |          |  数据源
-required    | Boolean  | false    |  红色星号标记当前为必选项
-placeholder | String   |          |  选项提示
-disabled    | Boolean  | false    |  是否禁用
-value-key   | String   | text     |  选项对象中，文字对应的 key
-@change     | Function |          |  选中后的回调,参数为当前选中的对象
+参数名      |  说明                                 |  type    | default  
+------------|---------------------------------------|----------|----------
+label       |  标题                                 | String   |          
+v-model     |  选中项的value                        | String   |          
+options     |  数据源                               | Array    |          
+required    |  红色星号标记当前为必选项             | Boolean  | false    
+placeholder |  选项提示                             | String   |          
+disabled    |  是否禁用                             | Boolean  | false    
+value-key   |  选项对象中，文字对应的 key           | String   | text     
+@change     |  选中后的回调,参数为当前选中的对象    | Function |          
 
