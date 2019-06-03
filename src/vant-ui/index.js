@@ -8,12 +8,12 @@ export default {
     install: function (Vue) {
         for (let i = 0; i < components.length; i++) {
 
-            // cover js exports to component config
+            // 兼容 import export 和 require module.export 两种规范
             if (components[i].name===undefined && components[i].default) {
                 components[i] = components[i].default
             }
 
-            // regist components on Vue
+            // 注册或安装组件
             if (components[i].name) {
                 Vue.component(components[i].name, components[i])
             }else if(components[i].install){
