@@ -6,7 +6,7 @@
 
         <ui-card>
             <template v-slot:title>
-                <div>@change</div>
+                <div>@read</div>
             </template>
             获取已上传的file对象,然后手动实现上传逻辑
         </ui-card>
