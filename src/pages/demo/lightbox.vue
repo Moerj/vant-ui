@@ -40,9 +40,9 @@
                     { src: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2754825801,773274927&fm=26&gp=0.jpg', },
                     { src: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2761763315,1123663049&fm=26&gp=0.jpg', },
                     { src: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3622184301,1106551337&fm=15&gp=0.jpg', },
-                    { src: 'https://wx3.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tdy0j31kw11xqpb.jpg', },
-                    { src: 'https://wx1.sinaimg.cn/mw1024/006SSVT6gy1fv3g63sfiej31kw11xqpu.jpg', },
-                    { src: 'https://wx2.sinaimg.cn/mw1024/006SSVT6gy1fv3g63tep9j31kw11xhaw.jpg', },
+                    { src: 'http://wx3.sinaimg.cn/large/006NJCErly1g3ofda622gj30j60ssq5x.jpg', },
+                    { src: 'http://wx2.sinaimg.cn/large/006NJCErly1g3ojogk8qnj30j60uugpj.jpg', },
+                    { src: 'http://wx2.sinaimg.cn/large/006WCzeoly1g3odc8iy6jj31400qo445.jpg', },
                 ]
             }
         },
