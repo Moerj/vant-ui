@@ -82,7 +82,7 @@
                     <i class="line"></i>
                 </div>
                 <div class="form-item">
-                    <van-button @click="$router.push('/demo')" size="large" type="" class="login-btn">登录</van-button>
+                    <van-button @click="login" size="large" type="" class="login-btn">登录</van-button>
                 </div>
 
             </div>
@@ -97,6 +97,15 @@
                 form: {
                     username: '',
                     password: ''
+                }
+            }
+        },
+        methods:{
+            login(){
+                if (window.innerWidth > 800) {
+                    this.$router.replace('/demo-markdown') //pc查看 markdown + demo
+                }else{
+                    this.$router.replace('/demo') //手机只看 demo
                 }
             }
         },
