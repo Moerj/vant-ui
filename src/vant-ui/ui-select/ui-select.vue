@@ -16,9 +16,9 @@
                 <template v-slot:header>
                     <van-nav-bar :title="pageTitle" :left-text="isChanged?'确定':''" left-arrow @click-left="backAndConfirm()" />
                     <!-- 搜索框 -->
-                    <van-search v-if="$listeners.search" show-action v-model="searchVal" :disabled="isSearching">
+                    <van-search v-if="$listeners.search" :show-action="!!searchVal" v-model="searchVal" :disabled="isSearching">
                         <template v-slot:action>
-                            <a v-if="searchVal!=''" @click="search(searchVal)" class="f-color-blue ml10 mr10" >搜索</a>
+                            <a v-if="searchVal!=''" @click="search(searchVal)" class="f-color-blue" >搜索</a>
                             <a v-else class="m7"></a>
                         </template>
                     </van-search>
