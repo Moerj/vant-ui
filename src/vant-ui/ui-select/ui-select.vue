@@ -47,8 +47,8 @@
                     <!-- 多选 -->
                     <van-checkbox-group v-if="multiple" v-model="selected" :max="max">
                         <van-cell-group>
-                            <van-cell v-for="item in optionsAll" :title="item[valueKey]" :key="item.id" @click.native="toggleCheckbox('checkbox'+item.id)">
-                                <van-checkbox :name="item.id" :ref="'checkbox'+item.id" shape="square"/>
+                            <van-cell v-for="(item,index) in optionsAll" :title="item[valueKey]" :key="item.id" @click="toggleCheckbox(index)">
+                                <van-checkbox :name="item.id" ref="checkboxes" shape="square"/>
                             </van-cell>
                         </van-cell-group>
                     </van-checkbox-group>
@@ -267,11 +267,13 @@
                 }
                 
             },
-            toggleCheckbox(ref){//多选单元格点击时触发多选框勾选
-                const checkbox = this.$refs[ref][0].$el
-                checkbox.querySelector('i').click()
-                if (this.selected.length === this.max) 
+            toggleCheckbox(index){//多选单元格点击时触发多选框勾选
+                const current = this.$refs.checkboxes[index]
+                if (current.checked===false && this.selected.length >= this.max) {
                     this.$toast('最多选择' + this.max + '项')
+                }else{
+                    this.$refs.checkboxes[index].toggle()
+                }
             }
         },
         mounted(){

@@ -4,6 +4,18 @@
 - 输入检索
 - 分类检索
 
+
+### 简单的
+```html
+<ui-select
+    label="标题" 
+    required
+    v-model="form.id" 
+    :options="opt"
+></ui-select>
+```
+
+### 带输入框检索和tab检索
 ```html
 <ui-select
     label="标题" 
@@ -13,6 +25,11 @@
     :max="3"
     @search="onSearch"
     @change="onChange"
+    <!-- 插入tab进行过滤 -->
+    <van-tabs v-model="tab">
+        <van-tab v-for="item in tabData" :key="item.label" :title="item.label">
+        </van-tab>
+    </van-tabs>
 ></ui-select>
 ```
 
@@ -28,7 +45,17 @@ data(){
 },
 methods:{
     onSearch(keyword){
-        // keyword搜索关键字
+        // 模拟在线检索
+        setTimeout(() => {
+            if (v) {
+                this.opt = [
+                    {text:'在线新结果1',id:'new1'},
+                    {text:'在线新结果2',id:'new2'},
+                ]
+            }else{
+                this.opt=[...this.initOpt]
+            }
+        }, 1000);
     },
     onChange(){
 
@@ -36,11 +63,15 @@ methods:{
 }
 ```
 
+>提示: 组件为了统一检索逻辑，统一使用 **@search** 回调修改数据源的方式进行数据的筛选。
+这样既满足在线检索也满足本地数据过滤。
+
 
 参数名          |  说明                                                             |  类型         |  默认值
 ----------------|-------------------------------------------------------------------|---------------|----------
 label           | 选项标题                                                          |   String      |
 required        | 标题前标记为必选                                                  |   Boolean     |   false
+placeholder     | 原生属性                                                          |   String      |   
 options         | 数据源                                                            |   Array       |
 v-model         | 回显的id                                                          |   String      |
 multiple        | 是否多选                                                          |   Boolean     |   false
@@ -61,5 +92,3 @@ reset           | 重置并清空所有已选项|
 ----------------|---------------------
 default         | 在输入框下方                            
 
->提示: 组件为了统一检索逻辑，统一使用 **@search** 回调修改数据源的方式进行数据的筛选。
-这样既满足在线检索也满足本地数据过滤。
