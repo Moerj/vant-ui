@@ -5,8 +5,8 @@
         </template>
 
         <van-cell-group>
-            <ui-select label="单选" required v-model="form.id" @search="onSearch" :options="opt" placeholder="请选择一项"></ui-select>
-            <ui-select label="多选" v-model="form2.id" @search="onSearch" :options="opt" multiple searchable :max="3" placeholder="最多选3个,可搜索">
+            <ui-select label="单选" required v-model="form.id" :options="opt" placeholder="请选择一项"></ui-select>
+            <ui-select label="多选" v-model="form2.id" @search="onSearch" :options="opt" multiple :max="3" placeholder="最多选3个,可搜索">
                 <!-- 插入tab进行过滤 -->
                 <van-tabs v-model="tab">
                     <van-tab v-for="item in tabData" :key="item.label" :title="item.label">
@@ -55,14 +55,17 @@
         methods:{
             onSearch(v){
                 console.log('检索关键字: '+v);
-                if (v) {
-                    this.opt = [
-                        {text:'检索结果1',id:'11'},
-                        {text:'检索结果2',id:'12'},
-                    ]
-                }else{
-                    this.opt=[...this.initOpt]
-                }
+                // 模拟在线检索
+                setTimeout(() => {
+                    if (v) {
+                        this.opt = [
+                            {text:'在线新结果1',id:'new1'},
+                            {text:'在线新结果2',id:'new2'},
+                        ]
+                    }else{
+                        this.opt=[...this.initOpt]
+                    }
+                }, 1000);
             }
         },
     }
