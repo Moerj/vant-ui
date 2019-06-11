@@ -1,3 +1,22 @@
+<style lang="scss" scoped>
+    @import '~@/scss/public.scss';
+    .search-btn{
+        color: $ui-color-primary;
+    }
+    .text-tip{
+        font-size: 14px;
+        color: $ui-color-grey;
+        text-align: center;
+    }
+    .search-text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>.text{
+            margin-left: 5px;
+        }
+    }
+</style>
 <template>
     <!-- 单元格 -->
     <van-field
@@ -18,8 +37,7 @@
                     <!-- 搜索框 -->
                     <van-search v-if="$listeners.search" :show-action="!!searchVal" v-model="searchVal" :disabled="isSearching">
                         <template v-slot:action>
-                            <a v-if="searchVal!=''" @click="search(searchVal)" class="f-color-blue" >搜索</a>
-                            <a v-else class="m7"></a>
+                            <a v-if="searchVal!=''" @click="search(searchVal)" class="search-btn" >搜索</a>
                         </template>
                     </van-search>
                     <!-- 插槽 -->
@@ -29,16 +47,14 @@
                     </div>
                 </template>
 
-
-
                 <!-- 文本提示区 -->
-                <div class="f14 f-color-grey text-center">
+                <div class="text-tip">
 
                     <p v-show="!isSearching && loaded && optionsAll.length===0" :data="options">暂无数据</p>
 
-                    <p v-show="isSearching || !loaded" class="flex col-center row-center">
+                    <p v-show="isSearching || !loaded" class="search-text">
                         <van-loading type="spinner" size="16px"/>
-                        <span class="ml5">正在搜索数据...</span>
+                        <span class="text">正在搜索数据...</span>
                     </p>
                 </div>
 

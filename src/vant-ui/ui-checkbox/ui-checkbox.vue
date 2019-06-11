@@ -29,11 +29,16 @@
             font-size: 16px;
             margin-left: 5px;
         }
+
+        >label{
+            display: flex;
+            align-items: center;
+        }
     }
 </style>
 <template>
     <div class="ui-checkbox" @click="$emit('click')">
-        <label class="flex col-center">
+        <label>
             <input type="checkbox" :name="name" v-model="checked" :disabled="disabled" style="display:none">
 
             <span class="checkbox-icon" :style="{borderColor:color}">

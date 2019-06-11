@@ -228,6 +228,20 @@
 		}
 	}
 
+	.timeline-title{
+		font-size: 16px;
+		margin-bottom: 5px;
+	}
+	.timeline-text{
+		font-size: 14px;
+		color:rgba(black,.3);
+	}
+	.timeline-date{
+		font-size: 14px;
+		color:rgba(black,.3);
+		margin-top: 5px;
+	}
+
 	@media only screen and (min-width: 1170px) {
 		.timeline-content {
 			margin-left: 0;
@@ -307,11 +321,11 @@
 			</div>
 
 			<div class="timeline-content">
-				<div class="f16 mb02" v-text="point.title"></div>
-				<div class="f14 f-color-grey" v-text="point.text"></div>
+				<div class="timeline-title" v-text="point.title"></div>
+				<div class="timeline-text" v-text="point.text"></div>
 				<a :href="point.linkUrl" class="read-more" target="_blank" v-if="point.linkUrl"
 					v-html="point.linkText!=undefined?point.linkText:'Read more'"></a>
-				<div v-if="point.date" class="f12 f-color-grey mt5" v-text="point.date"></div>
+				<div v-if="point.date" class="timeline-date" v-text="point.date"></div>
 			</div>
 		</div>
 	</section>

@@ -26,6 +26,12 @@
         }
     }
     
+    .ui-page-scroll{
+        flex:1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 </style>
 <template>
     <!-- transition层不会生成dom -->
@@ -33,7 +39,7 @@
         <div ref="el" class="ui-page" v-show="active" :key="redraw ? active : ''">
             <van-nav-bar v-if="title" :title="title" left-arrow @click-left="close()"></van-nav-bar>
             <slot name="header" v-if="visited"></slot>
-            <div class="flex-1 scroll-y" v-if="visited">
+            <div class="ui-page-scroll" v-if="visited">
                 <slot></slot>
             </div>
             <slot name="footer" v-if="visited"></slot>
