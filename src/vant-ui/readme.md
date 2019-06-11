@@ -13,7 +13,7 @@ this is vant components extend
 
 ### 安装
 ```node
-npm i vant-ui
+npm i vant vant-ui
 ```
 
 main.js中引入
