@@ -1,5 +1,5 @@
 <style lang="scss">
-    @import '~@/scss/public.scss';
+    @import '~@/scss/variables.scss';
     .ui-page{
         position: fixed;
         top: 0;

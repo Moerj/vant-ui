@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import '~@/scss/public.scss';
+    @import '~@/scss/variables.scss';
     .card-title{
         color: $ui-color-primary;
         font-size: 16px;

@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import '~@/scss/public.scss';
+    @import '~@/scss/variables.scss';
     .ui-checkbox{
         background-color: #fff;
         display: inline;

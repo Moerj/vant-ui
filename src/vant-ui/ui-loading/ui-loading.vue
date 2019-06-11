@@ -1,6 +1,6 @@
 <style lang="scss" >
     .ui-loading{
-        @import '~@/scss/public.scss';
+        @import '~@/scss/variables.scss';
         position: absolute;
         top: 0;
         left: 0;

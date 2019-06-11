@@ -21,7 +21,7 @@
 
         <ui-card>
             <template v-slot:title>
-                <span>public.scss</span>
+                <span>variables.scss</span>
             </template>
             存放所有样式公共变量, 如颜色, 用于在其他页面或样式文件中@import引入
         </ui-card>

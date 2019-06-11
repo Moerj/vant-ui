@@ -1,5 +1,5 @@
 <style lang="scss" scope>
-    @import '~@/scss/public.scss';
+    @import '~@/scss/variables.scss';
     .modal{
         position: absolute;
         left: 0;

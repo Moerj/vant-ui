@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import '~@/scss/public.scss';
+    @import '~@/scss/variables.scss';
     .ui-tab-item{
         flex:1;
         font-size: 14px;
