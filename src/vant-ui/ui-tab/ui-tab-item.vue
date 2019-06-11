@@ -1,5 +1,4 @@
 <style lang="scss" scoped>
-    @import '~@/scss/variables.scss';
     .ui-tab-item{
         flex:1;
         font-size: 14px;
@@ -7,16 +6,16 @@
         padding: 6px;
         white-space: nowrap;
         transition: .3s;
-        color: $ui-color-black;
+        color: rgba(black , .7);
         display: inline-block;
         &.item-active{
-            color: $ui-color-primary;
+            color: #26a2ff;
         }
         >.item-label{
             display: inline-block;
             position: relative;
             >.item-badge{
-                background-color: $ui-color-purple;
+                background-color: #c7b1e2;
                 font-size: 10px;
                 line-height: 1;
                 color: #fff;

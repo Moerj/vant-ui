@@ -1,26 +1,25 @@
 <style lang="scss" scoped>
-    @import '~@/scss/variables.scss';
     .ui-checkbox{
         background-color: #fff;
         display: inline;
         padding-left: 15px;
         input[disabled]{//禁用颜色
             &+.checkbox-icon{
-                border-color: $ui-color-disabled !important;
+                border-color: rgba(black, .24) !important;
                 .fa-icon{
-                    color: $ui-color-disabled !important;
+                    color: rgba(black, .24) !important;
                 }
             }
         }
         .checkbox-icon{
-            border: 1px solid $ui-color-primary;
+            border: 1px solid #26a2ff;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             width: 1rem;
             height: 1rem;
             >*{
-                color: $ui-color-primary;
+                color: #26a2ff;
                 font-weight: lighter;
             }
         }

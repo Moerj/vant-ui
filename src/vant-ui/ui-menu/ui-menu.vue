@@ -1,5 +1,4 @@
 <style lang="scss" scope>
-    @import '~@/scss/variables.scss';
     .modal{
         position: absolute;
         left: 0;
@@ -34,8 +33,8 @@
         background-color: #fff;
         padding: .3rem .5rem;
         font-size: 12px;
-        color: $ui-color-primary;
-        @include box-shadow-bottom;
+        color: #26a2ff;
+        box-shadow: 0 1px 1px rgba(black, .1);
         position: relative;
         z-index: 2;
     }

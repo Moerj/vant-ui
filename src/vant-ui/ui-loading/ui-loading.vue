@@ -1,6 +1,5 @@
 <style lang="scss" >
     .ui-loading{
-        @import '~@/scss/variables.scss';
         position: absolute;
         top: 0;
         left: 0;
@@ -14,12 +13,6 @@
         justify-content: center;
         align-items: center;
 
-        .mint-spinner-double-bounce{// loading颜色
-            &>div{
-                background-color: $ui-color-primary !important;
-            }
-        }
-        
         .ui-loading-title{
             font-size: .8rem;
         }

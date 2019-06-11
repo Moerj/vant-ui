@@ -1,7 +1,6 @@
 <style lang="scss" scoped>
-    @import '~@/scss/variables.scss';
     .card-title{
-        color: $ui-color-primary;
+        color: #26a2ff;
         font-size: 16px;
         font-weight: bold;
     }

@@ -1,11 +1,10 @@
 <style lang="scss" scoped>
-    @import '~@/scss/variables.scss';
     .search-btn{
-        color: $ui-color-primary;
+        color: #26a2ff;
     }
     .text-tip{
         font-size: 14px;
-        color: $ui-color-grey;
+        color: rgba(black, 0.3);
         text-align: center;
     }
     .search-text{

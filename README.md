@@ -1,19 +1,15 @@
 # vue-vant-cli3
 
-## Project setup
-```
-npm install
+## 新项目设置步骤
+
+### 修改组件为远程仓库
+```js
+// import vantUI from 'vant-ui'; //npm库
+import vantUI from './vant-ui'; //本地库
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 删除本地组件库
+删除 src/vant-ui
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/zh/config/).
+### 配置代理
+解压ip.zip,并配置你的ip地址

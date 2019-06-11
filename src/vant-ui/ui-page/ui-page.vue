@@ -1,5 +1,4 @@
 <style lang="scss">
-    @import '~@/scss/variables.scss';
     .ui-page{
         position: fixed;
         top: 0;
@@ -10,7 +9,7 @@
         transform: translate3d(0,0,0);
         display: flex;
         flex-direction: column;
-        background-color: $ui-bg-grey;
+        background-color: rgb(243, 245, 247);
         .mint-header{
             z-index: 1;
             .mint-button{
