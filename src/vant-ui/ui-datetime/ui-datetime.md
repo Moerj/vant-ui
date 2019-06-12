@@ -6,7 +6,7 @@
 - time 日期
 - year-month 年月
 
-<span style="color:red">手势滑动在pc端无法操作,请在移动端查看</span>
+<span style="color:red">手势滑动在PC端无法操作,请左键点击操作</span>
 
 
 ```html
