@@ -1,0 +1,8 @@
+/*
+    样式入口
+*/
+
+@import 'base.scss'; //基础布局样式
+@import 'ui.scss'; //ui样式,必须以 "ui-" 开头,例如: ui-block, ui-color
+@import 'rewrite.scss'; //重构的样式,对原本框架进行修改
+@import 'vue-transition.scss'; //vue的过渡动画
