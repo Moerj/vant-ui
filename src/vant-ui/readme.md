@@ -13,8 +13,9 @@ this is vant components extend
 
 ### 安装
 ```node
-npm i vant vant-ui
+npm i vant-ui
 ```
+> vant-ui内部已自动安装vant,请勿重复安装vant
 
 main.js中引入
 ```js
