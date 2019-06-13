@@ -1,16 +1,38 @@
-# vue-vant-cli3
+# Vant-ui
+this is vant components extend  
+这是vant组件库的扩展
 
-## 快速设置新项目
+### [Online demo](http://moerj.com/vant-ui/#/demo-markdown)
 
-### 修改组件为远程仓库
-```js
-import vantUI from 'vant-ui'; //npm库
-// import vantUI from './vant-ui'; //本地库
+## 特性
+- 更完善的组件库
+- 高级选择器组件
+- 图片画廊
+- 多级菜单
+- 支持无限层级页面
+
+## 安装
+```shell
+npm i vant-ui
 ```
 
-### 删除新项目不需要的文件
-- 删除本地组件库 src/vant-ui
-- 删除 src/pages/demo
+### 核心
+vant-ui内部已自动安装vant,请勿重复安装vant
+```js
+import vantUI from 'vant-ui';
+Vue.use(vantUI);
+```
 
-### 配置代理
-解压ip.zip,并配置你的ip地址
+### 样式
+组件库是基于scss的，如果报错请安装scss依赖  
+```shell
+npm i sass-loader node-sass
+```
+
+选装, 如果你想使用组件库提供的样式
+```js
+import 'vant-ui/src/scss/base.scss'
+```
+
+## 浏览器支持
+现代浏览器以及 Android 4.0+, iOS 6+

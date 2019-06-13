@@ -87,14 +87,14 @@ const walk = function(dir, done) {
 
 const init = function() {
     const mdPath = path.resolve(__dirname, '../../src')
-    //首次执行
-    // console.log('\n\x1b[36m -- MD2HTML START --');
+
+    // md 转 html
     walk(mdPath, function(err, results) {
         if (err) throw err;
-        // console.log('\x1b[36m -- MD2HTML END -- \n');
         if (NODE_ENV === 'production') console.log('\n \x1b[46m\x1b[30m MD2HTML \x1b[0m DONE\n');
-
     });
+    buildFile(path.resolve(path.resolve(__dirname, '../../'), 'README.md')); // 主页README.md也编译一次
+    
     // 如果不是开发模式就不需要监听
     if (NODE_ENV !== 'production') {
         // 开发模式监听文件
@@ -114,9 +114,6 @@ const init = function() {
                 buildFile(path);
                 console.log('\x1b[36m -- MD2HTML(add) END --\n');
             });
-            // watcher.on('unlink', (path) =>{
-            //     console.log('\n\x1b[41m删除文件:\x1b[0m ' + path);
-            // });
         });
     }
 };
