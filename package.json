@@ -1,5 +1,5 @@
 {
-  "name": "vant-ui",
+  "name": "vant-cli",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
