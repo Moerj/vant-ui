@@ -1,15 +1,10 @@
-## 样式规范
+> 样式作为选装型功能, 使用时记得安装
+```js
+// main.js
+import 'vant-ui/src/scss/base.scss'
+```
 
-### 不允许开发人员修改,只能使用
-- base 基础样式
-- variables 公共变量
-- rewrite 重构样式
-
-### 开发人员可以使用和修改
-- ui 项目风格
-- vue-transition 动画部分
-
-### 单位
+## 单位
 - 全局基础单位: 16px 
 - 最小单位: 10px 
 
