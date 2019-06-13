@@ -15,7 +15,7 @@
             font, font-size, line-height, letter-spacing
         </ui-card>
 
-        <ui-card class="f-color-orange">
+        <ui-card class="c-orange">
             公共样式路径 src/scss/*.scss
         </ui-card>
 

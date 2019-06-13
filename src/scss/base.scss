@@ -4,8 +4,8 @@ body {
     padding: 0;
     margin: 0; 
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    color: rgba(black, .78);
-    background:$ui-bg-grey;
+    color: $ui-color-black;
+    background: $ui-bg-grey;
     height: 100%;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;//mac抗锯齿
@@ -279,7 +279,14 @@ input,textarea{
     clear: both;
 }
 
-// color
+
+
+.f-bold{
+    font-weight: bold;
+}
+
+
+// #region color
 @mixin f-hover($color) {
     @if $color {
         &.f-hover:hover {
@@ -287,61 +294,46 @@ input,textarea{
         }
     }
 }
-
-.f-bold{
-    font-weight: bold;
+.c-black {
+    color: $ui-color-black !important;
+    @include f-hover($ui-color-black);
 }
 
-.f-color-black {
-    color: rgba(black, .75) !important;
-    @include f-hover(rgba(black, .75));
-}
-
-.f-color-white {
+.c-white {
     color: white !important;
 }
 
-.f-color-grey {
+.c-grey {
     color: $ui-color-grey !important;
     @include f-hover($ui-color-grey);
 }
 
-.f-color-red {
+.c-red {
     color: $ui-color-red !important;
     @include f-hover($ui-color-red);
 }
 
-.f-color-blue {
+.c-blue {
     color: $ui-color-blue !important;
     @include f-hover($ui-color-blue);
 }
 
-.f-color-green {
+.c-green {
     color: $ui-color-green !important;
     @include f-hover($ui-color-green);
 }
 
-.f-color-orange {
+.c-orange {
     color: $ui-color-orange !important;
     @include f-hover($ui-color-orange);
 }
 
-.f-color-yellow {
+.c-yellow {
     color: $ui-color-yellow !important;
     @include f-hover($ui-color-yellow);
 }
 
-.f-color-text {
-    color: rgba(black, .5) !important;
-}
-
-.f-color-placeholder{
-    color: rgba(black, .2) !important;
-}
-
-.f-color-primary{
-    color: $ui-color-primary !important;
-}
+// #endregion
 
 // 背景
 .bg-white {

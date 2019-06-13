@@ -12,7 +12,7 @@
             
 
             <van-button @click="openLoading" type="primary" size="small">开启</van-button>
-            <div class="f-color-orange">$loading.open()开启,$loading.close()关闭</div>
+            <div class="c-orange">$loading.open()开启,$loading.close()关闭</div>
         </ui-card>
 
         
@@ -23,7 +23,7 @@
             用html标签创建一块loading区域, 遮罩覆盖在该区域上方。
             可以自定义组件的加载标题和背景色。
             
-            <div class="p05 f-color-orange">用 <van-button @click="isLoading=!isLoading" type="primary" size="small">v-if</van-button> 来控制loading的开启关闭</div>
+            <div class="p05 c-orange">用 <van-button @click="isLoading=!isLoading" type="primary" size="small">v-if</van-button> 来控制loading的开启关闭</div>
         </ui-card>
 
 

@@ -15,7 +15,7 @@
         <ui-picker v-model="id" placeholder="请选择一项" label="这是单选题" :options="option" required @change="onChange">
         </ui-picker>
 
-        <p class="f-color-orange pl5">当前id: {{id}}</p>
+        <p class="c-orange pl5">当前id: {{id}}</p>
 
     </ui-main>
 </template>

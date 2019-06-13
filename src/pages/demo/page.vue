@@ -9,7 +9,7 @@
                 <span>ui-page</span>
             </template>
             与ui-main嵌套子路由不同，子页面可以直接与父页面进行交互。
-            <span class="f-color-red f07">
+            <span class="c-red f07">
                 需要注意的是，页面刷新后子页面不会保留状态。
             </span>
         </ui-card>

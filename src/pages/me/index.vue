@@ -45,18 +45,18 @@
                         <van-icon name="contact" size="40px"></van-icon>
                     </div>
                     <p class="f18 f-bold text-center">博益科技</p>
-                    <div class="f16 f-color-text text-center">1808888888</div>
+                    <div class="f16 opacity-05 text-center">1808888888</div>
                 </div>
 
                 <van-cell-group class="mt50">
                     <van-cell title="个人档案" is-link @click="$refs.userInfo.open()">
                         <template v-slot:icon>
-                            <van-icon name="description" size="22px" class="mr5 f-color-primary"></van-icon>
+                            <van-icon name="description" size="22px" class="mr5 c-blue"></van-icon>
                         </template>
                     </van-cell>
                     <van-cell title="设置" is-link @click="$refs.setting.open()">
                         <template v-slot:icon>
-                            <van-icon name="setting" size="22px" class="mr5 f-color-primary"></van-icon>
+                            <van-icon name="setting" size="22px" class="mr5 c-blue"></van-icon>
                         </template>
                     </van-cell>
                 </van-cell-group>
@@ -73,10 +73,10 @@
         </ui-page>
 
         <ui-page title="设置" ref="setting" class="bg-white">
-            <van-icon name="point-gift-o" class="f-color-grey" style="font-size:60px;position:fixed;top:40%;left:50%;transform:translateX(-50%)" />
+            <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="100" class="mt100 auto-center">
             <div class="abs-left-bottom w-100 ui-content text-center">
                 <p class="f18 f-bold">xxx科技有限公司</p>
-                <div class="f-color-text">版本号: {{appVersion}}</div>
+                <div class="c-grey">版本号: {{appVersion}}</div>
                 <van-button type="danger" plain size="large" class="mt50 mb50" @click="logout">退出登录</van-button>
             </div>
         </ui-page>

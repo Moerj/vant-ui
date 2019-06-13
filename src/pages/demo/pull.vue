@@ -6,7 +6,7 @@
                 <template v-slot:title>
                     <div class="flex row-between">
                         <span >ui-pull</span>
-                        <a href="https://github.com/mescroll/mescroll" target="_blank" class="f07 f-color-orange">文档地址</a>
+                        <a href="https://github.com/mescroll/mescroll" target="_blank" class="f07 c-orange">文档地址</a>
                     </div>
                 </template>
                 <ol>

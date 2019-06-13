@@ -7,7 +7,7 @@
         <!-- 案例 1 -->
         <ui-card>
             <template v-slot:title>
-                <span class="f-color-blue">default</span>
+                <span class="c-blue">default</span>
             </template>
             默认均分布局
         </ui-card>
@@ -20,7 +20,7 @@
         <!-- 案例 2 -->
         <ui-card class="mt2">
             <template v-slot:title>
-                <span class="f-color-blue">scroll</span>
+                <span class="c-blue">scroll</span>
             </template>
             左右滚动
         </ui-card>
