@@ -1,26 +1,12 @@
 {
   "name": "vant-ui",
-  "version": "1.1.55",
-  "description": "vant expand components",
-  "author": "Moer",
-  "keywords": [
-    "vant",
-    "vant-ui"
-  ],
-  "main": "src/vant-ui/index.js",
-  "homepage": "http://moerj.com/vant-ui/#/demo-markdown",
-  "license": "MIT",
-  "files": [
-    "src/vant-ui",
-    "src/scss"
-  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "demo": "vue-cli-service build --mode demo",
     "start": "concurrently \"node tools/md2html\"  \"npm run serve \" ",
     "build-demo": "concurrently \"node tools/md2html --production\" \"npm run demo\"",
-    "publish": "concurrently \"npm publish\""
+    "publish": "concurrently \"cd src/vant-ui&&npm publish\""
   },
   "dependencies": {
     "axios": "^0.18.0",
