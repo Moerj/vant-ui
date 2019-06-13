@@ -25,10 +25,6 @@ Vue.use(axios, {
     timeout: 20000,
 });
 
-// 主框架 vant-ui
-import 'vant/lib/index.css';//导入全部样式
-import Vant from 'vant';
-Vue.use(Vant);
 
 // 公共事件监听器
 import eventHub from './assets/eventHub';
