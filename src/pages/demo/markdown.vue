@@ -93,7 +93,6 @@
         .logo{
             animation: rotate 5s infinite;
             width: 24px;
-            filter: blur(1px);
         }
     }
     .markdown{
