@@ -1,6 +1,7 @@
 ## 局部区域loading
 
 ### 全局调用
+当前页面的最外层必须使用 [**ui-main**](http://moerj.com/vant-ui/#/demo-markdown?nav=main)
 ```js
 this.$loading.open() //开启
 this.$loading.close() //关闭

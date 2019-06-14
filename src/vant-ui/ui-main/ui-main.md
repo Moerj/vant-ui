@@ -36,3 +36,6 @@ export default [
     }
 ]
 ```
+
+### 页面加载等待
+参考 [**loading**](http://moerj.com/vant-ui/#/demo-markdown?nav=loading)
