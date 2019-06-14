@@ -35,8 +35,8 @@ import VueTouch from 'vue-touch'
 Vue.use(VueTouch, {name: 'v-touch'})
 
 // 组件库
-import vantUI from 'vant-ui'; //npm库 - 正式项目请用这个
-// import vantUI from './vant-ui'; //本地库
+// import vantUI from 'vant-ui'; //npm库 - 正式项目请用这个
+import vantUI from './vant-ui'; //本地库
 Vue.use(vantUI);
 
 // 框架样式
