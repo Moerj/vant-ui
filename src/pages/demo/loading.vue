@@ -29,7 +29,7 @@
 
         <div>
             <ui-loading v-if="isLoading" title="加载中..." background="rgba(222, 230, 247, 0.8)"></ui-loading>
-            <img src="~./loading-bg.jpg" class="w-100" style="display: inherit;">
+            <img src="~./img/loading-bg.jpg" class="w-100" style="display: inherit;">
         </div>
 
     </ui-main>
