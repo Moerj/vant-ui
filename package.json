@@ -6,7 +6,7 @@
     "demo": "vue-cli-service build --mode demo",
     "start": "concurrently \"node tools/md2html\"  \"npm run serve \" ",
     "build-demo": "concurrently \"node tools/md2html --production\" \"npm run demo\"",
-    "publish": "concurrently \"cd src&&npm publish\""
+    "publish": "concurrently \"node tools/publish.js\""
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,6 +28,7 @@
     "postcss-pxtorem": "^4.0.1",
     "postcss-url": "^8.0.0",
     "sass-loader": "^7.1.0",
+    "shelljs": "^0.8.3",
     "vue-template-compiler": "^2.6.10"
   }
 }

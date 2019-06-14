@@ -31,7 +31,7 @@ npm i sass-loader node-sass
 
 选装, 如果你想使用组件库提供的样式
 ```js
-import 'vant-ui/src/scss/base.scss'
+import 'vant-ui/scss/base.scss'
 ```
 
 ## 浏览器支持

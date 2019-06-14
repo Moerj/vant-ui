@@ -1,7 +1,7 @@
 > 样式作为选装型功能, 使用时记得安装
 ```js
 // main.js
-import 'vant-ui/src/scss/base.scss'
+import 'vant-ui/scss/base.scss'
 ```
 
 ## 单位
