@@ -169,7 +169,7 @@
 </template>
 <script>
     import ROUTER_LIST from './router'
-    import PACKAGE from '@/vant-ui/package.json'
+    import PACKAGE from '@/package.json'
     
     export default {
         data(){

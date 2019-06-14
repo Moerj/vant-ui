@@ -1,6 +1,6 @@
 {
   "name": "vant-ui",
-  "version": "1.1.592",
+  "version": "1.1.593",
   "description": "Mobile UI Components",
   "author": "Moer",
   "keywords": [
@@ -8,7 +8,7 @@
     "vant-ui",
     "component"
   ],
-  "main": "./vant-ui/index.js",
+  "main": "vant-ui/index.js",
   "homepage": "http://moerj.com/vant-ui/#/demo-markdown",
   "license": "MIT",
   "files": [
