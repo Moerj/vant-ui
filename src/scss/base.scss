@@ -451,3 +451,14 @@ input,textarea{
 .mid{
     vertical-align: middle;
 }
+
+// 文本限制行数
+.ellipsis-1{
+    //单独写一个是为了编辑器能提示
+    @include text-clamp(1)
+}
+@for $i from 2 through 5 {
+    .ellipsis-#{$i}{
+        @include text-clamp($i);
+    }
+}

@@ -28,19 +28,6 @@
     overflow: hidden;
 }
 
-
-
-// 文本限制行数
-.ui-clamp-1{
-    //单独写一个是为了编辑器能提示ui-clamp
-    @include text-clamp(1)
-}
-@for $i from 2 through 5 {
-    .ui-clamp-#{$i}{
-        @include text-clamp($i);
-    }
-}
-
 @mixin border($direction) {
     border-#{$direction}: $ui-border;
     }
