@@ -11,17 +11,20 @@ import 'vant-ui/scss/base.scss'
 系统会将以下几个css属性的px单位转为rem   
 **font, font-size, line-height, letter-spacing**
 
+## base.scss 全文
+<pre>
+    <code class="language-css">
+    </code>
+</pre>
 
-## 基础样式
-样式名          |   说明
-----------------|-----------------
-flex            |   flex布局
-flex-column     |   flex布局-纵向
-flex-nowrap     |   不换行
-col-center      |   纵向居中
-row-center      |   横向居中
-row-center      |   横向居中
-row-between     |   两端对齐
-row-around      |   均分
-
-> 样式太多,不一一例举,请查看 **base.scss**
+<script>
+    $(function(){
+        $.ajax({
+            url:'https://raw.githubusercontent.com/Moerj/vant-ui/master/scss/base.scss',
+            success: function (response) {
+                var html = Prism.highlight(response, Prism.languages.css, 'css');
+                $('.language-css').append(html)
+            }
+        })
+    })
+</script>
