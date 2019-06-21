@@ -22,3 +22,10 @@ transition  |  页面动画效果, 相关动画见vue-transition.scss  | String 
 default     |  主区域,自带滚动条
 header      |  顶部区域
 footer      |  底部区域
+
+
+方法        |  说明
+------------|----------
+open        |  打开页面 $refs.page.open()
+close       |  关闭页面
+
