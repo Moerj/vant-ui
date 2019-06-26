@@ -20,9 +20,15 @@ const router = new VueRouter({
 // http 模块
 import axios from './assets/axios';
 Vue.use(axios, {
-    withCredentials: true,//启用跨域支持
-    baseURL: "/api",//用代理解决跨域,这里配置了后端接口要以/api开头,如: http://106.14.39.87:8886/api/backstage/pieces/find
     timeout: 20000,
+    /** 跨域代理
+     *  @填写代理地址 在ip.js中配置需要代理的域名, 比如 http://8.8.8.8
+     *  @绑定代理 在vue.config.js中配置proxy选项, 比如 /api 开头的进行代理
+     *  @页面中的请求 this.$http.post('/backstage/pieces/find')
+     *  @实际代理路径 http://8.8.8.8/api/backstage/pieces/find
+     */
+    withCredentials: true,//启用跨域支持
+    baseURL: "/api"
 });
 
 
