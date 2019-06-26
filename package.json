@@ -6,7 +6,7 @@
     "demo": "vue-cli-service build --mode demo",
     "start": "concurrently \"node tools/md2html\"  \"npm run serve \" ",
     "build-demo": "concurrently \"node tools/md2html --production\" \"npm run demo\"",
-    "publish": "concurrently \"node tools/publish.js\""
+    "publish": "node tools/publish.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
