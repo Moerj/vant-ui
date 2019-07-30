@@ -52,7 +52,7 @@
 </template>
 <script>
     export default {
-        name: 'ui-checkbox',
+        name: 'ui-checkbox', 
         props:{
             value: {
                 type: Boolean,

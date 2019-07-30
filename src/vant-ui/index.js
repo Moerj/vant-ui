@@ -6,7 +6,7 @@ function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);
 }
 
-const components = requireAll(require.context("./", true, /^\.\/.*\.vue$/));
+const components = requireAll(require.context("./components", true, /^\.\/.*\.vue$/));
 
 export default {
     install: function (Vue) {

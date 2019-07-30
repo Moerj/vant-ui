@@ -63,7 +63,7 @@
                     <van-checkbox-group v-if="multiple" v-model="selected" :max="max">
                         <van-cell-group>
                             <van-cell v-for="(item,index) in optionsAll" :title="item[valueKey]" :key="item.id" @click="toggleCheckbox(index)">
-                                <van-checkbox :name="item.id" ref="checkboxes" shape="square"/>
+                                <van-checkbox :name="item.id" ref="checkboxes" shape="square" slot="right-icon"/>
                             </van-cell>
                         </van-cell-group>
                     </van-checkbox-group>
@@ -71,7 +71,7 @@
                     <van-radio-group v-else v-model="selected">
                         <van-cell-group>
                             <van-cell v-for="item in optionsAll" :key="item.id" :title="item[valueKey]" clickable @click="selected=item.id">
-                                <van-radio :name="item.id" />
+                                <van-radio :name="item.id" slot="right-icon"/>
                             </van-cell>
                         </van-cell-group>
                     </van-radio-group>

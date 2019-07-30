@@ -42,12 +42,6 @@ const routerArry = [
         component: () => import(/* webpackChunkName: "demo" */ './img')
     },
     {
-        path:'/demo-checkbox',
-        name:'复选框',
-        meta:{ disused:true },
-        component: () => import(/* webpackChunkName: "demo" */ './checkbox')
-    },
-    {
         path:'/demo-timeline',
         name:'时间线',
         component: () => import(/* webpackChunkName: "demo" */ './timeline')
@@ -58,20 +52,9 @@ const routerArry = [
         component: () => import(/* webpackChunkName: "demo" */ './loading')
     },
     {
-        path:'/demo-upload',
-        name:'上传',
-        component: () => import(/* webpackChunkName: "demo" */ './upload')
-    },
-    {
         path:'/demo-pull',
         name:'上拉加载/下拉刷新',
         component: () => import(/* webpackChunkName: "demo" */ './pull')
-    },
-    {
-        path:'/demo-tab',
-        name:'标签页',
-        meta:{ disused:true },
-        component: () => import(/* webpackChunkName: "demo" */ './tab')
     },
     {
         path:'/demo-picker',
