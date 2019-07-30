@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "photoswipe": "^4.1.3",
-    "vant-ui": "^2.0.1",
+    "vant-ui": "^2.0.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vue-touch": "^2.0.0-beta.4"
