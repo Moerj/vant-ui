@@ -56,7 +56,7 @@
                 }
             },
             loadSuccess(){//标记刷新或加载完成
-                this.$refs.uiPull && this.$refs.uiPull.endSuccess()
+                this.$refs.uiPull.endSuccess()
             }
         },
     }

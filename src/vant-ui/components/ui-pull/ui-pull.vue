@@ -88,9 +88,9 @@
                     this.uiPullInstance.endSuccess(this.value.length, hasNext)
                 })
             },
-            endErr() {
-                this.uiPullInstance.endErr()
-            },
+            // endErr() {
+            //     this.uiPullInstance.endErr()
+            // },
             reload() { //用于点击tab重新加载数据
                 this.$emit('update:num', this.initNum)
                 this.$emit('input', [])

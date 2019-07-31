@@ -44,3 +44,9 @@ total       |   总数据长度,用于上拉加载,必传                       
 page-size   |   每次分页加载的条数,分页数低于默认值时必传             |    Number       |  10
 @swipeleft  |   手势v-touch的滑动回调-左                              |    Function     |  
 @swiperight |   手势v-touch的滑动回调-右                              |    Function     |  
+
+
+方法        |      说明                                           
+------------|-------------------------------------------
+reload      |   进行列表重新加载,带有loading效果                  
+endSuccess  |   数据加载完成后调用,转变为加载完成状态                  
