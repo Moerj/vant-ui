@@ -89,7 +89,7 @@
                 })
             },
             // endErr() {
-            //     this.uiPullInstance.endErr()
+            //     this.uiPullInstance.endErr() //隐藏下拉刷新和上拉加载的状态
             // },
             reload() { //用于点击tab重新加载数据
                 this.$emit('update:num', this.initNum)
