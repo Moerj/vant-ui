@@ -1,8 +1,10 @@
 # Vant-ui
 this is vant components extend  
-这是vant组件库的扩展
 
-### [Online demo](http://moerj.com/vant-ui/#/demo-markdown)
+这是vant组件库的扩展，其中包含vant原本所有组件以及本库的扩展组件。  
+已支持最新的 <a href="https://youzan.github.io/vant" target="_blank">__vant 2.x__</a>
+
+### <a href="http://moerj.com/vant-ui/#/demo-markdown" target="_blank">Online demo</a>
 
 ## 特性
 - 更完善的组件库

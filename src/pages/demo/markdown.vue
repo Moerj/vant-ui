@@ -143,7 +143,7 @@
             </div>
             <div class="flex-1 scroll-y pb50">
                 <span class="nav-title">框架基础</span>
-                <a href="https://youzan.github.io/vant/1.x/#/zh-CN/intro" target="_blank">
+                <a href="https://youzan.github.io/vant/#/zh-CN/intro" target="_blank">
                     <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="16" class="mid">
                     Vant官方库
                 </a>
