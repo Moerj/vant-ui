@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+    <link href="https://cdn.bootcss.com/prism/1.16.0/themes/prism.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/table.min.css" rel="stylesheet">
+
+    <!-- 用于markdown动态加载在线源码 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: #34495e;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+
+        blockquote {
+            border-left: 4px solid #03a9f4;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 0em .5em;
+            margin: 1em 0em 2em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: #333;
+            margin-top: 45px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 3px;
+            height: 4px;
+        }
+
+        body::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body:hover::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        body:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .25);
+        }
+
+        a {
+            color: #03a9f4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #607D8B;
+            list-style-type: circle;
+            margin: 5px 0 5px 10px;
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            background: #f9fafb;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="padding-bottom:50px">
+        <h2>下拉刷新/上拉加载</h2>
+<pre><code class="language-html">&lt;ui-pull @load=&quot;getListData&quot; v-model=&quot;listData&quot; :total=&quot;total&quot; ref=&quot;pull&quot;&gt;
+    &lt;!-- for循环的列表... --&gt;
+&lt;/ui-pull&gt;
+</code></pre>
+<pre><code class="language-js">data(){
+    return{
+        listData:[],
+        total:0,//来至接口的列表总数,滚动加载根据它来判断是否加载完所有列表,最终显示 END 标示
+    }
+},
+method:{
+    mounted(){
+        // 开始不需要手动调用getListData方法了,初始化时组件的@load方法会自动执行
+    },
+    getListData(){//请求数据的方法
+        this.$http.post({
+            pageSize:20,
+            pageNumber:1,
+        }).then(({data})=&gt;{
+            this.listData = data.listData
+            this.total = data.total //将后端返回的数据总数赋值给total
+
+            // 结束下拉刷新或上拉加载功能
+            this.$refs.pull.endSuccess()
+        })
+    },
+    reload(){//用于点击tab,进行列表重新加载
+        // reload带有loading效果
+        this.$refs.pull.reload()
+    }
+}
+</code></pre>
+<table class="ui celled table small"><thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@load</td>
+<td>上拉/下拉的回调,根据参数{isDownScrolling}来区分</td>
+<td>Funtion</td>
+<td></td>
+</tr>
+<tr>
+<td>v-model</td>
+<td>数据列表</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>total</td>
+<td>总数据长度,用于上拉加载,必传</td>
+<td>Number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>page-size</td>
+<td>每次分页加载的条数,分页数低于默认值时必传</td>
+<td>Number</td>
+<td>10</td>
+</tr>
+<tr>
+<td>@swipeleft</td>
+<td>手势v-touch的滑动回调-左</td>
+<td>Function</td>
+<td></td>
+</tr>
+<tr>
+<td>@swiperight</td>
+<td>手势v-touch的滑动回调-右</td>
+<td>Function</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="ui celled table small"><thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reload</td>
+<td>进行列表重新加载,带有loading效果</td>
+</tr>
+<tr>
+<td>endSuccess</td>
+<td>数据加载完成后调用,转变为加载完成状态</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <script src="https://cdn.bootcss.com/prism/1.16.0/prism.min.js"></script>
+</body>
+
+</html>

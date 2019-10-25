@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+    <link href="https://cdn.bootcss.com/prism/1.16.0/themes/prism.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/table.min.css" rel="stylesheet">
+
+    <!-- 用于markdown动态加载在线源码 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: #34495e;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+
+        blockquote {
+            border-left: 4px solid #03a9f4;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 0em .5em;
+            margin: 1em 0em 2em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: #333;
+            margin-top: 45px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 3px;
+            height: 4px;
+        }
+
+        body::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body:hover::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        body:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .25);
+        }
+
+        a {
+            color: #03a9f4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #607D8B;
+            list-style-type: circle;
+            margin: 5px 0 5px 10px;
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            background: #f9fafb;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="padding-bottom:50px">
+        <h2>page</h2>
+<p>弹出层页面,可实现无限级相互叠加</p>
+<pre><code class="language-html">&lt;ui-page title=&quot;页面标题&quot;&gt;
+    页面内容...
+&lt;/ui-page&gt;
+</code></pre>
+<h3>参数</h3>
+<table class="ui celled table small"><thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>页面标题,会生成顶部区域,并附带一个返回按钮,若需自定义顶部区域时请忽略此参数</td>
+<td>String</td>
+<td>''</td>
+</tr>
+<tr>
+<td>redraw</td>
+<td>每次开启和关闭是否重绘其中内容</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>页面动画效果, 相关动画见vue-transition.scss</td>
+<td>String</td>
+<td>right</td>
+</tr>
+</tbody>
+</table>
+<table class="ui celled table small"><thead>
+<tr>
+<th>插槽</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default</td>
+<td>主区域,自带滚动条</td>
+</tr>
+<tr>
+<td>header</td>
+<td>顶部区域</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>底部区域</td>
+</tr>
+</tbody>
+</table>
+<table class="ui celled table small"><thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open</td>
+<td>打开页面 $refs.page.open()</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭页面</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <script src="https://cdn.bootcss.com/prism/1.16.0/prism.min.js"></script>
+</body>
+
+</html>

@@ -2,7 +2,6 @@
 node_modules
 /dist
 /ip.js
-public/md2html/*.html
 src/vant-ui/scss
 
 # local env files

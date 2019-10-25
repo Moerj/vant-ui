@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+    <link href="https://cdn.bootcss.com/prism/1.16.0/themes/prism.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/components/table.min.css" rel="stylesheet">
+
+    <!-- 用于markdown动态加载在线源码 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            color: #34495e;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+
+        blockquote {
+            border-left: 4px solid #03a9f4;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 0em .5em;
+            margin: 1em 0em 2em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: #333;
+            margin-top: 45px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 3px;
+            height: 4px;
+        }
+
+        body::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        body:hover::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        body:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .25);
+        }
+
+        a {
+            color: #03a9f4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            color: #607D8B;
+            list-style-type: circle;
+            margin: 5px 0 5px 10px;
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            background: #f9fafb;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="padding-bottom:50px">
+        <h2>单选器</h2>
+<p>用于选项较少的单选操作</p>
+<p><span style="color:red">手势滑动在PC端无法操作,请左键点击操作</span></p>
+<pre><code class="language-html">&lt;ui-picker title=&quot;标题&quot; required v-model=&quot;selectedValue&quot; :options=&quot;opt&quot;&gt; &lt;/ui-picker&gt;
+</code></pre>
+<pre><code class="language-js">data(){
+    return{
+        selectedValue:'',
+        opt:[
+            {text:'选项1',id:'1'},
+            {text:'选项2',id:'2'},
+            {text:'选项3',id:'3'},
+        ]
+    }
+}
+</code></pre>
+<table class="ui celled table small"><thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>标题</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>v-model</td>
+<td>选中项的value</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>options</td>
+<td>数据源</td>
+<td>Array</td>
+<td></td>
+</tr>
+<tr>
+<td>required</td>
+<td>红色星号标记当前为必选项</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>选项提示</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>value-key</td>
+<td>选项对象中，文字对应的 key</td>
+<td>String</td>
+<td>text</td>
+</tr>
+<tr>
+<td>@change</td>
+<td>选中后的回调,参数为当前选中的对象</td>
+<td>Function</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <script src="https://cdn.bootcss.com/prism/1.16.0/prism.min.js"></script>
+</body>
+
+</html>
