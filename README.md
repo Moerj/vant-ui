@@ -39,6 +39,9 @@ import 'vant-ui/scss/base.scss'
 ## 浏览器支持
 现代浏览器以及 Android 4.0+, iOS 6+
 
+
+<br/><br/>
+
 ## vant-ui 移动端框架
 如果你使用本脚手架搭建项目, 按以下操作
 
