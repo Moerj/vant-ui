@@ -52,7 +52,6 @@ window.APP_BACK = function(){
         }
         // 确保此返回按钮可见后,触发点击
         if (!isHiddren) {
-            Vue.prototype.$loading.close()
             button.click()
             return true
         }
