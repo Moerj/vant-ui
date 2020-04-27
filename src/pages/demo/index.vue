@@ -29,7 +29,6 @@
             <van-cell title="多选框" value="checkbox" is-link to="/demo-checkbox" />
             <van-cell title="时间线" value="timeline" is-link to="/demo-timeline" />
             <van-cell title="加载" value="loading" is-link to="/demo-loading" />
-            <van-cell title="图片上传" value="upload" is-link to="/demo-upload" />
             <van-cell title="下拉刷新/上拉加载" value="pull" is-link to="/demo-pull" />
             <van-cell title="选项卡" value="tab" is-link to="/demo-tab" />
             <van-cell title="滑动单选" value="picker" is-link to="/demo-picker" />
