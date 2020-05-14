@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <transition name="fade">
+        <transition :name="isMiniProgram ? '' : 'fade'">
             <router-view class="ui-main-router"></router-view>
         </transition>
     </div>
@@ -97,13 +97,14 @@
 <script>
     export default {
         name: 'ui-main',
-        version: '2.0.4',
+        version: '2.0.5',
         data () {
             return {
                 parentUiMainContent:null,
                 scrollActive: true,
                 isLoading: false,
-                loadingCount:0
+                loadingCount:0,
+                isMiniProgram: window.wx && window.wx.miniProgram
             }
         },
         beforeCreate(){
