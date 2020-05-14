@@ -67,9 +67,10 @@
     animation-duration: .3s;
 }
 
+// ios关闭页面时,webview容器自带右滑动画
 .right-leave-active {
-    animation-name: right-out;
-    animation-duration: .3s;
+    // animation-name: right-out;
+    // animation-duration: .3s;
 }
 
 @keyframes right-in {

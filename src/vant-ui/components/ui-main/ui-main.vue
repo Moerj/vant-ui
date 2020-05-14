@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <transition :name="isMiniProgram ? '' : 'fade'">
+        <transition name="right">
             <router-view class="ui-main-router"></router-view>
         </transition>
     </div>
@@ -104,7 +104,6 @@
                 scrollActive: true,
                 isLoading: false,
                 loadingCount:0,
-                isMiniProgram: window.wx && window.wx.miniProgram
             }
         },
         beforeCreate(){
