@@ -57,6 +57,15 @@
             }
         }
     }
+
+    @keyframes right-in {
+        0% {
+            transform: translate3d(100%, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
 </style>
 <template>
     <div class="ui-main">
@@ -68,7 +77,10 @@
             </div>
             
             <!-- body -->
-            <div class="ui-main-scroll" :class="{'scroll-y':scrollActive}" ref="scroll-box">
+            <div class="ui-main-scroll" 
+                :class="{'scroll-y':scrollActive}" 
+                :style="{'animation': parentUiMainContent ? 'right-in 0.3s' : ''}"
+                ref="scroll-box">
                 <slot></slot>
             </div>
 
@@ -89,9 +101,7 @@
             </div>
         </div>
 
-        <transition name="right">
-            <router-view class="ui-main-router"></router-view>
-        </transition>
+        <router-view class="ui-main-router"></router-view>
     </div>
 </template>
 <script>
