@@ -1,9 +1,7 @@
 <template>
     <div id="app" class="h-100 flex-column">
         <div class="flex-1 relative">
-            <transition name="fade">
-                <router-view/>
-            </transition>
+            <router-view/>
         </div>
         <bottombar></bottombar>
     </div>
