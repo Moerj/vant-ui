@@ -4,12 +4,13 @@
             <router-view/>
         </div>
         <bottombar></bottombar>
+
+        <ui-loading-global />
     </div>
 </template>
 
 <script>
     import bottombar from '@/pages/rootMenu'
-    
     export default {
         name: 'App',
         components:{

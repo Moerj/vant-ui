@@ -37,25 +37,6 @@
             right: 0;
         }
 
-        .ui-main-loading{
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 99999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            >.loading-item{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 1rem;
-                background-color: rgba(black,.5);
-                border-radius: 4px;
-            }
-        }
     }
 
 </style>
@@ -83,11 +64,7 @@
                 <slot name="popup"></slot>
             </div>
 
-            <div v-if="isLoading" class="ui-main-loading">
-                <div class="loading-item">
-                    <van-loading color="white" />
-                </div>
-            </div>
+            
         </div>
 
         <router-view class="ui-main-router"></router-view>
@@ -101,26 +78,8 @@
             return {
                 parentUiMainContent:null,
                 scrollActive: true,
-                isLoading: false,
-                loadingCount:0,
+                
             }
-        },
-        beforeCreate(){
-            // 挂载this.$loading方法在当前页面实例 
-            // 注意: this是当前ui-main实例, this.$parent才是页面实例.
-            const _this = this
-            Object.defineProperty(this.$parent, '$loading', {
-                value: {
-                    open(){
-                        _this.loadingCount++
-                    },
-                    close(){
-                        if(_this.loadingCount>0){
-                            _this.loadingCount--
-                        }
-                    }
-                }
-            })
         },
         mounted () {
             this.$eventHub.$on('ui-main-scroll',this.toggleScroll)
@@ -155,12 +114,6 @@
                 this.scrollActive = lock
             },
         },
-        watch:{
-            loadingCount(v){
-                const B = Boolean(v)
-                this.isLoading = B //开关loading层
-                this.toggleScroll(!B)
-            }
-        }
+        
     }
 </script>
