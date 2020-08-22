@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
-const IP = require('./ip')
 
 function getFullDate() {
     const date = new Date();
@@ -17,15 +16,6 @@ module.exports = {
     publicPath: './',
     devServer: {
         port: 9000,
-        proxy: {
-            '/api': { //跨域配置标示
-                target: `${IP}/api`, //所有访问标示的都被代理到这个地址,例如 http://后端域名/api
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': '/'
-                }
-            },
-        },
     },
     productionSourceMap: false,
     configureWebpack: config => {

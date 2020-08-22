@@ -1,6 +1,8 @@
 // 主框架 vant-ui
 import 'vant/lib/index.css'; //导入全部样式
 import Vant from 'vant';
+import $ from 'jqlite'
+window.$ = $
 
 function requireAll(requireContext) {
     return requireContext.keys().map(requireContext);
