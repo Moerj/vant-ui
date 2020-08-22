@@ -19,7 +19,8 @@ npm i vant-ui
 ```
 
 ### 核心
-vant-ui内部已自动安装vant,请勿重复安装vant
+1. vant-ui内部已自动安装vant,请勿重复安装vant
+2. jqlite内部已自动安装, jquery的轻量库 (大小20k, gzip压缩5k)
 ```js
 import vantUI from 'vant-ui';
 Vue.use(vantUI);
@@ -55,6 +56,3 @@ import vantUI from 'vant-ui'; //npm库
 ### 删除新项目不需要的文件
 - 删除本地组件库 src/vant-ui
 - 删除 src/pages/demo
-
-### 配置代理
-解压ip.zip,并配置你的ip地址
