@@ -22,7 +22,6 @@
 </style>
 <script>
     import Vue from 'vue'
-    import $ from 'jqlite'
     let loadingCount=0
     const $loading = `<div class="ui-loading-global">
                     <div class="loading-item">
