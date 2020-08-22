@@ -4,8 +4,6 @@
             <router-view/>
         </div>
         <bottombar></bottombar>
-
-        <ui-loading-global />
     </div>
 </template>
 

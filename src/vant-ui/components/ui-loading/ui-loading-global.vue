@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<style lang="scss">
     .ui-loading-global{
             position: fixed;
             top: 0;
@@ -9,6 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            touch-action: none; //触摸滑动时候不产生默认行为
             >.loading-item{
                 display: flex;
                 justify-content: center;
@@ -19,45 +20,42 @@
             }
         }
 </style>
-<template>
-    <div v-if="isLoading" class="ui-loading-global" @touchmove.prevent>
-        <div class="loading-item">
-            <van-loading color="white" />
-        </div>
-    </div>
-</template>
 <script>
     import Vue from 'vue'
-    export default {
-        name:'ui-loading-global',
-        beforeCreate(){
-            // 挂载this.$loading方法在当前页面实例 
-            // 注意: this是当前ui-main实例, this.$parent才是页面实例.
-            const _this = this
-            Object.defineProperty(Vue.prototype, '$loading', {
-                value: {
-                    open(){
-                        _this.loadingCount++
-                    },
-                    close(){
-                        if(_this.loadingCount>0){
-                            _this.loadingCount--
-                        }
+    import $ from 'jqlite'
+    let loadingCount=0
+    const $loading = `<div class="ui-loading-global">
+                    <div class="loading-item">
+                        <span class="van-loading__spinner van-loading__spinner--circular" style="color: white;">
+                            <svg viewBox="25 25 50 50" class="van-loading__circular">
+                                <circle cx="50" cy="50" r="20" fill="none"></circle>
+                            </svg>
+                        </span>
+                    </div>
+                </div>`
+    $(window).ready(() => {
+        if (Vue.prototype.$loading) {
+            return
+        }
+        // 挂载this.$loading方法在当前页面实例 
+        Object.defineProperty(Vue.prototype, '$loading', {
+            value: {
+                open(){
+                    loadingCount++
+                    if (loadingCount==1) {
+                        $('body').append($loading)
+                    }
+                },
+                close(){
+                    loadingCount--
+                    if (loadingCount<=0) {
+                        $('body > .ui-loading-global').remove()
                     }
                 }
-            })
-        },
-        data(){
-            return {
-                isLoading: false,
-                loadingCount:0,
             }
-        },
-        watch:{
-            loadingCount(v){
-                const B = Boolean(v)
-                this.isLoading = B //开关loading层
-            }
-        }
+        })
+    })
+    export default {
+        name:'ui-loading-global',
     }
 </script>

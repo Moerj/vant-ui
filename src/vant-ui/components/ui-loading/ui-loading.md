@@ -1,12 +1,12 @@
-## 局部区域loading
+## 加载loading
 
 ### 全局调用
-当前页面的最外层必须使用 [**ui-main**](http://moerj.com/vant-ui/#/demo-markdown?nav=main)
+一个全局附带不可见蒙层的loading
 ```js
 this.$loading.open() //开启
 this.$loading.close() //关闭
 ```
->在有多个异步请求同时调时,你不需要理会互相之间的逻辑.因为组件内部会进行计数排序,你只需要正确操作每个请求loading的开与关.
+>在有多个异步请求同时调时, 确保每个请求前调用一次open, 每个请求完成后调用一次close, 这样程序会自动计数以确保最后一次请求结束后再关闭loading
 
 ### 局部调用
 ```html
