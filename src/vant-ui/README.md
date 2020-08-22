@@ -56,4 +56,5 @@ import vantUI from 'vant-ui'; //npm库
 - 删除本地组件库 src/vant-ui
 - 删除 src/pages/demo
 
-## 内置jqlite
+### 配置代理
+解压ip.zip,并配置你的ip地址
