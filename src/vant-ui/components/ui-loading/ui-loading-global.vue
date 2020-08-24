@@ -32,11 +32,9 @@
                         </span>
                     </div>
                 </div>`
-    $(window).ready(() => {
-        if (Vue.prototype.$loading) {
-            return
-        }
-        // 挂载this.$loading方法在当前页面实例 
+            
+    // 挂载this.$loading方法在当前页面实例 
+    if (!Vue.prototype.$loading) {
         Object.defineProperty(Vue.prototype, '$loading', {
             value: {
                 open(){
@@ -53,7 +51,8 @@
                 }
             }
         })
-    })
+    }
+
     export default {
         name:'ui-loading-global',
     }
