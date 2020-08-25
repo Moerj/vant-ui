@@ -3,7 +3,7 @@
  * 基于Promise 的 HTTP 请求客户端
  * https://www.awesomes.cn/repo/mzabriskie/axios
  * 
- * @version 0.1.2
+ * @version 0.1.3
  * 
  * 使用:
  * http://www.jianshu.com/p/df464b26ae58
@@ -29,7 +29,7 @@ export default {
         const instance = axios.create({
 
             headers: {
-                'Content-Type':'application/x-www-form-urlencoded',//默认的请求头
+                'Content-Type':'application/json',//默认的请求头
             },
             
         });
@@ -41,6 +41,7 @@ export default {
             const lib = {//dataType封装常用类型
                 json: 'application/json',
                 formData: 'multipart/form-data',
+                form: 'application/x-www-form-urlencoded'
             }
             if (config.dataType) {
                 for (const key in lib) {
