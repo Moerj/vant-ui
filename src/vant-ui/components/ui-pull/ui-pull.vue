@@ -1,15 +1,19 @@
 <template>
-    <v-touch 
-    @swipeleft="$emit('swipeleft')" 
-    @swiperight="$emit('swiperight')" 
-    v-bind:swipe-options="{ direction:'horizontal' }" 
-    :id="id" 
-    class="mescroll">
+      <v-touch
+        @swipeleft="$emit('swipeleft')"
+        @swiperight="$emit('swiperight')"
+        v-bind:swipe-options="{ direction:'horizontal' }"
+        :id="id"
+        class="mescroll">
         <!-- 必须多套一层,不然 MeScroll 生成的 mescroll-upwarp 会跑到列表前面 -->
         <div>
-            <slot></slot>
+          <slot></slot>
         </div>
-    </v-touch>
+        <slot
+          name="empty"
+          v-show="!loading&&(!value||!value.length)"
+        />
+      </v-touch>
 </template>
 <script>
     import MeScroll from './mescroll.m'
@@ -37,7 +41,8 @@
             return {
                 uiPullInstance: null,
                 id: 'ui-pull-' + this._uid,
-                initNum: this.num
+                initNum: this.num,
+                loading: true
             }
         },
         mounted() {
@@ -55,14 +60,14 @@
                     scrollbar: {
                         use: false
                     }, //是否开启自定义滚动条
-                    empty: {
-                        warpId: this.id,
-                        icon: null, //图片地址
-                        tip: "暂无相关数据~",
+                    empty: !this.$scopedSlots.empty && {
+                      warpId: this.id,
+                      icon: null, //图片地址
+                      tip: '暂无相关数据~',
                     },
                     page:{
                         size: this.pageSize
-                    }
+                    },
                 }
 
             }
@@ -75,6 +80,7 @@
                 this.$emit('load', instance)
             },
             pullUpCallback(dataSize, instance) {
+                this.loading = true
                 this.$emit('load', instance)
             },
             endSuccess() {
@@ -86,6 +92,7 @@
                     const hasNext = this.value.length < this.total
                     // console.log('是否还有下一页:', hasNext);
                     this.uiPullInstance.endSuccess(this.value.length, hasNext)
+                    this.loading = false
                 })
             },
             // endErr() {
