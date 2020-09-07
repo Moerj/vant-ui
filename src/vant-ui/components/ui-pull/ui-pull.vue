@@ -1,19 +1,12 @@
 <template>
-      <v-touch
-        @swipeleft="$emit('swipeleft')"
-        @swiperight="$emit('swiperight')"
-        v-bind:swipe-options="{ direction:'horizontal' }"
-        :id="id"
-        class="mescroll">
+    <v-touch @swipeleft="$emit('swipeleft')" @swiperight="$emit('swiperight')"
+        v-bind:swipe-options="{ direction:'horizontal' }" :id="id" class="mescroll">
         <!-- 必须多套一层,不然 MeScroll 生成的 mescroll-upwarp 会跑到列表前面 -->
         <div>
-          <slot></slot>
+            <slot></slot>
         </div>
-        <slot
-          name="empty"
-          v-show="!loading&&(!value||!value.length)"
-        />
-      </v-touch>
+        <slot name="empty" v-show="!loading&&(!value||!value.length)" />
+    </v-touch>
 </template>
 <script>
     import MeScroll from './mescroll.m'
@@ -33,8 +26,8 @@
             },
             num: Number,
             pageSize: {
-                type:Number,
-                default:10
+                type: Number,
+                default: 10
             }
         },
         data() {
@@ -61,11 +54,11 @@
                         use: false
                     }, //是否开启自定义滚动条
                     empty: !this.$scopedSlots.empty && {
-                      warpId: this.id,
-                      icon: null, //图片地址
-                      tip: '暂无相关数据~',
+                        warpId: this.id,
+                        icon: null, //图片地址
+                        tip: '暂无相关数据~',
                     },
-                    page:{
+                    page: {
                         size: this.pageSize
                     },
                 }
@@ -105,5 +98,4 @@
             },
         },
     }
-
 </script>
