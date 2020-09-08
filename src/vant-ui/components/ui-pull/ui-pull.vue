@@ -5,7 +5,9 @@
         <div>
             <slot></slot>
         </div>
-        <slot name="empty" v-show="!loading&&(!value||!value.length)" />
+        <div v-show="!loading&&(!value||!value.length)">
+            <slot name="empty"></slot>
+        </div>
     </v-touch>
 </template>
 <script>
@@ -71,6 +73,7 @@
             pullDownCallback(instance) {
                 this.$emit('update:num', this.initNum)
                 this.$emit('load', instance)
+                this.loading = true
             },
             pullUpCallback(dataSize, instance) {
                 this.loading = true
@@ -95,6 +98,7 @@
                 this.$emit('update:num', this.initNum)
                 this.$emit('input', [])
                 this.uiPullInstance.resetUpScroll() //重置列表为第一页 (常用于列表筛选条件变化或切换菜单时重新刷新列表数据)
+                this.loading = false
             },
         },
     }
