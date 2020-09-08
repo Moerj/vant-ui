@@ -36,14 +36,15 @@ method:{
 }
 ```
 
-参数        |      说明                                               |      类型       | 默认值
-------------|---------------------------------------------------------|-----------------|---------
-@load       |   上拉/下拉的回调,根据参数{isDownScrolling}来区分       |    Funtion      |
-v-model     |   数据列表                                              |    Array        |
-total       |   总数据长度,用于上拉加载,必传                          |    Number       |   0
-page-size   |   每次分页加载的条数,分页数低于默认值时必传             |    Number       |  10
-@swipeleft  |   手势v-touch的滑动回调-左                              |    Function     |  
-@swiperight |   手势v-touch的滑动回调-右                              |    Function     |  
+参数              |      说明                                               |      类型       | 默认值
+------------------|---------------------------------------------------------|-----------------|---------
+@load             |   上拉/下拉的回调,根据参数{isDownScrolling}来区分       |    Funtion      |
+v-model           |   数据列表                                              |    Array        |
+total             |   总数据长度,用于上拉加载,必传                          |    Number       |   0
+page-size         |   每次分页加载的条数,分页数低于默认值时必传             |    Number       |  10
+immediateCheck    |   是否在初始化时立即执行滚动位置检查                    |    Boolean      |  true
+@swipeleft        |   手势v-touch的滑动回调-左                              |    Function     |  
+@swiperight       |   手势v-touch的滑动回调-右                              |    Function     |  
 
 
 方法        |      说明                                           

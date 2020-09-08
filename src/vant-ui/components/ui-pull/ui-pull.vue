@@ -30,6 +30,10 @@
             pageSize: {
                 type: Number,
                 default: 10
+            },
+            immediateCheck:{//是否在初始化时立即执行滚动位置检查
+                type:Boolean,
+                default: true
             }
         },
         data() {
@@ -51,7 +55,7 @@
                 up: {
                     use: !this.disablePullUp,
                     callback: this.pullUpCallback, //上拉加载回调
-                    auto: true, //是否在初始化完毕之后自动执行一次上拉加载的回调
+                    auto: this.immediateCheck, //是否在初始化完毕之后自动执行一次上拉加载的回调
                     scrollbar: {
                         use: false
                     }, //是否开启自定义滚动条
