@@ -45,6 +45,8 @@ page-size         |   每次分页加载的条数,分页数低于默认值时必
 immediateCheck    |   是否在初始化时立即执行滚动位置检查                    |    Boolean      |  true
 @swipeleft        |   手势v-touch的滑动回调-左                              |    Function     |  
 @swiperight       |   手势v-touch的滑动回调-右                              |    Function     |  
+empty-text        |   数据为空时的文案                                      |    String       |  暂无相关数据~
+empty-icon        |   数据为空时的图标                                      |    String       |  默认无图标
 
 
 方法        |      说明                                           

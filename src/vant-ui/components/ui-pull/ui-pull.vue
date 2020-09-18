@@ -34,6 +34,14 @@
             immediateCheck:{//是否在初始化时立即执行滚动位置检查
                 type:Boolean,
                 default: true
+            },
+            emptyText:{
+                type: String,
+                default: '暂无相关数据~'
+            },
+            emptyIcon:{
+                type: String,
+                default: null
             }
         },
         data() {
@@ -61,8 +69,8 @@
                     }, //是否开启自定义滚动条
                     empty: !this.$scopedSlots.empty && {
                         warpId: this.id,
-                        icon: null, //图片地址
-                        tip: '暂无相关数据~',
+                        icon: this.emptyIcon,
+                        tip: this.emptyText,
                     },
                     page: {
                         size: this.pageSize
