@@ -162,12 +162,18 @@ input,textarea{
     overflow-y: auto !important;
     /* 滚动弹性弹性、并且让整个body不会随滚动内容一起乱跑 */
     -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
 }
 // 开启横向滚动
-.scroll-x{
+.scroll-x {
     overflow-y: hidden;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        display: none; 
+    }
 }
 
 // overflow
