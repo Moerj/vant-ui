@@ -1,7 +1,7 @@
 ## 主容器
 
 ```html
-<ui-main>
+<ui-main @scroll="onScroll">
     <template v-slot:header>
         固定的顶部区域
     </template>
@@ -14,6 +14,13 @@
         固定的底部区域
     </template>
 </ui-main>
+
+<script>
+ methods: {
+    onScroll(event){// 页面滚动监听
+    },
+},
+</script>
 ```
 
 ### 路由页面

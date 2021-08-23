@@ -50,7 +50,7 @@
             </div>
             
             <!-- body -->
-            <div class="ui-main-scroll" :class="{'scroll-y':scrollActive}" ref="scroll-box">
+            <div class="ui-main-scroll" :class="{'scroll-y':scrollActive}" ref="scroll-box" @scroll="e=>$emit('scroll',e)">
                 <slot></slot>
             </div>
 
