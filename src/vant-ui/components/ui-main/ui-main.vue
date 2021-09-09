@@ -13,7 +13,8 @@
             flex-direction: column;
         }
         .ui-main-header{
-            z-index: 1;
+            position: relative;
+            z-index: 10;
         }
         .ui-main-scroll{
             overflow: hidden;
@@ -28,7 +29,8 @@
             z-index: 3001;
         }
         .ui-main-footer{
-            z-index: 1;
+            position: relative;
+            z-index: 10;
         }
         .ui-main-router{//二级路由
             position: absolute;
