@@ -14,7 +14,7 @@
         }
         .ui-main-header{
             position: relative;
-            z-index: 10;
+            z-index: 1;
         }
         .ui-main-scroll{
             overflow: hidden;
@@ -30,7 +30,7 @@
         }
         .ui-main-footer{
             position: relative;
-            z-index: 10;
+            z-index: 1;
         }
         .ui-main-router{//二级路由
             position: absolute;
