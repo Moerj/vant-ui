@@ -3,11 +3,11 @@
  * @Author: 杨圣
  * @Date: 2022-04-22 21:21:13
  * @LastEditors: 杨圣
- * @LastEditTime: 2022-04-22 22:54:25
+ * @LastEditTime: 2022-04-22 23:22:54
 -->
 <template>
-    <div class="waterwall-mask" v-show="display">
-        <div class="waterwall">
+    <div class="waterwall-mask" v-show="display" @click="close">
+        <div class="waterwall" @click.stop>
             <div class="title">
                 <span>请点击与其他不同的图片</span>
                 <span>
