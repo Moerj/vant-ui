@@ -34,6 +34,7 @@
             <van-cell title="日期时间" value="datetime" is-link to="/demo-datetime" />
             <van-cell title="菜单" value="menu" is-link to="/demo-menu" />
             <van-cell title="图片画廊" value="lightbox" is-link to="/demo-lightbox" />
+            <van-cell title="防水墙" value="waterwall" is-link to="/demo-waterwall" />
         </van-cell-group>
     </ui-main>
 </template>

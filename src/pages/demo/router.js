@@ -81,5 +81,10 @@ const routerArry = [
         name:'图片画廊',
         component: () => import(/* webpackChunkName: "demo" */ './lightbox')
     },
+    {
+        path:'/demo-waterwall',
+        name:'防水墙',
+        component: () => import(/* webpackChunkName: "demo" */ './waterwall')
+    },
 ]
 export default isDev ? routerArry : null
