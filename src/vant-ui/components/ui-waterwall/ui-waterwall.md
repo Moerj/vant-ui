@@ -9,7 +9,7 @@
 ```js
 data(){
     return{
-        imgSrc:'/img.png' //在线获取本地图片地址
+        imgSrc:'/img.png' //图片地址
     },
     methods:{
         onSuccess(){
