@@ -3,7 +3,7 @@
  * @Author: 杨圣
  * @Date: 2022-04-22 21:21:13
  * @LastEditors: 杨圣
- * @LastEditTime: 2022-04-22 23:22:54
+ * @LastEditTime: 2022-04-24 15:08:55
 -->
 <template>
     <div class="waterwall-mask" v-show="display" @click="close">
@@ -71,10 +71,10 @@
                 }
             },
             randomTop(){
-                return this.getRandom(this.imgSize/2, this.boxH - this.imgSize/2) + 'px'
+                return this.getRandom(0, this.boxH - this.imgSize) + 'px'
             },
             randomLeft(){
-                return this.getRandom(this.imgSize/2, this.boxW - this.imgSize/2) + 'px'
+                return this.getRandom(0, this.boxW - this.imgSize) + 'px'
             },
             getRandom(min,max){
                 return Math.random() * (max-min)+min
