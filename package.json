@@ -29,7 +29,7 @@
     "postcss-pxtorem": "^4.0.1",
     "postcss-url": "^8.0.0",
     "sass-loader": "^7.1.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "vue-template-compiler": "^2.6.10"
   }
 }
