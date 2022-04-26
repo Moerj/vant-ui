@@ -7,7 +7,7 @@
 -->
 <template>
     <ui-main>
-        <img @click="$refs.waterwall.open()" :src="imgSrc" style="width: 200px;position: absolute;top:50%;left:50%;transform: translate3d(-50%,-50%,0);">
+        <img @click="$refs.waterwall.open()" src="./img/cat.jpeg" style="width: 200px;position: absolute;top:50%;left:50%;transform: translate3d(-50%,-50%,0);">
         <ui-waterwall ref="waterwall" @success="onSuccess" @fail="onFail" :imgSrc="imgSrc"></ui-waterwall>
     </ui-main>
 </template>
@@ -15,8 +15,14 @@
     export default {
         data(){
             return {
-                imgSrc:require('./img/cat.jpeg')
+                imgSrc: [
+                    require('./img/cat.jpeg'),
+                    require('./img/loading-bg.jpg'),
+                ]
             }
+        },
+        mounted () {
+            this.$refs.waterwall.open()
         },
         methods:{
             onSuccess(){

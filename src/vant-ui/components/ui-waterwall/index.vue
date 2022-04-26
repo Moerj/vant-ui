@@ -16,17 +16,17 @@
                 </span>
             </div>
             <div class="waterwall-box" ref="box">
-                <img v-if="ready" v-for="(item, i) in 10" :src="imgSrc" 
+                <img v-if="ready" v-for="(item, i) in imgList" :src="item.imgSrc" 
                 class="waterwall-img"
                  @click="clickImg(i)"
                  :style="{
                      width:imgSize+'px',
                      height:imgSize+'px',
-                     top:randomTop(), 
-                     left:randomLeft(),
+                     top:item.top, 
+                     left:item.left,
                      filter: i==0 ? '':'grayscale(1)',
                      zIndex: i==0 ? 1 : 0,
-                     transform: i==0 ? '' : 'rotate('+getRandom(0,360)+'deg)'
+                     transform: item.transform
                      }">
             </div>
         </div>
@@ -37,7 +37,7 @@
         name:'ui-waterwall',
         props:{
             imgSrc:{//验证图片的地址,可以是本地路径
-                type:String,
+                type: [String, Array],
                 require:true
             },
             imgSize:{
@@ -47,8 +47,9 @@
         },
         data(){
             return {
-                ready:false,
-                display:true
+                ready: false,
+                display: false,
+                imgList: []
             }
         },
         computed:{
@@ -60,6 +61,21 @@
             },
         },
         methods:{
+            createList() {
+                // 判断传入的是数组还是图片地址
+                let imgSrc = this.imgSrc
+                if(Array.isArray(imgSrc)) {
+                    imgSrc = imgSrc[Math.floor(this.getRandom(0, this.imgSrc.length))]
+                }
+                this.imgList = Array.from(new Array(10)).map((_, i) => {
+                    return {
+                        imgSrc: imgSrc,
+                        top: this.randomTop(), 
+                        left: this.randomLeft(),
+                        transform: i==0 ? '' : `rotate(${this.getRandom(0,360)}deg)`
+                    }
+                })
+            },
             clickImg(i){
                 if (i==0) {
                     this.$emit('success')
@@ -81,12 +97,16 @@
             },
             replay(){
                 this.ready=false
+                this.createList()
                 setTimeout(() => {
                     this.ready=true
                 }, 100);
             },
             open(){
                 this.display=true
+                this.$nextTick(() => {
+                    this.createList()
+                })
             },
             close(){
                 this.display=false
@@ -134,5 +154,6 @@
     .waterwall-img{
         border-radius: 50%;
         position: absolute;
+        box-shadow: 0 0 2px 2px #ddd;
     }
 </style>
