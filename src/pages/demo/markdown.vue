@@ -183,7 +183,7 @@
     export default {
         data(){
             return {
-                host: location.origin + location.pathname,
+                host: (location.origin + location.pathname).replace('index.html', ''),
                 demoSrc: '',
                 routerList: ROUTER_LIST,
                 pageName: this.$route.query.nav || '',

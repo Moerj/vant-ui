@@ -20,7 +20,7 @@ for(let i = 0, len = routerObj.length; i < len; i++){
 export default [
     {
         path: '/',
-        redirect: '/login', //重定向
+        redirect: '/demo-markdown', //重定向
     },
 
     ...routes
