@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@vue/cli-service": "^5.0.8",
     "chokidar": "^2.1.1",
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.1.0",
