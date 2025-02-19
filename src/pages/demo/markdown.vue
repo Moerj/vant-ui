@@ -194,6 +194,7 @@
             navChange(path){
                 this.pageName =  path.replace('/demo','').replace('-','') || 'readme'  //当前菜单名称
 
+
                 if (this.pageName === 'readme') {
                     this.demoSrc = `${this.host}#/demo`
                 }else{
@@ -214,7 +215,7 @@
         computed:{
             markdownSrc(){
                 if (this.pageName === 'readme') {
-                    return `${this.host}md2html/readme.md.html`
+                    return `${this.host}md2html/README.md.html`
                 }else if (this.pageName === 'style') {
                     return `${this.host}md2html/style.md.html`
                 }

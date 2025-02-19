@@ -11,7 +11,7 @@ import 'vant-ui/scss/base.scss'
 系统会将以下几个css属性的px单位转为rem   
 **font, font-size, line-height, letter-spacing**
 
-## [base.scss](https://raw.githubusercontent.com/Moerj/vant-ui/master/scss/base.scss) 全文
+## [base.scss](https://raw.githubusercontent.com/Moerj/vant-ui/refs/heads/dev/src/scss/base.scss) 全文
 <pre>
     <code class="language-css">
     </code>
@@ -20,7 +20,7 @@ import 'vant-ui/scss/base.scss'
 <script>
     $(function(){
         $.ajax({
-            url:'https://raw.githubusercontent.com/Moerj/vant-ui/master/scss/base.scss',
+            url:'https://raw.githubusercontent.com/Moerj/vant-ui/refs/heads/dev/src/scss/base.scss',
             success: function (response) {
                 var html = Prism.highlight(response, Prism.languages.css, 'css');
                 $('.language-css').append(html)

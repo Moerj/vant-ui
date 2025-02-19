@@ -3,88 +3,88 @@ const routerArry = [
     // 基础框架
     {
         path:'/demo',
-        component: () => import(/* webpackChunkName: "demo" */ './index')
+        component: () => import('./index')
     },
     {
         path:'/demo-markdown',
-        component: () => import(/* webpackChunkName: "demo" */ './markdown')
+        component: () => import('./markdown')
     },
     {
         path:'/demo-style',
-        component: () => import(/* webpackChunkName: "demo" */ './style')
+        component: () => import('./style')
     },
 
     // 扩展
     {
         path:'/demo-main',
-        component: () => import(/* webpackChunkName: "demo" */ './main'),
+        component: () => import('./main'),
         name:'主容器',
         children:[
             {
                 path:'/demo-main-child',
-                component: () => import(/* webpackChunkName: "demo" */ './main-child')
+                component: () => import('./main-child')
             }
         ]
     },
     {
         path:'/demo-page',
         name:'子页面',
-        component: () => import(/* webpackChunkName: "demo" */ './page')
+        component: () => import('./page')
     },
     {
         path:'/demo-card',
         name:'卡片',
-        component: () => import(/* webpackChunkName: "demo" */ './card')
+        component: () => import('./card')
     },
     {
         path:'/demo-img',
         name:'图片',
-        component: () => import(/* webpackChunkName: "demo" */ './img')
+        component: () => import('./img')
     },
     {
         path:'/demo-timeline',
         name:'时间线',
-        component: () => import(/* webpackChunkName: "demo" */ './timeline')
+        component: () => import('./timeline')
     },
     {
         path:'/demo-loading',
         name:'加载等待',
-        component: () => import(/* webpackChunkName: "demo" */ './loading')
+        component: () => import('./loading')
     },
     {
         path:'/demo-pull',
         name:'上拉加载/下拉刷新',
-        component: () => import(/* webpackChunkName: "demo" */ './pull')
+        component: () => import('./pull')
     },
     {
         path:'/demo-picker',
         name:'单选器',
-        component: () => import(/* webpackChunkName: "demo" */ './picker')
+        component: () => import('./picker')
     },
     {
         path:'/demo-select',
         name:'高级选择器',
-        component: () => import(/* webpackChunkName: "demo" */ './select')
+        component: () => import('./select')
     },
     {
         path:'/demo-datetime',
         name:'日期时间',
-        component: () => import(/* webpackChunkName: "demo" */ './datetime')
+        component: () => import('./datetime')
     },
     {
         path:'/demo-menu',
         name:'多级菜单',
-        component: () => import(/* webpackChunkName: "demo" */ './menu')
+        component: () => import('./menu')
     },
     {
         path:'/demo-lightbox',
         name:'图片画廊',
-        component: () => import(/* webpackChunkName: "demo" */ './lightbox')
+        component: () => import('./lightbox')
     },
     {
         path:'/demo-waterwall',
         name:'防水墙',
-        component: () => import(/* webpackChunkName: "demo" */ './waterwall')
+        component: () => import('./waterwall')
     },
 ]
 export default isDev ? routerArry : null
