@@ -1,35 +1,37 @@
 {
   "name": "vant-cli",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "demo": "vue-cli-service build --mode demo",
-    "start": "concurrently \"node tools/md2html\"  \"npm run serve \" ",
+    "dev": "vite",
+    "build": "vite build",
+    "demo": "vite build --mode demo",
+    "start": "concurrently \"node tools/md2html\"  \"npm run dev \" ",
     "build-demo": "concurrently \"node tools/md2html --production\" \"npm run demo\"",
     "publish": "node tools/publish.js"
   },
   "dependencies": {
+    "@vitejs/plugin-vue2": "^2.3.3",
     "axios": "^0.18.0",
     "jqlite": "^0.2.42",
     "photoswipe": "^4.1.3",
+    "qs": "^6.14.0",
     "vant-ui": "^2.1.13",
-    "vue": "^2.6.10",
+    "vue": "^2.7.0",
     "vue-router": "^3.0.6",
     "vue-touch": "^2.0.0-beta.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.7.0",
-    "@vue/cli-service": "^3.7.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.20",
     "chokidar": "^2.1.1",
     "compression-webpack-plugin": "^2.0.0",
     "concurrently": "^4.1.0",
     "markdown-it": "^8.4.2",
-    "node-sass": "^4.14.1",
     "postcss-import": "^12.0.1",
     "postcss-pxtorem": "^4.0.1",
     "postcss-url": "^8.0.0",
-    "sass-loader": "^7.1.0",
     "shelljs": "^0.8.3",
-    "vue-template-compiler": "^2.6.10"
+    "vite": "^6.1.0",
+    "vue-template-compiler": "^2.6.10",
+    "sass": "1.58.1"
   }
 }

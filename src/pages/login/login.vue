@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-    @import '~@/scss/variables.scss';
+    @import '@/scss/variables.scss';
     $color:#26a2ff;
 
     .form-item {

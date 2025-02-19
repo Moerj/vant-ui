@@ -4,30 +4,20 @@ import Vant from 'vant';
 import $ from 'jqlite'
 window.$ = $
 
-function requireAll(requireContext) {
-    return requireContext.keys().map(requireContext);
-}
-
-const components = requireAll(require.context("./components", true, /^\.\/.*\.vue$/));
+const components = import.meta.glob("./components/**/*.vue", { eager: true });
 
 export default {
     install: function (Vue) {
         
         Vue.use(Vant);
 
-        for (let i = 0; i < components.length; i++) {
-
-            // 兼容 import export 和 require module.export 两种规范
-            if (components[i].name === undefined && components[i].default) {
-                components[i] = components[i].default
-            }
-
-            // 注册或安装组件
-            if (components[i].name) {
-                Vue.component(components[i].name, components[i])
-            } else if (components[i].install) {
-                Vue.use(components[i])
-            }
-        }
+				for (const k in components) {
+					const component = components[k].default
+					if (component.name) {
+						Vue.component(component.name, component)
+					} else if (component.install) {
+						Vue.use(component)
+					}
+				}
     }
 }
