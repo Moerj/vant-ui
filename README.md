@@ -56,3 +56,9 @@ import vantUI from 'vant-ui'; //npm库
 ### 删除新项目不需要的文件
 - 删除本地组件库 src/vant-ui
 - 删除 src/pages/demo
+
+## 部署demo
+```
+npm run build-demo
+```
+使用ftp 将dist目录中的内容，推送到到 /upload/vant-ui
