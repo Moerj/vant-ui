@@ -3,7 +3,7 @@
  * @Author: 杨圣
  * @Date: 2022-04-22 21:20:06
  * @LastEditors: 杨圣
- * @LastEditTime: 2022-04-22 22:52:58
+ * @LastEditTime: 2025-02-20 10:04:09
 -->
 <template>
     <ui-main>
@@ -16,8 +16,8 @@
         data(){
             return {
                 imgSrc: [
-                    require('./img/cat.jpeg'),
-                    require('./img/loading-bg.jpg'),
+                    new URL('./img/cat.jpeg', import.meta.url).href,
+                    new URL('./img/loading-bg.jpg', import.meta.url).href,
                 ]
             }
         },
