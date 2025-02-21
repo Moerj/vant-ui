@@ -184,7 +184,7 @@
         data(){
             return {
                 host: (location.origin + location.pathname).replace('index.html', ''),
-                demoSrc: `${this.host}#/demo`,
+                demoSrc: `${this.host || ""}#/demo`,
                 routerList: ROUTER_LIST,
                 pageName: this.$route.query.nav || '',
                 version: PACKAGE.version

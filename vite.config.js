@@ -13,6 +13,7 @@ function getFullDate() {
     return `"${year}-${month}-${day} ${hour}:${minute}:${second}"`
 }
 
+
 export default defineConfig({
     base: './',
     server: {
@@ -20,9 +21,6 @@ export default defineConfig({
     },
     build: {
         sourcemap: false,
-        define: {
-            'process.env.APP_VERSION': getFullDate()
-        }
     },
     plugins: [Vue()],
     resolve: {
@@ -38,5 +36,9 @@ export default defineConfig({
         ],
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
+    define: {
+        // 将构建时间作为版本号，常用于判断代码是否更新
+        __APP_VERSION__: getFullDate()
+    }
 
 })
