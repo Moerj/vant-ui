@@ -184,7 +184,7 @@
         data(){
             return {
                 host: (location.origin + location.pathname).replace('index.html', ''),
-                demoSrc: '',
+                demoSrc: `${this.host}#/demo`,
                 routerList: ROUTER_LIST,
                 pageName: this.$route.query.nav || '',
                 version: PACKAGE.version
@@ -193,6 +193,11 @@
         methods:{
             navChange(path){
                 this.pageName =  path.replace('/demo','').replace('-','') || 'readme'  //当前菜单名称
+
+                // 已经在当前路由
+                if (this.$route.query.nav == this.pageName) {
+                    return
+                }
 
 
                 if (this.pageName === 'readme') {
@@ -220,14 +225,6 @@
                     return `${this.host}md2html/style.md.html`
                 }
                 return `${this.host}md2html/ui-${this.pageName}.md.html`
-            }
-        },
-        mounted(){
-            this.navChange(this.pageName)
-        },
-        created(){
-            if (window.innerWidth<800) {
-                this.$router.replace('/demo')
             }
         },
     }
