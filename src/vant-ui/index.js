@@ -1,10 +1,8 @@
-//导入全部样式
-import 'vant/lib/index.css'; 
+// 2.2.4+更新支持vite脚手架
 
-// 主框架 vant-ui
+import 'vant/lib/index.css'; 
 import Vant from 'vant';
 
-// 2.2.4+更新支持vite脚手架，若遇到这里报错请升级vant-ui版本
 const components = import.meta.glob("./components/**/*.vue", { eager: true });
 
 export default {

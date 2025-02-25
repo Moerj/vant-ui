@@ -39,10 +39,13 @@ Vue.use(eventHub);
 import VueTouch from 'vue-touch'
 Vue.use(VueTouch, {name: 'v-touch'})
 
-// 组件库
-// import vantUI from 'vant-ui'; //npm库 - 正式项目请用这个
-import vantUI from './vant-ui'; //本地库
-Vue.use(vantUI);
+// 组件库引入
+// --------正式项目-------
+// import vantUI from 'vant-ui' // vite框架请用这此方式引入
+// import vantUI from 'vant-ui/index_webpack.js' // vue-cli+webpack老框架，用这个脚本引入
+//---------开发本地库--------
+import vantUI from './vant-ui'
+Vue.use(vantUI)
 
 // 框架样式
 import '@/scss/index.scss';

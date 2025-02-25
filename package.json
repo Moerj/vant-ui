@@ -1,11 +1,8 @@
 {
   "name": "vant-cli",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "demo": "vite build --mode demo",
-    "start": "concurrently \"node tools/md2html\"  \"npm run dev \" ",
-    "build-demo": "concurrently \"node tools/md2html --production\" \"npm run demo\"",
+    "dev": "concurrently \"node tools/md2html\"  \"vite \" ",
+    "build": "concurrently \"node tools/md2html --production\" \"vite build --mode demo\"",
     "publish": "node tools/publish.js"
   },
   "dependencies": {

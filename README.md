@@ -19,10 +19,12 @@ npm i vant-ui
 ```
 
 ### 核心
-1. vant-ui内部已自动安装vant,请勿重复安装vant
-2. jqlite内部已自动安装, jquery的轻量库 (大小20k, gzip压缩5k)
+vant-ui内部已自动安装vant,请勿重复安装vant
+
 ```js
-import vantUI from 'vant-ui';
+import vantUI from 'vant-ui' // vite框架
+// import vantUI from 'vant-ui/index_webpack.js' // vue-cli+webpack老框架，用这个安装
+
 Vue.use(vantUI);
 ```
 
