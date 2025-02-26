@@ -3,20 +3,44 @@
 import 'vant/lib/index.css'; 
 import Vant from 'vant';
 
-const components = import.meta.glob("./components/**/*.vue", { eager: true });
+import Card from './components/ui-card/index.js'
+import Datetime from './components/ui-datetime/index.js'
+import Img from './components/ui-img/index.js'
+import Lightbox from './components/ui-lightbox/index.js'
+import { Loading, LoadingGlobal } from './components/ui-loading/index.js'
+import Main from './components/ui-main/index.js'
+import Menu from './components/ui-menu/index.js'
+import Page from './components/ui-page/index.js'
+import Picker from './components/ui-picker/index.js'
+import Pull from './components/ui-pull/index.js'
+import Select from './components/ui-select/index.js'
+import Timeline from './components/ui-timeline/index.js'
+import Waterwall from './components/ui-waterwall/index.js'
+
+const components = [
+	Card,
+	Datetime,
+	Img,
+	Lightbox,
+	Loading,
+	LoadingGlobal,
+	Main,
+	Menu,
+	Page,
+	Picker,
+	Pull,
+	Select,
+	Timeline,
+	Waterwall
+]
 
 export default {
 	install: function (Vue) {
 
 		Vue.use(Vant);
 
-		for (const k in components) {
-			const component = components[k].default
-			if (component.name) {
-				Vue.component(component.name, component)
-			} else if (component.install) {
-				Vue.use(component)
-			}
-		}
+		components.forEach(component => {
+			Vue.component(component.name, component)
+		})
 	}
 }
