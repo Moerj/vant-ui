@@ -22,9 +22,7 @@ npm i vant-ui
 vant-ui内部已自动安装vant,请勿重复安装vant
 
 ```js
-import vantUI from 'vant-ui' // vite框架
-// import vantUI from 'vant-ui/index_webpack.js' // vue-cli+webpack老框架，用这个安装
-
+import vantUI from 'vant-ui'
 Vue.use(vantUI);
 ```
 
