@@ -20,26 +20,40 @@
         data() {
             return {
                 activeMenu: 'safeInfo', //当前激活的页面
-                items: [{
-                    // 导航名称
-                    text: '企业基础信息',
-                    // 该导航下所有的可选项
-                    children: [{
-                            // 名称
-                            text: '安全生产基础信息',
-                            // id，作为匹配选中状态的标识
-                            id: 'safeInfo',
-                        },
-                        {
-                            text: '企业基础信息',
-                            id: 'enterpriseInfo'
-                        },
-                        {
-                            text: '员工档案',
-                            id: 'employeeProfile'
-                        },
-                    ]
-                }]
+                items: [
+                    {
+                        // 导航名称
+                        text: '企业基础信息',
+                        // 该导航下所有的可选项
+                        children: [{
+                                // 名称
+                                text: '安全生产基础信息',
+                                // id，作为匹配选中状态的标识
+                                id: 'safeInfo',
+                            },
+                            {
+                                text: '企业基础信息',
+                                id: 'enterpriseInfo'
+                            },
+                            {
+                                text: '员工档案',
+                                id: 'employeeProfile'
+                            },
+                        ]
+                    },
+                    {
+                        text: '根目录2',
+                        children: [{
+                                text: '子目录1',
+                                id: 'b1',
+                            },
+                            {
+                                text: '子目录2',
+                                id: 'b2'
+                            },
+                        ]
+                    },
+                ]
             }
         }
     }

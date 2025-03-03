@@ -55,8 +55,8 @@
             :items="options" 
             :main-active-index="mainActiveIndex" 
             :active-id="value" 
-            @navclick="onNavClick" 
-            @itemclick="onItemClick" 
+            @click-nav="onNavClick" 
+            @click-item="onItemClick" 
             class="filter-list"
             />
             <div class="modal" v-show="treeVisible" :style="{top:headerHeight}" @click="treeVisible=false" ref="modal"></div>
@@ -83,8 +83,8 @@
         },
         methods: {
             onNavClick(index) {//一级节点选择
+                // 点击后更新二级节点
                 this.mainActiveIndex = index
-                
             },
             onItemClick(data) {//二级节点选择
                 this.groupText = this.options[this.mainActiveIndex].text
