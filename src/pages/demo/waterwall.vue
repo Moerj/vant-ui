@@ -2,8 +2,8 @@
  * @Descripttion: 防水墙
  * @Author: 杨圣
  * @Date: 2022-04-22 21:20:06
- * @LastEditors: 杨圣
- * @LastEditTime: 2025-02-20 10:04:09
+ * @LastEditors: yilong
+ * @LastEditTime: 2025-03-03 14:16:40
 -->
 <template>
     <ui-main>
@@ -12,13 +12,12 @@
     </ui-main>
 </template>
 <script>
+import Cat from './img/cat.jpeg'
+import Bg from './img/loading-bg.jpg'
     export default {
         data(){
             return {
-                imgSrc: [
-                    new URL('./img/cat.jpeg', import.meta.url).href,
-                    new URL('./img/loading-bg.jpg', import.meta.url).href,
-                ]
+                imgSrc: [Cat, Bg]
             }
         },
         mounted () {

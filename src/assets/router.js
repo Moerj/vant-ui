@@ -1,17 +1,14 @@
 // 动态导入所有路由配置
-const modules = import.meta.glob('@/pages/**/router.js', { eager: true });
-let routes = [];
-
-for (const path in modules) {
-    const module = modules[path];
-    if (module.default) {
-        if (Array.isArray(module.default)) {
-            routes.push(...module.default);
-        } else {
-            routes.push(module.default);
-        }
-    }
-}
+import RouteDemo from '../pages/demo/router.js'
+import RouteHome from '../pages/home/router.js'
+import RouteLogin from '../pages/login/router.js'
+import RouteMe from '../pages/me/router.js'
+let routes = [
+	...RouteDemo,
+	...RouteHome,
+	...RouteMe,
+	RouteLogin,
+];
 
 export default [
     {
