@@ -1,10 +1,10 @@
 # Vant-ui
-this is vant components extend  
+这是vant2扩展库，其中包含vant2原本所有组件以及本库的扩展组件。  
+<a href="https://youzan.github.io/vant" target="_blank">__vant 2.x__</a>
 
-这是vant组件库的扩展，其中包含vant原本所有组件以及本库的扩展组件。  
-已支持最新的 <a href="https://youzan.github.io/vant" target="_blank">__vant 2.x__</a>
+注意：该组件库对应Vue2， 如果使用Vue3则单独使用Vant4就行了。
 
-### <a href="http://moerj.com/vant-ui/#/demo-markdown" target="_blank">Online demo</a>
+### <a href="http://moerj.com/vant-ui/#/demo-markdown" target="_blank">在线demo</a>
 
 ## 特性
 - 更完善的组件库
@@ -19,7 +19,7 @@ npm i vant-ui
 ```
 
 ### 核心
-vant-ui内部已自动安装vant,请勿重复安装vant
+vant-ui内部已自动安装vant2,请勿重复安装vant
 
 ```js
 import vantUI from 'vant-ui'
