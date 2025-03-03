@@ -85,8 +85,8 @@
     </div>
 </template>
 <script>
-    import PhotoSwipe from 'photoswipe'
-    import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+    // import PhotoSwipe from 'photoswipe'
+    // import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
     import 'photoswipe/dist/photoswipe.css'
     import 'photoswipe/dist/default-skin/default-skin.css'
     export default {
@@ -104,12 +104,15 @@
             close() {
                 this.gallery.destroy()
             },
-            open(index = 0) {
+            async open(index = 0) {
                 let opt = {
                     history: false, //不需要在query追加历史记录
                     index: index, //初始打开的图片索引
                 }
                 opt = Object.assign({}, opt, this.options)
+
+								const { default: PhotoSwipe } = await import('photoswipe')
+								const { default: PhotoSwipeUI_Default } = await import('photoswipe/dist/photoswipe-ui-default')
 
                 // Initializes and opens PhotoSwipe
                 this.gallery = new PhotoSwipe(this.$refs.pswp, PhotoSwipeUI_Default, this.items, opt);

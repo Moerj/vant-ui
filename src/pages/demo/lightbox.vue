@@ -1,3 +1,10 @@
+<!--
+ * @Author: yilong
+ * @Date: 2025-03-03 11:13:51
+ * @LastEditors: yilong
+ * @LastEditTime: 2025-03-03 11:18:05
+ * @Descripttion: 
+-->
 <style lang="scss" scoped>
     .img-item{
         width: 30%;
@@ -31,16 +38,35 @@
     </ui-main>
 </template>
 <script>
+		import Img1 from './img/lightbox/1.jpg'
+		import Img2 from './img/lightbox/2.jpg'
+		import Img3 from './img/lightbox/3.jpg'
+		import Img4 from './img/lightbox/4.jpg'
+		import Img5 from './img/lightbox/5.jpg'
+		import Img6 from './img/lightbox/6.jpg'
+		import Img7 from './img/lightbox/7.jpg'
+		import Img8 from './img/lightbox/8.jpg'
+		import Img9 from './img/lightbox/9.jpg'
+		import Img10 from './img/lightbox/10.jpg'
+		import Img11 from './img/lightbox/11.jpg'
     export default {
         data() {
-            let array = []
-            let i = 1
-            for (let i = 1; i <= 11; i++) {
-                array.push({src: require(`./img/lightbox/${i}.jpg`)})
-            }
+            
 
             return {
-                imgList: array
+                imgList: [
+									{ src: Img1 },
+									{ src: Img2 },
+									{ src: Img3 },
+									{ src: Img4 },
+									{ src: Img5 },
+									{ src: Img6 },
+									{ src: Img7 },
+									{ src: Img8 },
+									{ src: Img9 },
+									{ src: Img10 },
+									{ src: Img11 }
+								]
             }
         },
         methods: {
