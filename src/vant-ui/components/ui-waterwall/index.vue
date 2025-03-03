@@ -3,7 +3,7 @@
  * @Author: 杨圣
  * @Date: 2022-04-22 21:21:13
  * @LastEditors: 杨圣
- * @LastEditTime: 2022-04-24 15:08:55
+ * @LastEditTime: 2025-03-03 15:56:24
 -->
 <template>
     <div class="waterwall-mask" v-show="display" @click="close">
@@ -24,9 +24,9 @@
                      height:imgSize+'px',
                      top:item.top, 
                      left:item.left,
-                     filter: i==0 ? '':'grayscale(1)',
-                     zIndex: i==0 ? 1 : 0,
-                     transform: item.transform
+                     filter: i==vaildIndex ? '':'grayscale(1)', //正确图片为彩色
+                     zIndex: i==vaildIndex ? 1 : 0, //正确图片层级最高
+                     transform: i==vaildIndex ? '' : item.transform //正确图片不旋转
                      }">
             </div>
         </div>
@@ -49,7 +49,8 @@
             return {
                 ready: false,
                 display: false,
-                imgList: []
+                imgList: [],
+                vaildIndex: 0
             }
         },
         computed:{
@@ -61,23 +62,33 @@
             },
         },
         methods:{
+            getRandom(min,max){
+                return Math.random() * (max-min)+min
+            },
+            getRandomInt(min,max){
+                return Math.floor(Math.random() * (max - min + 1) + min)
+            },
             createList() {
                 // 判断传入的是数组还是图片地址
                 let imgSrc = this.imgSrc
                 if(Array.isArray(imgSrc)) {
                     imgSrc = imgSrc[Math.floor(this.getRandom(0, this.imgSrc.length))]
                 }
+
+                // 在图片的列表中随机选取一个图片，标记为正确答案
+                this.vaildIndex = this.getRandomInt(0, this.imgList.length - 1)
+
                 this.imgList = Array.from(new Array(10)).map((_, i) => {
                     return {
                         imgSrc: imgSrc,
                         top: this.randomTop(), 
                         left: this.randomLeft(),
-                        transform: i==0 ? '' : `rotate(${this.getRandom(0,360)}deg)`
+                        transform: `rotate(${this.getRandom(0,360)}deg)`
                     }
                 })
             },
             clickImg(i){
-                if (i==0) {
+                if (i==this.vaildIndex) {
                     this.$emit('success')
                     this.close()
                 }else{
@@ -91,9 +102,6 @@
             },
             randomLeft(){
                 return this.getRandom(0, this.boxW - this.imgSize) + 'px'
-            },
-            getRandom(min,max){
-                return Math.random() * (max-min)+min
             },
             replay(){
                 this.ready=false
