@@ -23,15 +23,17 @@
 <script>
     import Vue from 'vue'
     let loadingCount=0
-    const $loading = `<div class="ui-loading-global">
-                    <div class="loading-item">
-                        <span class="van-loading__spinner van-loading__spinner--circular" style="color: white;">
-                            <svg viewBox="25 25 50 50" class="van-loading__circular">
-                                <circle cx="50" cy="50" r="20" fill="none"></circle>
-                            </svg>
-                        </span>
-                    </div>
-                </div>`
+    const $loading = document.createElement('div');
+    $loading.className = 'ui-loading-global';
+    $loading.innerHTML = `
+        <div class="loading-item">
+            <span class="van-loading__spinner van-loading__spinner--circular" style="color: white;">
+                <svg viewBox="25 25 50 50" class="van-loading__circular">
+                    <circle cx="50" cy="50" r="20" fill="none"></circle>
+                </svg>
+            </span>
+        </div>
+    `;
             
     // 挂载this.$loading方法在当前页面实例 
     if (!Vue.prototype.$loading) {
@@ -40,13 +42,16 @@
                 open(){
                     loadingCount++
                     if (loadingCount==1) {
-                        $('body').append($loading)
+                        document.body.appendChild($loading);
                     }
                 },
                 close(){
                     loadingCount--
                     if (loadingCount<=0) {
-                        $('body > .ui-loading-global').remove()
+                        const loadingElement = document.querySelector('.ui-loading-global');
+                        if (loadingElement) {
+                            document.body.removeChild(loadingElement);
+                        }
                     }
                 }
             }
